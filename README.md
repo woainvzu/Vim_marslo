@@ -9,7 +9,7 @@ LastChange: 2013-01-30 14:22:41
 =============================================================
 
 How to use it:
-
+<pre>
     * Windows User:
         Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.
 
@@ -17,7 +17,7 @@ How to use it:
         - Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/
         - Change the file name _vimrc to .vimrc
         - Change the folder name vimfiles to .vim
-    
+</pre>
 =============================================================
     
 Open is Maximize   
