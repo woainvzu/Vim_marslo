@@ -9,17 +9,14 @@ Version: 0.0.1
 LastChange: 2013-01-30 14:22:41
 
 =============================================================
-How to use it:
-
-    * Windows User:
-        Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.
-
-    * Linux User:
-        - Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/
-        - Change the file name _vimrc to .vimrc
-        - Change the folder name vimfiles to .vim
-
-
+How to use it   
+    * Windows User:   
+        Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.   
+    * Linux User:   
+        - Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/   
+        - Change the file name _vimrc to .vimrc   
+        - Change the folder name vimfiles to .vim   
+    
 =============================================================
 
 Open is Maximize   
@@ -28,33 +25,33 @@ Open is Maximize
 
 ---------------------------------------------------------------
 
-F5: Run Python, Ruby and Perl by one key! (The result could be shown in the Quickfix window)  
-F3. Open the tagbar  
-F4. Add the personal information  
+**F5**: Run Python, Ruby and Perl by one key! (The result could be shown in the Quickfix window)  
+**F3**. Open the tagbar  
+**F4**. Add the personal information  
 
 --------------------------------------------------------------
 
 Super cool theme: http://www.weibo.com/1132779494/z6lIzbmBg   
 Auto Pair   
 Auto compare code    
-    - \fn: insert current file name   
-    - \fe: insert current file name by suffix   
-    - tt:  insert the current time   
+    - **\fn**: insert current file name   
+    - **\fe**: insert current file name by suffix   
+    - **tt**:  insert the current time   
 Save and load the fold information automatic.   
    
 ---------------------------------------------------------------
    
-tl:     Show the taglist   
-wm.    Show winmanager   
-,v.    Open the configure file (_vimrc)   
-,te:    Open the Tetris   
-tv:     Open bash in the vim/gvim (Yes! That's true)   
-*pyli:*   Static Code Analysis for python   
+**tl**:     Show the taglist   
+**wm**:    Show winmanager   
+**,v**:    Open the configure file (_vimrc)   
+**,te**:    Open the Tetris   
+**tv**:     Open bash in the vim/gvim (Yes! That's true)   
+**pyli**:   Static Code Analysis for python   
    
 ---------------------------------------------------------------
    
-ctrl+g:     Open the most recently used files   
-ctrl+q(,v): Comments/Uncomments   
+**ctrl+g**:     Open the most recently used files   
+**ctrl+q(,v)**: Comments/Uncomments   
    
 ---------------------------------------------------------------
 Plugins:   
