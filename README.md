@@ -49,33 +49,33 @@ wm.    Show winmanager
 ,v.    Open the configure file (_vimrc)   
 ,te:    Open the Tetris   
 tv:     Open bash in the vim/gvim (Yes! That's true)   
-pyli:   Static Code Analysis for python   
+*pyli:*   Static Code Analysis for python   
    
 ---------------------------------------------------------------
-
-ctrl+g:     Open the most recently used files
-ctrl+q(,v): Comments/Uncomments
-
+   
+ctrl+g:     Open the most recently used files   
+ctrl+q(,v): Comments/Uncomments   
+   
 ---------------------------------------------------------------
-Plugins:
-    - authorinfo.vim
-    - conque_term.vim
-    - EnhancedCommentify.vim
-    - minibufexpl.vim
-    - mru.vim
-    - per-support.vim
-    - python_fold.vim
-    - snipMate.vi
-    - tagbar.vim
-    - taglist.vim
-    - TeTrIs.vim
-    - winfileexplorer.vim
-    - winmanager.vim
-    - wintagexplorer.vim
-
+Plugins:   
+    - authorinfo.vim   
+    - conque_term.vim   
+    - EnhancedCommentify.vim   
+    - minibufexpl.vim   
+    - mru.vim   
+    - per-support.vim   
+    - python_fold.vim   
+    - snipMate.vim   
+    - tagbar.vim   
+    - taglist.vim   
+    - TeTrIs.vim   
+    - winfileexplorer.vim   
+    - winmanager.vim   
+    - wintagexplorer.vim   
+   
 -----------------------------
-
-The default Font named: Monaco, download form: http://download.csdn.net/detail/jiaoxiaogu/4317959
+   
+The default Font named: Monaco, download form: http://download.csdn.net/detail/jiaoxiaogu/4317959   
 
 
 
