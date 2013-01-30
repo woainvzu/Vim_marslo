@@ -3,10 +3,10 @@ vim_config_marslo
 
 My vim configuration
 
-Author: Marslo</br>
-Email: marslo.vida@gmail.com</br>
-Version: 0.0.1</br>
-LastChange: 2013-01-30 14:22:41</br>
+Author: Marslo<br />
+Email: marslo.vida@gmail.com<br />
+Version: 0.0.1<br />
+LastChange: 2013-01-30 14:22:41<br />
 
 =============================================================
 How to use it:
@@ -23,12 +23,10 @@ How to use it:
 =============================================================
 
 Open is Maximize 
-<pre>
 <code>
     - Default maximze for Win32 user 
     - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 </code>
-</pre>
 
 ---------------------------------------------------------------
 
