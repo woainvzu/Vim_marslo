@@ -24,8 +24,8 @@ How to use it:
 =============================================================
     
 Open is Maximize   
-    -  Default maximze for Win32 user  
-    -  lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
+    * Default maximze for Win32 user  
+    * lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ---------------------------------------------------------------
 
@@ -38,9 +38,9 @@ Open is Maximize
 Super cool theme: http://www.weibo.com/1132779494/z6lIzbmBg   
 Auto Pair   
 Auto compare code    
-    -  **\fn**: insert current file name   
-    -  **\fe**: insert current file name by suffix   
-    -  **tt**:  insert the current time   
+    *  **\fn**: insert current file name   
+    *  **\fe**: insert current file name by suffix   
+    *  **tt**:  insert the current time   
 Save and load the fold information automatic.   
    
 ---------------------------------------------------------------
@@ -59,24 +59,22 @@ Save and load the fold information automatic.
    
 ---------------------------------------------------------------
 Plugins:   
-    - authorinfo.vim   
-    - conque_term.vim   
-    - EnhancedCommentify.vim   
-    - minibufexpl.vim   
-    - mru.vim   
-    - per-support.vim   
-    - python_fold.vim   
-    - snipMate.vim   
-    - tagbar.vim   
-    - taglist.vim   
-    - TeTrIs.vim   
-    - winfileexplorer.vim   
-    - winmanager.vim   
-    - wintagexplorer.vim   
+    * authorinfo.vim   
+    * conque_term.vim   
+    * EnhancedCommentify.vim   
+    * minibufexpl.vim   
+    * mru.vim   
+    * per-support.vim   
+    * python_fold.vim   
+    * snipMate.vim   
+    * tagbar.vim   
+    * taglist.vim   
+    * TeTrIs.vim   
+    * winfileexplorer.vim   
+    * winmanager.vim   
+    * wintagexplorer.vim   
    
 -----------------------------
    
 The default Font named: Monaco, download form: http://download.csdn.net/detail/jiaoxiaogu/4317959   
-
-
 
