@@ -20,6 +20,7 @@ How to use it:
         - Change the folder name vimfiles to .vim
 </code>
 </pre>
+    
 =============================================================
     
 Open is Maximize   
