@@ -3,15 +3,10 @@ vim_config_marslo
 
 My vim configuration
 
-
-me: _ReadMe
-#         Desc: 
-#       Author: Marslo
-#        Email: marslo.vida@gmail.com
-#      Version: 0.0.1
-#   LastChange: 2013-01-30 14:22:41
-#      History:
-#=============================================================================
+Author: Marslo
+Email: marslo.vida@gmail.com
+Version: 0.0.1
+LastChange: 2013-01-30 14:22:41
 
 =============================================================
 How to use it:
