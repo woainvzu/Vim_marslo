@@ -3,10 +3,10 @@ vim_config_marslo
 
 My vim configuration
 
-Author: Marslo<br />
-Email: marslo.vida@gmail.com<br />
-Version: 0.0.1<br />
-LastChange: 2013-01-30 14:22:41<br />
+Author: Marslo tag_br  
+Email: marslo.vida@gmail.com tag_br  
+Version: 0.0.1 tag_br
+LastChange: 2013-01-30 14:22:41
 
 =============================================================
 How to use it:
