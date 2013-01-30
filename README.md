@@ -27,8 +27,8 @@ How to use it:
 
 =============================================================
 
-Open is Maximize
-    - Default maximze for Win32 user
+Open is Maximize 
+    - Default maximze for Win32 user 
     - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 
 ---------------------------------------------------------------
