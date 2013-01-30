@@ -3,9 +3,9 @@ vim_config_marslo
 
 My vim configuration
 
-Author: Marslo tag_br  
-Email: marslo.vida@gmail.com tag_br  
-Version: 0.0.1 tag_br
+Author: Marslo  
+Email: marslo.vida@gmail.com   
+Version: 0.0.1  
 LastChange: 2013-01-30 14:22:41
 
 =============================================================
@@ -23,17 +23,15 @@ How to use it:
 =============================================================
 
 Open is Maximize 
-<code>
-    - Default maximze for Win32 user 
-    - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
-</code>
+    - Default maximze for Win32 user  
+    - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ---------------------------------------------------------------
 
-F5: Run Python, Ruby and Perl by one key!
-The result could be shown in the Quickfix window
-F3. Open the tagbar
-F4. Add the personal information
+F5: Run Python, Ruby and Perl by one key!  
+The result could be shown in the Quickfix window  
+F3. Open the tagbar  
+F4. Add the personal information  
 
 --------------------------------------------------------------
 
