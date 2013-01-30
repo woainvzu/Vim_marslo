@@ -7,19 +7,19 @@ Version: 0.0.1
 LastChange: 2013-01-30 14:22:41
 
 =============================================================
-How to use it   
-<pre>
-<code>
-    * Windows User:   
-        Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.   
-    * Linux User:   
-        -  Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/   
-        -  Change the file name _vimrc to .vimrc   
-        -  Change the folder name vimfiles to .vim   
-</code>
-</pre>
-=============================================================
 
+How to use it:
+
+    * Windows User:
+        Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.
+
+    * Linux User:
+        - Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/
+        - Change the file name _vimrc to .vimrc
+        - Change the folder name vimfiles to .vim
+    
+=============================================================
+    
 Open is Maximize   
     -  Default maximze for Win32 user  
     -  lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
