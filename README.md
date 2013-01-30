@@ -11,15 +11,15 @@ How to use it
     * Windows User:   
         Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.   
     * Linux User:   
-        - Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/   
-        - Change the file name _vimrc to .vimrc   
-        - Change the folder name vimfiles to .vim   
+        -  Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/   
+        -  Change the file name _vimrc to .vimrc   
+        -  Change the folder name vimfiles to .vim   
     
 =============================================================
 
 Open is Maximize   
-    - Default maximze for Win32 user  
-    - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
+    -  Default maximze for Win32 user  
+    -  lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ---------------------------------------------------------------
 
@@ -32,9 +32,9 @@ Open is Maximize
 Super cool theme: http://www.weibo.com/1132779494/z6lIzbmBg   
 Auto Pair   
 Auto compare code    
-    - **\fn**: insert current file name   
-    - **\fe**: insert current file name by suffix   
-    - **tt**:  insert the current time   
+    -  **\fn**: insert current file name   
+    -  **\fe**: insert current file name by suffix   
+    -  **tt**:  insert the current time   
 Save and load the fold information automatic.   
    
 ---------------------------------------------------------------
