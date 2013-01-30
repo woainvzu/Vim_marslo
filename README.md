@@ -8,13 +8,14 @@ LastChange: 2013-01-30 14:22:41
 
 =============================================================
 How to use it   
+<code>
     * Windows User:   
         Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.   
     * Linux User:   
         -  Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/   
         -  Change the file name _vimrc to .vimrc   
         -  Change the folder name vimfiles to .vim   
-    
+</code>
 =============================================================
 
 Open is Maximize   
