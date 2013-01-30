@@ -22,36 +22,35 @@ How to use it:
 
 =============================================================
 
-Open is Maximize 
+Open is Maximize   
     - Default maximze for Win32 user  
     - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ---------------------------------------------------------------
 
-F5: Run Python, Ruby and Perl by one key!  
-The result could be shown in the Quickfix window  
+F5: Run Python, Ruby and Perl by one key! (The result could be shown in the Quickfix window)  
 F3. Open the tagbar  
 F4. Add the personal information  
 
 --------------------------------------------------------------
 
-Super cool theme: http://www.weibo.com/1132779494/z6lIzbmBg
-Auto Pair 
-Auto compare code 
-    - \fn: insert current file name
-    - \fe: insert current file name by suffix
-    - tt:  insert the current time
-Save and load the fold information automatic.
-
+Super cool theme: http://www.weibo.com/1132779494/z6lIzbmBg   
+Auto Pair   
+Auto compare code    
+    - \fn: insert current file name   
+    - \fe: insert current file name by suffix   
+    - tt:  insert the current time   
+Save and load the fold information automatic.   
+   
 ---------------------------------------------------------------
-
-tl:     Show the taglist
-wm.    Show winmanager
-,v.    Open the configure file (_vimrc)
-,te:    Open the Tetris
-tv:     Open bash in the vim/gvim (Yes! That's true)
-pyli:   Static Code Analysis for python
-
+   
+tl:     Show the taglist   
+wm.    Show winmanager   
+,v.    Open the configure file (_vimrc)   
+,te:    Open the Tetris   
+tv:     Open bash in the vim/gvim (Yes! That's true)   
+pyli:   Static Code Analysis for python   
+   
 ---------------------------------------------------------------
 
 ctrl+g:     Open the most recently used files
