@@ -6,7 +6,7 @@ Email: marslo.vida@gmail.com
 Version: 0.0.1  
 LastChange: 2013-01-30 14:22:41
 
-=============================================================
+-----------------------------
 
 How to use it:
 <pre>
@@ -21,19 +21,19 @@ How to use it:
 </code>
 </pre>
     
-=============================================================
+-----------------------------
     
 Open is Maximize   
     * Default maximze for Win32 user  
     * lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
----------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++
 
 **F5**: Run Python, Ruby and Perl by one key! (The result could be shown in the Quickfix window)  
 **F3**. Open the tagbar  
 **F4**. Add the personal information  
 
---------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++
 
 Super cool theme: http://www.weibo.com/1132779494/z6lIzbmBg   
 Auto Pair   
@@ -43,7 +43,7 @@ Auto compare code
     *  **tt**:  insert the current time   
 Save and load the fold information automatic.   
    
----------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++
    
 **tl**:     Show the taglist   
 **wm**:    Show winmanager   
@@ -57,7 +57,7 @@ Save and load the fold information automatic.
 **ctrl+g**:     Open the most recently used files   
 **ctrl+q(,v)**: Comments/Uncomments   
    
- ---- 
++++++++++++++++++++++++++++++++++++++++++++
 
 Plugins:   
     * authorinfo.vim   
