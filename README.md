@@ -52,7 +52,7 @@ Save and load the fold information automatic.
 **tv**:     Open bash in the vim/gvim (Yes! That's true)   
 **pyli**:   Static Code Analysis for python   
    
----------------------------------------------------------------
+ ---- 
    
 **ctrl+g**:     Open the most recently used files   
 **ctrl+q(,v)**: Comments/Uncomments   
