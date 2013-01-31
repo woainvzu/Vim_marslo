@@ -57,7 +57,8 @@ Save and load the fold information automatic.
 **ctrl+g**:     Open the most recently used files   
 **ctrl+q(,v)**: Comments/Uncomments   
    
----------------------------------------------------------------
+ ---- 
+
 Plugins:   
     * authorinfo.vim   
     * conque_term.vim   
@@ -73,8 +74,9 @@ Plugins:
     * winfileexplorer.vim   
     * winmanager.vim   
     * wintagexplorer.vim   
-   
------------------------------
+
+ ---- 
    
 The default Font named: Monaco, download form: http://download.csdn.net/detail/jiaoxiaogu/4317959   
 
+-----------------------------
