@@ -31,8 +31,8 @@ LastChange: 2013-01-30 14:22:41
 -----------------------------
 
 #Open is Maximize  
-    - * Default maximze for Win32 user
-    - * lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
+* Default maximze for Win32 user  
+* lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ##Shortcuts
 
