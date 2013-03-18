@@ -9,8 +9,9 @@ LastChange: 2013-01-30 14:22:41
 -----------------------------
 ##ScreenShots:
 #Windows
-![Screenshots_Windows](https://github.com/woainvzu/vim_config_marslo/blob/master/Screenshot.png?raw=true)
+![Screenshot_Windows](https://github.com/woainvzu/vim_config_marslo/blob/master/Screenshot.png?raw=true)
 #Ubuntu(Ubuntu):
+![Screenshot_Ubuntu](https://github.com/woainvzu/vim_config_marslo/blob/master/Screenshots_Ubuntu.png?raw=true)
 
 
 How to use it:
