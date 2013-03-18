@@ -1,10 +1,10 @@
 vim_config_marslo
 =================
 
-Author: Marslo
-Email: marslo.vida@gmail.com
-Version: 0.0.2
-LastChange: 2013-01-30 14:22:41
+Author: Marslo  
+Email: marslo.vida@gmail.com  
+Version: 0.0.2  
+LastChange: 2013-01-30 14:22:41  
 
 -----------------------------
 ##ScreenShots:
@@ -31,8 +31,8 @@ LastChange: 2013-01-30 14:22:41
 -----------------------------
 
 Open is Maximize
-    * Default maximze for Win32 user
-    * lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
+    - * Default maximze for Win32 user
+    - * lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 
 ##Shortcuts
 
@@ -101,8 +101,8 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 -----------------------------
 
 打开vim/gvim默认最大化
-    - * Windows用户, 已默认开启最大化
-    - * Linux用户，需要安装lwmctr。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843
+* Windows用户, 已默认开启最大化  
+* Linux用户，需要安装lwmctr。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ##快捷键
 - **F5**: 一键运行Python, Ruby 和 Perl。(运行结果将显示在Quickfix窗口中)
