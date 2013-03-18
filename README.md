@@ -14,7 +14,7 @@ LastChange: 2013-01-30 14:22:41
 ![Screenshot_Ubuntu](https://github.com/woainvzu/vim_config_marslo/blob/master/Screenshots_Ubuntu.png?raw=true)
 
 
-How to use it:
+##Usage
 <pre>
 <code>
     * Windows User:
@@ -33,7 +33,7 @@ Open is Maximize
     * Default maximze for Win32 user
     * lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 
-+++++++++++++++++++++++++++++++++++++++++++
+##Shortcuts
 
 **F5**: Run Python, Ruby and Perl by one key! (The result could be shown in the Quickfix window)
 **F3**. Open the tagbar
@@ -63,9 +63,8 @@ Save and load the fold information automatic.
 **ctrl+g**:     Open the most recently used files
 **ctrl+q(,v)**: Comments/Uncomments
 
-+++++++++++++++++++++++++++++++++++++++++++
 
-Plugins:
+##Plugins:
     * authorinfo.vim
     * conque_term.vim
     * EnhancedCommentify.vim
@@ -87,7 +86,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 -----------------------------
 
-如何使用
+##使用方法
 <pre>
 <code>
     * Windows用户
@@ -104,8 +103,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
     * Windows用户, 已默认开启最大化
     * Linux用户，需要安装lwmctr。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843
 
-+++++++++++++++++++++++++++++++++++++++++++
-
+##快捷键
 **F5**: 一键运行Python, Ruby 和 Perl。(运行结果将显示在Quickfix窗口中)
 **F3**: 打开tagbar
 **F4**: 自动添加用户信息
@@ -131,7 +129,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 +++++++++++++++++++++++++++++++++++++++++++
 
-插件列表：
+##插件列表：
     * authorinfo.vim
     * conque_term.vim
     * EnhancedCommentify.vim
