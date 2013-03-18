@@ -30,7 +30,7 @@ LastChange: 2013-01-30 14:22:41
 
 -----------------------------
 
-Open is Maximize
+#Open is Maximize  
     - * Default maximze for Win32 user
     - * lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 
@@ -100,7 +100,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 -----------------------------
 
-打开vim/gvim默认最大化
+#打开vim/gvim默认最大化  
 * Windows用户, 已默认开启最大化  
 * Linux用户，需要安装lwmctr。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
