@@ -250,3 +250,11 @@ map <C-l> <C-w>l
 " set completeopt=longest,menu
 
 " set cursorline
+
+" IndentLine
+let g:indentLine_color_gui = '#282828'
+let g:indentLine_color_term = 7
+let g:indentLine_char = '|'
+" let g:indentLine_loaded = 1
+
+set list listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.

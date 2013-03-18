@@ -1,44 +1,55 @@
+snippet dt
+	DATETIME,${1}
+snippet bi
+	BIGINT,${1}
+snippet vc
+	VARCHAR(${1}),${2}
+snippet char
+	CHAR(${1}),${2}
 snippet cd
-	create database;
+	CREATE DATABASE;
 snippet ct
 	create table '${1:TableName}'
 	(
 		${2:-- table contents}
 	); ${3}
 snippet use
-	use ${1:DatabaseName};${2}
+	USE ${1:DatabaseName};${2}
 snippet sd
-	show databases;${1}
+	SHOW DATABASES;${1}
 snippet st
-	show tables;${1}
+	SHOW TABLES;${1}
 snippet desc
-	desc ${1:TableName};${2}
+	DESC ${1:TableName};${2}
 snippet insert
-	insert into ${1:TableName} values
+	INSERT INTO ${1:TableName} VALUES
 	${2:--Table Contents}
 snippet commit
-	commit;${1}
+	COMMIT;${1}
 snippet del
-	delete from ${1:TableName} 
-	Where ${2:Conditions};${3}
+	DELETE FROM ${1:TableName} 
+	WHERE ${2:Conditions};${3}
 snippet update
-	update ${1:TableName} set ${2:Field} = ${3:NewValue}
-	Where ${4:Conditios};${5}
+	UPDATE ${1:TableName} SET ${2:Field} = ${3:NewValue}
+	WHERE ${4:Conditios};${5}
 snippet limit
-	select * from ${1:TableName} order by ${2:Value}
-	limit ${3:StartLine}, ${4:LineNum};${5}
+	SELECT * FROM ${1:TableName} ORDER BY ${2:Value}
+	LIMIT ${3:StartLine}, ${4:LineNum};${5}
 snippet add
-	alter table ${1:TableName} add
+	ALTER TABLE ${1:TableName} ADD
 	${2:Field} ${3:Type} ${4:Others};${5}
 snippet rename
-	rename table ${1:OldName} to ${2:NewName};${3}
+	RENAME TABLE ${1:OldName} TO ${2:NewName};${3}
 snippet drop
-	drop table ${1:TableName};${2}
+	DROP TABLE ${1:TableName};${2}
+snippet dropif
+	DROP TABLE IF EXISTS ${1:TableName};${2}
 snippet group
-	group by ${1:Field};${2}
+	GROUP BY ${1:Field};${2}
 snippet order
-	order by ${1:Value}; ${2}
+	ORDER BY ${1:Value}; ${2}
 snippet sel
-	select * from ${1:TableName};
-
-
+	SELECT * FROM ${1:TableName};
+snippet selwhere
+	SELECT ${1:ColumnName} FROM ${2:TableName}
+	WHERE ${3:Condition}; ${4}
