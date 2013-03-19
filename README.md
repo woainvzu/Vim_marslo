@@ -79,6 +79,7 @@ LastChange: 2013-01-30 14:22:41
     * winfileexplorer.vim
     * winmanager.vim
     * wintagexplorer.vim
+    * indentLine.vim
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -145,6 +146,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
     * winfileexplorer.vim
     * winmanager.vim
     * wintagexplorer.vim
+    * indentLine.vim
 
 +++++++++++++++++++++++++++++++++++++++++++
 
