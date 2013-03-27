@@ -77,7 +77,7 @@ endfunc
 " Make 'cmd' open the current file path
 func! OpenCMD()
     let pa = expand('%:p:h')
-    let com = '!cmd /c start /wait cd '. pa
+    let com = '!cmd /c start cd '. pa
     " let com = '!cmd cmd /c start /wait run "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c start /wait cd ' . pa
     silent execute com
 endfunc
