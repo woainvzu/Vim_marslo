@@ -81,9 +81,9 @@ filetype off
 set rtp+=$VIM/vimfiles/bundle/vundle
 call vundle#rc()
 
+" Plugins
 Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
-
 Bundle 'AuthorInfo'
 Bundle 'Conque-Shell'
 " Bundle 'EnhCommentify.vim'
@@ -96,7 +96,11 @@ Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 
+" Colors
+Bundle 'txt.vim'
+
 filetype plugin indent on
+nmap bi :BundleInstall<CR>
 
 " ====================================== For Programming =====================================
 " Open the current file path by cmd
