@@ -8,6 +8,7 @@
 "                 0.0.4: Add CheckRubySyntax() function for checking and run ruby script
 "                 0.0.5: Add the function of highlight txt file
 "                        Add the function of Automatic paire signs (), [], {}, '', etc
+"                 0.0.6: Add bunlder plugin for manager plugins automatic
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -48,29 +49,29 @@ set scrolloff=5
 
 set diffexpr=MyDiff()
 func! MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-    let mp = &makeprg
-    let mp = &makeprg
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
+    let opt = '-a --binary '
+    if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+    if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+    let arg1 = v:fname_in
+    if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+    let arg2 = v:fname_new
+    if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+        let mp = &makeprg
+        let mp = &makeprg
+    let arg3 = v:fname_out
+    if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+    let eq = ''
+    if $VIMRUNTIME =~ ' '
+        if &sh =~ '\<cmd'
+            let cmd = '""' . $VIMRUNTIME . '\diff"'
+            let eq = '"'
+        else
+            let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+        endif
     else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+          let cmd = $VIMRUNTIME . '\diff'
     endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+    silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunc
 
 
@@ -96,6 +97,7 @@ Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 
 filetype plugin indent on
+
 " ====================================== For Programming =====================================
 " Open the current file path by cmd
 func! OpenCMD()
@@ -105,6 +107,7 @@ func! OpenCMD()
     silent execute com
 endfunc
 nmap cmd :call OpenCMD()<CR>
+
 
 " Run pylint
 func! PylintCheck()
@@ -247,6 +250,7 @@ syntax enable
 syntax on
 filetype plugin on
 
+
 " Hide everything
 " set go=
 
@@ -260,6 +264,7 @@ set guioptions-=r
 set guioptions-=m
 set cpoptions+=n
 
+
 " Set auto read when a file is changed by outside
 set autoread
 
@@ -268,7 +273,6 @@ set showmatch
 
 " Wrap lines
 set nowrap
-
 " Tab width
 set tabstop=4
 set expandtab
