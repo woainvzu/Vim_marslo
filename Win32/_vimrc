@@ -8,7 +8,8 @@
 "                 0.0.4: Add CheckRubySyntax() function for checking and run ruby script
 "                 0.0.5: Add the function of highlight txt file
 "                        Add the function of Automatic paire signs (), [], {}, '', etc
-"                 0.0.6: Add bunlder plugin for manager plugins automatic
+"                 0.0.6: Add bundle plugin for manager plugins automatic
+"                 0.0.7: Add pyflakes plugin for python syntax checking
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -95,6 +96,7 @@ Bundle 'taglist.vim'
 Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
+Bundle 'pyflakes.vim'
 
 " Colors
 Bundle 'txt.vim'
