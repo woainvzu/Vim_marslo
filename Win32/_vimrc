@@ -15,6 +15,7 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 let g:ruby_path=$RUBY_BIN
+let g:solarized_termcolors=256
 
 " Remove the Welcome interface
 " set shortmess=atI
@@ -73,12 +74,34 @@ func! MyDiff()
 endfunc
 
 
+" Vim Bundle
+set nocompatible
+filetype off
+set rtp+=$VIM/vimfiles/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'Yggdroot/indentLine'
+
+Bundle 'AuthorInfo'
+Bundle 'Conque-Shell'
+" Bundle 'EnhCommentify.vim'
+Bundle 'mru.vim'
+Bundle 'python_fold'
+Bundle 'snipMate'
+Bundle 'Tagbar'
+Bundle 'taglist.vim'
+Bundle 'TeTrIs.vim'
+Bundle 'winmanager'
+Bundle 'matrix.vim--Yang'
+
+filetype plugin indent on
 " ====================================== For Programming =====================================
-" Make 'cmd' open the current file path
+" Open the current file path by cmd
 func! OpenCMD()
     let pa = expand('%:p:h')
     let com = '!cmd /c start cd '. pa
-    " let com = '!cmd cmd /c start /wait run "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c start /wait cd ' . pa
+    " let com = '!cmd /c start /wait run "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c cd ' . pa
     silent execute com
 endfunc
 nmap cmd :call OpenCMD()<CR>
@@ -323,7 +346,10 @@ nmap tv :ConqueTermSplit bash <CR>
 
 " Delete the black space in the end of each line
 nmap dbb :%s/\s\+$//<CR>
+nmap dhh :%s/^\s\+//<CR>
 nmap dmm :g/^/ s//\=line('.').' '/<CR>
+" Delete white space
+nmap dws :g/^\s*$/d<CR>
 
 " Search
 set incsearch
@@ -445,4 +471,6 @@ let g:indentLine_color_term = 7
 let g:indentLine_char = '|'
 " let g:indentLine_loaded = 1
 
-set list listchars=tab:\ \ ,trail:.,extends:>>,precedes:<<,nbsp:.
+
+set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:·
+
