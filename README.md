@@ -15,24 +15,20 @@ LastChange: 2013-01-30 14:22:41
 
 
 ##Usage
+- Windows User:
+    Copy all files(vimfiles and _vimrc) into `C:\Program Files\Vim`.
 
-<pre>
-<code>
-    * Windows User:
-        Copy all files(vimfiles and _vimrc) into C:\Program Files\Vim.
+- Linux User:
+    - Copy all files(vimfiles + _vimrc) into `$HOME`
+    - Change the file name _vimrc to .vimrc
+    - Change the folder name vimfiles to .vim
 
-    * Linux User:
-        - Copy all files(vimfiles + _vimrc) into /home/[USERNAME]/
-        - Change the file name _vimrc to .vimrc
-        - Change the folder name vimfiles to .vim
-</code>
-</pre>
 
 -----------------------------
 
 #Open is Maximize  
-* Default maximze for Win32 user  
-* lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
+- Default maximze for Win32 user  
+- lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ##Shortcuts
 
@@ -44,16 +40,16 @@ LastChange: 2013-01-30 14:22:41
 
 - Auto Pair
 - Auto compare code
-    - *  **\fn**: insert current file name
-    - *  **\fe**: insert current file name by suffix
-    - *  **tt**:  insert the current time
+    -  **\fn**: insert current file name
+    -  **\fe**: insert current file name by suffix
+    -  **tt**:  insert the current time
 - Save and load the fold information automatic.
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **tl**:     Show the taglist
-- **wm**:    Show winmanager
-- **,v**:    Open the configure file (_vimrc)
+- **wm**:     Show winmanager
+- **,v**:     Open the configure file (_vimrc)
 - **,te**:    Open the Tetris
 - **tv**:     Open bash in the vim/gvim (Yes! That's true)
 - **pyli**:   Static Code Analysis for python
@@ -65,21 +61,23 @@ LastChange: 2013-01-30 14:22:41
 
 
 ##Plugins:
-    * authorinfo.vim
-    * conque_term.vim
-    * EnhancedCommentify.vim
-    * minibufexpl.vim
-    * mru.vim
-    * per-support.vim
-    * python_fold.vim
-    * snipMate.vim
-    * tagbar.vim
-    * taglist.vim
-    * TeTrIs.vim
-    * winfileexplorer.vim
-    * winmanager.vim
-    * wintagexplorer.vim
-    * indentLine.vim
+- authorinfo.vim
+- conque_term.vim
+- EnhancedCommentify.vim
+- minibufexpl.vim
+- mru.vim
+- per-support.vim
+- python_fold.vim
+- snipMate.vim
+- tagbar.vim
+- taglist.vim
+- TeTrIs.vim
+- winfileexplorer.vim
+- winmanager.vim
+- wintagexplorer.vim
+- indentLine.vim
+- Bunlde.vim
+- css.vim
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -88,22 +86,16 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 -----------------------------
 
 ##使用方法
-
-<pre>
-<code>
-    * Windows用户
-        复制所有的文件(vimfiles 和 _vimrc) 到 C:\Program Files\Vim
-
-    * Linux User:
-        - 复制所有文件(.vim 和 .vimrc) 到 /home/[用户名]/目录下
-</code>
-</pre>
+- Windows用户
+    复制所有的文件(vimfiles 和 _vimrc) 到 C:\Program Files\Vim
+- Linux User:
+    复制所有文件(.vim 和 .vimrc) 到 /home/[用户名]/目录下
 
 -----------------------------
 
-#打开vim/gvim默认最大化  
-* Windows用户, 已默认开启最大化  
-* Linux用户，需要安装lwmctr。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843  
+# 打开vim/gvim默认最大化  
+- Windows用户, 已默认开启最大化  
+- Linux用户，需要安装`lwmctr`。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843  
 
 ##快捷键
 - **F5**: 一键运行Python, Ruby 和 Perl。(运行结果将显示在Quickfix窗口中)
@@ -115,9 +107,9 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 主题请看Screenshot
 - 自动配对
 - 自动添加信息：
-    - * **\fn**: 添加当前文件名(无后缀，方便Java添加类名)
-    - * **\fe**: 添加当前文件名(有后缀，方便添加注释)
-    - * **\tt**: 添加当前时间
+    - **\fn**: 添加当前文件名(无后缀，方便Java添加类名)
+    - **\fe**: 添加当前文件名(有后缀，方便添加注释)
+    - **\tt**: 添加当前时间
 - 自动保存和加载折叠信息
 
 +++++++++++++++++++++++++++++++++++++++++++
@@ -132,22 +124,24 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 +++++++++++++++++++++++++++++++++++++++++++
 
 ##插件列表：
-    * authorinfo.vim
-    * conque_term.vim
-    * EnhancedCommentify.vim
-    * minibufexpl.vim
-    * mru.vim
-    * per-support.vim
-    * python_fold.vim
-    * snipMate.vim
-    * tagbar.vim
-    * taglist.vim
-    * TeTrIs.vim
-    * winfileexplorer.vim
-    * winmanager.vim
-    * wintagexplorer.vim
-    * indentLine.vim
-
+- authorinfo.vim
+- conque_term.vim
+- EnhancedCommentify.vim
+- minibufexpl.vim
+- mru.vim
+- per-support.vim
+- python_fold.vim
+- snipMate.vim
+- tagbar.vim
+- taglist.vim
+- TeTrIs.vim
+- winfileexplorer.vim
+- winmanager.vim
+- wintagexplorer.vim
+- indentLine.vim
+- Bunlde.vim
+- css.vim
+    
 +++++++++++++++++++++++++++++++++++++++++++
 
 默认字体为： Monaco, 下载地址: http://download.csdn.net/detail/jiaoxiaogu/4317959
