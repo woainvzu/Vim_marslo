@@ -100,6 +100,7 @@ Bundle 'pyflakes.vim'
 
 " Colors
 Bundle 'txt.vim'
+Bundle 'css.vim'
 
 filetype plugin indent on
 nmap bi :BundleInstall<CR>
@@ -107,10 +108,9 @@ nmap bi :BundleInstall<CR>
 " ====================================== For Programming =====================================
 " Open the current file path by cmd
 func! OpenCMD()
-    let pa = expand('%:p:h')
-    let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. pa . '"'
-    " let com = '!cmd /c start cd "'. pa . '"'
-    " let com = '!cmd /c start run "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c cd ' . pa
+    let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. expand('%:p:h') . '"'
+    " let com = '!cmd /c start cd "'. expand('%:p:h') . '"'
+    " let com = '!cmd /c start run "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c cd ' . expand('%:p:h')
     silent execute com
 endfunc
 nmap cmd :call OpenCMD()<CR>
