@@ -2,7 +2,7 @@
 " #     FileName: _vimrc
 " #         Desc:
 " #       Author: Marslo
-" #      Version: 0.0.4
+" #      Version: 0.0.7
 " #   LastChange: 2012-11-08 16:44:38
 " #      History: 0.0.3: Add the Autoload and Fast Edit difference between win32 and non-win32
 "                 0.0.4: Add CheckRubySyntax() function for checking and run ruby script
@@ -103,7 +103,7 @@ Bundle 'txt.vim'
 Bundle 'css.vim'
 
 filetype plugin indent on
-nmap bi :BundleInstall<CR>
+" nmap bi :BundleInstall<CR>
 
 " ====================================== For Programming =====================================
 " Open the current file path by cmd
