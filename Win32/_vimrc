@@ -214,6 +214,10 @@ iabbrev tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 inoremap \fn <C-R>=expand("%:t:r")<CR>
 inoremap \fe <C-R>=expand("%:t")<CR>
 
+" Moveing shortcut under the Insert mode
+inoremap <M-b> <Esc>Bi
+inoremap <M-f> <Esc>f<Space>a
+inoremap <M-d> <Esc>cf<Space>
 
 " map ecq :echo system("ruby -e 'print $:.join(%q{,})'")<CR>
 
