@@ -1,15 +1,16 @@
 " =============================================================================
-" #     FileName: _vimrc
-" #         Desc:
-" #       Author: Marslo
-" #      Version: 0.0.7
-" #   LastChange: 2012-11-08 16:44:38
-" #      History: 0.0.3: Add the Autoload and Fast Edit difference between win32 and non-win32
-"                 0.0.4: Add CheckRubySyntax() function for checking and run ruby script
-"                 0.0.5: Add the function of highlight txt file
-"                        Add the function of Automatic paire signs (), [], {}, '', etc
-"                 0.0.6: Add bundle plugin for manager plugins automatic
-"                 0.0.7: Add pyflakes plugin for python syntax checking
+"      FileName: _vimrc
+"          Desc:
+"        Author: Marslo
+"       Version: 0.0.9
+"    LastChange: 2013-08-05 21:06:46
+"       History: 0.0.3: Add the Autoload and Fast Edit difference between win32 and non-win32
+"                0.0.4: Add CheckRubySyntax() function for checking and run ruby script
+"                0.0.5: Add the function of highlight txt file
+"                       Add the function of Automatic paire signs (), [], {}, '', etc
+"                0.0.6: Add bundle plugin for manager plugins automatic
+"                0.0.7: Add pyflakes plugin for python syntax checking
+"                0.0.8: Remap the shortcut key: Ctrl-A/Ctrl-E/F1
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -45,7 +46,7 @@ let &termencoding=&encoding
 " set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
-set scrolloff=5
+set scrolloff=3
 
 
 set diffexpr=MyDiff()
@@ -380,14 +381,19 @@ nmap <leader>s :ConqueTermSplit
 nmap tv :ConqueTermSplit bash <CR>
 
 " Delete the black space in the end of each line
-nmap sbb :%s/\s\+$//<CR>
-nmap shh :%s/^\s\+//<CR>
-nmap smm :g/^/ s//\=line('.').' '/<CR>
+nmap zdb :%s/\s\+$//<CR>
+nmap zhh :%s/^\s\+//<CR>
+nmap zmm :g/^/ s//\=line('.').' '/<CR>
 " Delete white space
-nmap sws :g/^\s*$/d<CR>
+nmap zws :g/^\s*$/d<CR>
 
 nmap <F1> <ESC>
 imap <F1> <ESC>
+
+map <C-a> <ESC>^
+imap <C-a> <ESC>^i
+map <C-e> <ESC>$
+imap <C-e> <ESC>$i
 
 " Search
 set incsearch
