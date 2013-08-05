@@ -85,12 +85,13 @@ call vundle#rc()
 " Plugins
 Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
+Bundle 'kien/ctrlp.vim.git'
 Bundle 'AuthorInfo'
 Bundle 'Conque-Shell'
 " Bundle 'EnhCommentify.vim'
 Bundle 'mru.vim'
 Bundle 'python_fold'
-Bundle 'snipMate'
+" Bundle 'snipMate'
 Bundle 'Tagbar'
 Bundle 'taglist.vim'
 Bundle 'TeTrIs.vim'
@@ -125,7 +126,7 @@ nmap cmd :call OpenCMD()<CR>
 func! PylintCheck()
     let mp = &makeprg
     let ef = &errorformat
-    let exeFile = expand("%:t")
+    let exeFile = '"' . expand("%:t") . '"'
     setlocal makeprg=pylint\ --reports=n\ --output-format=parseable
     set efm=%A%f:%l:\ [%t%.%#]\ %m,%Z%p^^,%-C%.%#
     silent make "%:p"
@@ -145,6 +146,7 @@ endfunc
 func! RunResult()
     let mp = &makeprg
     let ef = &errorformat
+    " let exeFile = expand("%:t")
     let exeFile = expand("%:t")
     exec "w"
     if &ft == "Python"
@@ -156,7 +158,10 @@ func! RunResult()
     elseif &ft == "autohotkey"
         setlocal makeprg=AutoHotkey
     endif
+    " let com = make . ' "' . expand("%") . '"'
+    " silent execute com
     silent make %
+    " silent make expand("%")
     if &ft != "autohotkey"
         set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
         copen
@@ -166,13 +171,23 @@ func! RunResult()
 endfunc
 map <F5> :call RunResult()<CR>
 
+" CtrlP
+" let g:ctrlp_map = '<s-w>'
+let g:ctrlp_max_height = 8
+let g:ctrlp_max_depth = 100
+let g:ctrlp_working_path_mode = '.ctrlp'
+" let g:ctrlp_custom_ignore = {
+    " \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    " \ 'file': '\v\.(exe|so|dll)$',
+    " \ }
+
 " Automatic Pair
 " inoremap ( ()<ESC>i
 " inoremap { {<CR>}<ESC>ko
-inoremap ( <c-r>=AutoPair('(')<CR>
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap [ <c-r>=AutoPair('[')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
+" inoremap ( <c-r>=AutoPair('(')<CR>
+" inoremap ) <c-r>=ClosePair(')')<CR>
+" inoremap [ <c-r>=AutoPair('[')<CR>
+" inoremap ] <c-r>=ClosePair(']')<CR>
 inoremap { <c-r>=AutoPair('{')<CR>
 inoremap } <c-r>=ClosePair('}')<CR>
 inoremap % <c-r>=AutoPair('%')<CR>
@@ -188,7 +203,7 @@ func! AutoPair(char)
         return "[]\<Left>"
     elseif "{" == a:char
         if &ft =~ '^\(ruby\|java\|perl\)$'
-            return "{\<Enter>}\<Up>\<Enter>"
+            return "{}\<ESC>i\<Enter>"
         elseif &ft =~ '^\(python\|autohotkey\|vim\|snippet\)$'
             return "{}\<Left>"
         else
@@ -233,7 +248,7 @@ func! MaximizeWindow()
 endfunc
 
 " The initialize size
-set lines=36
+set lines=38
 set columns=118
 
 if has('win32')
@@ -365,11 +380,14 @@ nmap <leader>s :ConqueTermSplit
 nmap tv :ConqueTermSplit bash <CR>
 
 " Delete the black space in the end of each line
-nmap dbb :%s/\s\+$//<CR>
-nmap dhh :%s/^\s\+//<CR>
-nmap dmm :g/^/ s//\=line('.').' '/<CR>
+nmap sbb :%s/\s\+$//<CR>
+nmap shh :%s/^\s\+//<CR>
+nmap smm :g/^/ s//\=line('.').' '/<CR>
 " Delete white space
-nmap dws :g/^\s*$/d<CR>
+nmap sws :g/^\s*$/d<CR>
+
+nmap <F1> <ESC>
+imap <F1> <ESC>
 
 " Search
 set incsearch
