@@ -387,13 +387,19 @@ nmap zmm :g/^/ s//\=line('.').' '/<CR>
 " Delete white space
 nmap zws :g/^\s*$/d<CR>
 
+" Disable <F1> to open help file
 nmap <F1> <ESC>
 imap <F1> <ESC>
 
+" Set Ctrl-A/Ctrl-E jump to the Begin-of-line/End-of-line
 map <C-a> <ESC>^
 imap <C-a> <ESC>^i
 map <C-e> <ESC>$
-imap <C-e> <ESC>$i
+imap <C-e> <ESC>$a
+
+" Set the Ctrl-K/Ctrl-J switch the Top/Bottom window
+map <C-k> <C-w>k
+map <C-j> <C-w>j
 
 " Search
 set incsearch
@@ -487,9 +493,6 @@ let g:Perl_Email='marslo.vida@gmail.com'
 set linespace=0
 set wildmenu
 
-map <C-k> <C-w>k
-map <C-j> <C-w>j
-
 
 " The blinding frequency
 " set mat=2
@@ -517,4 +520,3 @@ let g:indentLine_char = '|'
 
 
 set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:·
-
