@@ -40,9 +40,9 @@ LastChange: 2013-01-30 14:22:41
 
 - Auto Pair
 - Auto compare code
-    -  **\fn**: insert current file name
-    -  **\fe**: insert current file name by suffix
-    -  **tt**:  insert the current time
+    -  **,fn**: insert current file name
+    -  **,fe**: insert current file name by suffix
+    -  **,tt**:  insert the current time
 - Save and load the fold information automatic.
 
 +++++++++++++++++++++++++++++++++++++++++++
@@ -107,9 +107,9 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 主题请看Screenshot
 - 自动配对
 - 自动添加信息：
-    - **\fn**: 添加当前文件名(无后缀，方便Java添加类名)
-    - **\fe**: 添加当前文件名(有后缀，方便添加注释)
-    - **\tt**: 添加当前时间
+    - **,fn**: 添加当前文件名(无后缀，方便Java添加类名)
+    - **,fe**: 添加当前文件名(有后缀，方便添加注释)
+    - **,tt**: 添加当前时间
 - 自动保存和加载折叠信息
 
 +++++++++++++++++++++++++++++++++++++++++++
