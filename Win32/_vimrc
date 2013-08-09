@@ -11,6 +11,7 @@
 "                0.0.6: Add bundle plugin for manager plugins automatic
 "                0.0.7: Add pyflakes plugin for python syntax checking
 "                0.0.8: Remap the shortcut key: Ctrl-A/Ctrl-E/F1
+"                0.0.9: Add the function about remove a paird parentheses, brackets, braces
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -135,7 +136,7 @@ func! PylintCheck()
     let &makeprg     = mp
     let &errorformat = ef
 endfunc
-nmap pyli :call PylintCheck()<CR>
+nmap <leader>li :call PylintCheck()<CR>
 
 map rc :call CompileRunGpp()<CR>
 func! CompileRunGpp()
@@ -185,13 +186,13 @@ let g:ctrlp_working_path_mode = '.ctrlp'
 " Automatic Pair
 " inoremap ( ()<ESC>i
 " inoremap { {<CR>}<ESC>ko
-" inoremap ( <c-r>=AutoPair('(')<CR>
-" inoremap ) <c-r>=ClosePair(')')<CR>
-" inoremap [ <c-r>=AutoPair('[')<CR>
-" inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap { <c-r>=AutoPair('{')<CR>
-inoremap } <c-r>=ClosePair('}')<CR>
-inoremap % <c-r>=AutoPair('%')<CR>
+inoremap <buffer> ( <c-r>=AutoPair('(')<CR>
+inoremap <buffer> ) <c-r>=ClosePair(')')<CR>
+inoremap <buffer> [ <c-r>=AutoPair('[')<CR>
+inoremap <buffer> ] <c-r>=ClosePair(']')<CR>
+inoremap <buffer> { <c-r>=AutoPair('{')<CR>
+inoremap <buffer> } <c-r>=ClosePair('}')<CR>
+inoremap <buffer> % <c-r>=AutoPair('%')<CR>
 
 func! AutoPair(char)
     if "(" == a:char
@@ -228,12 +229,25 @@ func! ClosePair(char)
     endif
 endfunc
 
-iabbrev /** /*********************************
-iabbrev **/ *********************************/
-iabbrev #-- #------------------
-iabbrev tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-inoremap \fn <C-R>=expand("%:t:r")<CR>
-inoremap \fe <C-R>=expand("%:t")<CR>
+inoremap <buffer> <BS> <c-r>=DeletePairs()<CR>
+inoremap <buffer> <C-h> <c-r>=DeletePairs()<CR>
+
+" Delete the pair of parentheses, brackets and braces
+function! DeletePairs()
+    let AutoPaires = {')':'(',']':'[','}':'{'}
+    if has_key(AutoPaires, getline('.')[col('.') - 1]) && getline('.')[col('.') - 2 ] == AutoPaires[getline('.')[col('.') - 1]]
+        return "\<BS>\<DEL>"
+    else
+        return "\<BS>"
+    endif
+endfunction
+
+iabbrev <leader>/* /*********************************
+iabbrev <leader>*/ *********************************/
+iabbrev <leader>#- #------------------
+inoremap <leader>tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+inoremap <leader>fn <C-R>=expand("%:t:r")<CR>
+inoremap <leader>fe <C-R>=expand("%:t")<CR>
 
 " Moveing shortcut under the Insert mode
 inoremap <M-b> <Esc>Bi
@@ -414,7 +428,7 @@ set magic
 " let g:AutoOpenWinManager=1
 let g:winManagerWidth = 20
 let g:winManagerWindowLayout='FileExplorer|TagList'
-nmap wm :WMToggle<cr>
+nmap mm :WMToggle<cr>
 
 " Tlist
 let Tlist_Show_One_File=1
