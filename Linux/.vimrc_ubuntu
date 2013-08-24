@@ -2,13 +2,14 @@
 " #     FileName: _vimrc
 " #         Desc:
 " #       Author: Marslo
-" #      Version: 0.0.6
+" #      Version: 0.0.7
 " #   LastChange: 2012-11-08 16:44:38
 " #      History: 0.0.3: Add the Autoload and Fast Edit difference between win32 and non-win32
 "                 0.0.4: Add CheckRubySyntax() function for checking and run ruby script
 "                 0.0.5: Add the function of highlight txt file
 "                        Add the function of Automatic paire signs (), [], {}, '', etc
 "                 0.0.6: Remove a pair of parentheses, brackets, or braces
+"                 0.0.7: Modification about autoPair(): if there are char behind the ( or [ or { it wont pair
 " =============================================================================
 
 " Remove the Welcome interface
@@ -55,7 +56,6 @@ func! RunResult()
 endfunc
 map <F5> :call RunResult()<CR>
 
-
 map rc :call CompileRunGpp()<CR>
 func! CompileRunGpp()
     exec "w"
@@ -74,27 +74,37 @@ inoremap <buffer> ] <c-r>=ClosePair(']')<CR>
 inoremap <buffer> { <c-r>=AutoPair('{')<CR>
 inoremap <buffer> } <c-r>=ClosePair('}')<CR>
 
+
 func! AutoPair(char)
     " let curchar = getline('.')[col('.') - 1]
+    let bchar = getline('.')[col('.')]
     if "(" == a:char
         if &ft =~ '^\(disable_sql\)$'
             return "(\<Enter>);\<Up>\<Enter>"
-        else
+        elseif '' == bchar
             return "()\<Left>"
+        else
+            return a:char
         endif
-    elseif "[" == a:char
-        return "[]\<Left>"
+    elseif "[" == a:char 
+        if '' == bchar
+            return "[]\<Left>"
+        else
+            return a:char
+        endif
     elseif "{" == a:char
         if &ft =~ '^\(ruby\|java\|perl\)$'
             return "{\<Enter>}\<ESC>ko"
             " return "{\<Enter>}\<Up>\<Enter>"
-        elseif &ft =~ '^\(python\|autohotkey\|vim\|snippet\|txt\)$'
+        elseif '' == bchar && &ft =~ '^\(python\|autohotkey\|vim\|snippet\|txt\)$'
             return "{}\<Left>"
         else
             return a:char
         endif
     endif
 endfunc
+
+
 
 
 function! ClosePair(char)
@@ -104,6 +114,7 @@ function! ClosePair(char)
         return a:char
     endif
 endfunction
+
 
 inoremap <buffer> <BS> <c-r>=DeletePairs()<CR>
 inoremap <buffer> <C-h> <c-r>=DeletePairs()<CR>
