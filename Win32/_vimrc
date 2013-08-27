@@ -138,7 +138,7 @@ func! PylintCheck()
 endfunc
 nmap <leader>li :call PylintCheck()<CR>
 
-map rc :call CompileRunGpp()<CR>
+" map rc :call CompileRunGpp()<CR>
 func! CompileRunGpp()
     exec "w"
     exec "!gcc % -o %<"
@@ -198,21 +198,28 @@ func! AutoPair(char)
     if "(" == a:char
         if &ft =~ '^\(sql\)$'
             return "(\<Enter>);\<Up>\<Enter>"
-        else
+        elseif '' == getline('.')[col('.')]
             return "()\<Left>"
+        else
+            return a:char
         endif
     elseif "[" == a:char
-        return "[]\<Left>"
+        if '' == getline('.')[col('.')]
+            return "[]\<Left>"
+        else
+            return a:char
+        endif
     elseif "{" == a:char
         if &ft =~ '^\(ruby\|java\|perl\)$'
-            return "{}\<ESC>i\<Enter>"
-        elseif &ft =~ '^\(python\|autohotkey\|vim\|snippet\)$'
+            return "{\<Enter>}\<ESC>ko"
+            " return "{}\<ESC>i\<Enter>"
+        elseif '' == getline('.')[col('.')] && &ft =~ '^\(python\|autohotkey\|vim\|snippet\)$'
             return "{}\<Left>"
         else
             return a:char
         endif
     elseif "%" == a:char
-        if &ft =~ '^\(autohotkey\)$'
+        if '' == getline('.')[col('.')] && &ft =~ '^\(autohotkey\)$'
             return "%%\<left>"
         else
             return a:char
@@ -407,9 +414,9 @@ imap <F1> <ESC>
 
 " Set Ctrl-A/Ctrl-E jump to the Begin-of-line/End-of-line
 map <C-a> <ESC>^
-imap <C-a> <ESC>^i
+imap <C-a> <ESC>I
 map <C-e> <ESC>$
-imap <C-e> <ESC>$a
+imap <C-e> <ESC>A
 
 " Set the Ctrl-K/Ctrl-J switch the Top/Bottom window
 map <C-k> <C-w>k
@@ -528,7 +535,7 @@ hi CursorLineNr guifg=#A6E22E guibg=background gui=NONE ctermbg=black ctermfg=li
 
 " IndentLine
 let g:indentLine_color_gui = '#282828'
-let g:indentLine_color_term = 7
+let g:indentLine_color_term = 10
 let g:indentLine_char = '|'
 " let g:indentLine_loaded = 1
 
