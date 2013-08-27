@@ -47,7 +47,6 @@ else
     set guifont=Monaco\ 12
 endif
 
-
 " Hide the tool bar
 set guioptions-=T
 set guioptions-=m
@@ -61,6 +60,7 @@ au BufRead,BufNewFile * setfiletype txt
 set wrap
 
 " Make backspace key can manage normal indent, eol, start, etc 
+set backspace=indent,eol,start
 " set backspace=2
 
 set report=0
@@ -101,7 +101,15 @@ set tw=0
 " set mouse=a
 " set selection=exclusive
 " set selectmode=mouse,key
-set scrolloff=5
+set scrolloff=3
+
+nmap <F1> <ESC>
+imap <F1> <ESC>
+
+map <C-a> <ESC>^
+imap <C-a> <ESC>I
+map <C-e> <ESC>$
+imap <C-e> <ESC>A
 
 
 " Show Line and colum number
@@ -131,8 +139,6 @@ let g:tagbar_autoshowtag=1
 
 " Comments setting
 " nmap <silent> <C-Q> ,x
-vmap <silent> <C-Q> ,x
-imap <silent> <C-Q> ,x
 let g:EnhCommentifyAlignRight='Yes'
 let g:EnhCommentifyRespectIndent='yes'
 let g:EnhCommentifyPretty='Yes'
@@ -190,29 +196,33 @@ func! AutoPair(char)
     if "(" == a:char
         if &ft =~ '^\(sql\)$'
             return "(\<Enter>);\<Up>\<Enter>"
-        else
+        elseif '' == getline('.')[col('.')]
             return "()\<Left>"
+        else
+            return a:char
         endif
     elseif "[" == a:char
-        return "[]\<Left>"
+        if '' == getline('.')[col('.')]
+            return "[]\<Left>"
+        else
+            return a:char
+        endif
     elseif "{" == a:char
         if &ft =~ '^\(java\|perl\)$'
-            return "\<Enter>{\<Enter>}\<Up>\<Enter>"
-        elseif &ft =~ '^\(ruby\|python\|autohotkey\|vim\|snippet\)$'
+            return "{\<Enter>}\<ESC>ko"
+        elseif '' == getline('.')[col('.')] && &ft =~ '^\(ruby\|python\|autohotkey\|vim\|snippet\)$'
             return "{}\<Left>"
         else
-            return "{}\<left>"
-            " return a:char
+            return a:char
         endif
     elseif "%" == a:char
-        if &ft =~ '^\(autohotkey\)$'
+        if '' == getline('.')[col('.')] && &ft =~ '^\(autohotkey\)$'
             return "%%\<left>"
-        else
+        else:
             return a:char
         endif
     endif
 endfunc
-
 
 function! ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -222,11 +232,25 @@ function! ClosePair(char)
     endif
 endfunction
 
-iabbrev /* /*********************************
-iabbrev */ *********************************/
-iabbrev tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-inoremap \fn <C-R>=expand("%:t:r")<CR>
-inoremap \fe <C-R>=expand("%:t")<CR>
+inoremap <buffer> <BS> <c-r>=DeletePairs()<CR>
+inoremap <buffer> <C-h> <c-r>=DeletePairs()<CR>
+
+" Delete the pair of parentheses, brackets and braces
+function! DeletePairs()
+    let AutoPaires = {')':'(',']':'[','}':'{'}
+    if has_key(AutoPaires, getline('.')[col('.') - 1]) && getline('.')[col('.') - 2 ] == AutoPaires[getline('.')[col('.') - 1]]
+        return "\<BS>\<DEL>"
+    else
+        return "\<BS>"
+    endif
+endfunction
+
+
+iabbrev <leader>/* /*********************************
+iabbrev <leader>*/ *********************************/
+inoremap <leader>tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+inoremap <leader>\fn <C-R>=expand("%:t:r")<CR>
+inoremap <leader>\fe <C-R>=expand("%:t")<CR>
 
 " Cursor format
 set guicursor=a:hor10
@@ -250,11 +274,4 @@ map <C-l> <C-w>l
 " set completeopt=longest,menu
 
 " set cursorline
-
-" IndentLine
-let g:indentLine_color_gui = '#282828'
-let g:indentLine_color_term = 7
-let g:indentLine_char = '|'
-" let g:indentLine_loaded = 1
-
 set list listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
