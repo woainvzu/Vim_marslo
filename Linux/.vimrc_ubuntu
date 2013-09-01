@@ -22,6 +22,8 @@ let g:mapleader=","
 
 set clipboard+=unnamed
 set clipboard+=unnamedplus
+set paste
+set go+=a
 
 " document format
 set fileformat=unix
@@ -138,6 +140,25 @@ iabbrev <leader>#- #------------------
 inoremap <leader>tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 inoremap <leader>fn <C-R>=expand("%:t:r")<CR>
 inoremap <leader>fe <C-R>=expand("%:t")<CR>
+
+" Open the current file path by cmd
+function! OpenCMD()
+    if has('win32')
+        " let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. expand('%:p:h') . '"'
+        " let com = '!cmd /c start cd '. expand('%:p:h')
+        " let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c "' . expand('%:p:h') .'"'
+        " let com = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command "Set-Location ' . expand ('%:p:h') . '"'
+        let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
+        let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
+        let com = com1 . com2
+        silent execute com
+    else
+        let com = '!/usr/bin/gnome-terminal --working-directory=' . expand('%:p:h')
+        silent execute com
+    endif
+endfunction
+nmap cmd :call OpenCMD()<CR>
+
 
 " ====================================== For Inteface =====================================
 " Make vim maximize while it startup
@@ -314,6 +335,8 @@ set write
 " E21\: Cannot make changes, 'modifiable' is off:     $delete
 set linespace=0
 set wildmenu
+" Completion mode that is used for the character
+set wildmode=longest,list,full
 
 noremap <F1> <ESC>
 imap <F1> <ESC>a
@@ -351,3 +374,4 @@ let g:indentLine_char = '|'
 " let g:indentLine_loaded = 1
 
 set list listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
+
