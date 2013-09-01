@@ -20,8 +20,8 @@
 let mapleader=","
 let g:mapleader=","
 
-set clipboard+=unnamed
-set clipboard+=unnamedplus
+" set clipboard+=unnamed
+set clipboard=unnamedplus
 set paste
 set go+=a
 
