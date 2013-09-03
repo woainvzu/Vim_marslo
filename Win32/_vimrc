@@ -399,7 +399,11 @@ set backspace=indent,eol,start
 " set whichwrap+=<,>,h,l
 
 nmap <leader>s :ConqueTermSplit
-nmap tv :ConqueTermSplit bash <CR>
+if has('win32')
+    nmap tv :ConqueTermSplit cmd <CR>
+else
+    nmap tv :ConqueTermSplit bash <CR>
+endif
 
 " Delete the black space in the end of each line
 nmap zdb :%s/\s\+$//<CR>
