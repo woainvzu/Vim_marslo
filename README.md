@@ -57,8 +57,15 @@ LastChange: 2013-09-03 21:40:16
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **ctrl+g**:     Open the most recently used files
-- **ctrl+q(,v)**: Comments/Uncomments
+- **<leader>v**: Comments/Uncomments
 
++++++++++++++++++++++++++++++++++++++++++++
+
+- **Ctrl+a**: Go to begin of the line  [Normal Mode && Insert Mode]
+- **Ctrl+e**: Go to end of the line [Normal Mode && Insert Mode]
+- **Alt+b**: Backward a word [Insert Mode]
+- **Alt+f**: Forward a word  [Insert Mode]
+- **Alt+d**: Delete a word (backward) [Insert Mode]
 
 ##Plugins:
 - [AuthorInfo](https://github.com/vim-scripts/AuthorInfo)
@@ -124,6 +131,17 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 +++++++++++++++++++++++++++++++++++++++++++
 
+- **ctrl+g**:     Open the most recently used files
+- **<leader>v**: Comments/Uncomments
+
++++++++++++++++++++++++++++++++++++++++++++
+
+- **Ctrl+a**: Go to begin of the line  [Normal Mode && Insert Mode]
+- **Ctrl+e**: Go to end of the line [Normal Mode && Insert Mode]
+- **Alt+b**: Backward a word [Insert Mode]
+- **Alt+f**: Forward a word  [Insert Mode]
+- **Alt+d**: Delete a word (backward) [Insert Mode]
+
 ##插件列表：
 - [AuthorInfo](https://github.com/vim-scripts/AuthorInfo)
 - [Conque Term](http://code.google.com/p/conque/)
@@ -143,7 +161,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate)
 - [tlib](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
-    
+
 +++++++++++++++++++++++++++++++++++++++++++
 
 默认字体为： Monaco, 下载地址: http://download.csdn.net/detail/jiaoxiaogu/4317959

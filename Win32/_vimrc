@@ -261,12 +261,27 @@ inoremap <M-b> <Esc>Bi
 inoremap <M-f> <Esc>f<Space>a
 inoremap <M-d> <Esc>cf<Space>
 
+" Disable <F1> to open help file
+nmap <F1> <ESC>
+imap <F1> <ESC>
+
+" Set Ctrl-A/Ctrl-E jump to the Begin-of-line/End-of-line
+map <C-a> <ESC>^
+imap <C-a> <ESC>I
+map <C-e> <ESC>$
+imap <C-e> <ESC>A
+
+" Set the Ctrl-K/Ctrl-J switch the Top/Bottom window
+map <C-k> <C-w>k
+map <C-j> <C-w>j
+
+
 " map ecq :echo system("ruby -e 'print $:.join(%q{,})'")<CR>
 
 " ====================================== For Inteface =====================================
 " Make vim maximize while it startup
 func! MaximizeWindow()
-    silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
 endfunc
 
 " The initialize size
@@ -274,19 +289,19 @@ set lines=38
 set columns=118
 
 if has('win32')
-    " Max after start vim
-    " au GUIEnter * simalt ~x
-    " autoload _vimrc
-    autocmd! bufwritepost $VIM/_vimrc source %
-    " Fast Edit vim configuration
-    nmap <leader>v :e $VIM/_vimrc<CR>
-    " Fonts
-    set guifont=Monaco:h12
+" Max after start vim
+" au GUIEnter * simalt ~x
+" autoload _vimrc
+autocmd! bufwritepost $VIM/_vimrc source %
+" Fast Edit vim configuration
+nmap <leader>v :e $VIM/_vimrc<CR>
+" Fonts
+set guifont=Monaco:h12
 else
-    " au GUIEnter * call MaximizeWindow()
-    autocmd! bufwritepost ~/.vimrc source %
-    nmap <leader>v :e ~/.vimrc<CR>
-    set guifont=Monaco\ 12
+" au GUIEnter * call MaximizeWindow()
+autocmd! bufwritepost ~/.vimrc source %
+nmap <leader>v :e ~/.vimrc<CR>
+set guifont=Monaco\ 12
 endif
 
 set nobackup
@@ -400,9 +415,9 @@ set backspace=indent,eol,start
 
 nmap <leader>s :ConqueTermSplit
 if has('win32')
-    nmap tv :ConqueTermSplit cmd <CR>
+nmap tv :ConqueTermSplit cmd <CR>
 else
-    nmap tv :ConqueTermSplit bash <CR>
+nmap tv :ConqueTermSplit bash <CR>
 endif
 
 " Delete the black space in the end of each line
@@ -411,20 +426,6 @@ nmap zhh :%s/^\s\+//<CR>
 nmap zmm :g/^/ s//\=line('.').' '/<CR>
 " Delete white space
 nmap zws :g/^\s*$/d<CR>
-
-" Disable <F1> to open help file
-nmap <F1> <ESC>
-imap <F1> <ESC>
-
-" Set Ctrl-A/Ctrl-E jump to the Begin-of-line/End-of-line
-map <C-a> <ESC>^
-imap <C-a> <ESC>I
-map <C-e> <ESC>$
-imap <C-e> <ESC>A
-
-" Set the Ctrl-K/Ctrl-J switch the Top/Bottom window
-map <C-k> <C-w>k
-map <C-j> <C-w>j
 
 " Search
 set incsearch
