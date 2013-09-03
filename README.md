@@ -40,24 +40,24 @@ LastChange: 2013-09-03 21:40:16
 
 - Auto Pair
 - Auto compare code
-    -  **<leader>fn**: insert current file name
-    -  **<leader>fe**: insert current file name by suffix
-    -  **<leader>tt**:  insert the current time
+    -  **\<leader\>fn**: insert current file name
+    -  **\<leader\>fe**: insert current file name by suffix
+    -  **\<leader\>tt**:  insert the current time
 - Save and load the fold information automatic.
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **tl**:     Show the taglist
 - **wm**:     Show winmanager
-- **<leader>v**:     Open the configure file (_vimrc)
-- **<leader>te**:    Open the Tetris
+- **\<leader\>v**:     Open the configure file (_vimrc)
+- **\<leader\>te**:    Open the Tetris
 - **tv**:     Open bash in the vim/gvim (Yes! That's true)
 - **pyli**:   Static Code Analysis for python
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **ctrl+g**:     Open the most recently used files
-- **<leader>v**: Comments/Uncomments
+- **\<leader\>v**: Comments/Uncomments
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -115,24 +115,24 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 主题请看Screenshot
 - 自动配对
 - 自动添加信息：
-    - **<leader>fn**: 添加当前文件名(无后缀，方便Java添加类名)
-    - **<leader>fe**: 添加当前文件名(有后缀，方便添加注释)
-    - **<leader>tt**: 添加当前时间
+    - **\<leader\>fn**: 添加当前文件名(无后缀，方便Java添加类名)
+    - **\<leader\>fe**: 添加当前文件名(有后缀，方便添加注释)
+    - **\<leader\>tt**: 添加当前时间
 - 自动保存和加载折叠信息
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **tl**: 显示taglist
 - **wm**: 显示winmanager(附带taglist信息)
-- **<leader>v**: 打开配置文件(_vimrc/.vimrc)
-- **<leader>te**: 打开俄罗斯方块游戏(练习hjkl快捷键)
+- **\<leader\>v**: 打开配置文件(_vimrc/.vimrc)
+- **\<leader\>te**: 打开俄罗斯方块游戏(练习hjkl快捷键)
 - **tv**: 在vim/gvim中运行bash(是的，你没看错！)
 - **pyli**: Python静态代码分析(规范代码，远离砍手砍脚)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **ctrl+g**:     Open the most recently used files
-- **<leader>v**: Comments/Uncomments
+- **\<leader\>v**: Comments/Uncomments
 
 +++++++++++++++++++++++++++++++++++++++++++
 
