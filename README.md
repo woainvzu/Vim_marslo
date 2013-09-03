@@ -3,8 +3,8 @@ vim_config_marslo
 
 Author: Marslo  
 Email: marslo.vida@gmail.com  
-Version: 0.0.2  
-LastChange: 2013-01-30 14:22:41  
+Version: 0.0.3  
+LastChange: 2013-09-03 21:40:16   
 
 -----------------------------
 ##ScreenShots:
@@ -40,17 +40,17 @@ LastChange: 2013-01-30 14:22:41
 
 - Auto Pair
 - Auto compare code
-    -  **,fn**: insert current file name
-    -  **,fe**: insert current file name by suffix
-    -  **,tt**:  insert the current time
+    -  **<leader>fn**: insert current file name
+    -  **<leader>fe**: insert current file name by suffix
+    -  **<leader>tt**:  insert the current time
 - Save and load the fold information automatic.
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **tl**:     Show the taglist
 - **wm**:     Show winmanager
-- **,v**:     Open the configure file (_vimrc)
-- **,te**:    Open the Tetris
+- **<leader>v**:     Open the configure file (_vimrc)
+- **<leader>te**:    Open the Tetris
 - **tv**:     Open bash in the vim/gvim (Yes! That's true)
 - **pyli**:   Static Code Analysis for python
 
@@ -61,23 +61,24 @@ LastChange: 2013-01-30 14:22:41
 
 
 ##Plugins:
-- authorinfo.vim
-- conque_term.vim
-- EnhancedCommentify.vim
-- minibufexpl.vim
-- mru.vim
-- per-support.vim
+- [AuthorInfo](https://github.com/vim-scripts/AuthorInfo)
+- [Conque Term](http://code.google.com/p/conque/)
+- [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
+- [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
+- [mru](https://github.com/vim-scripts/mru.vim)
+- [ctrlp](https://github.com/kien/ctrlp.vim)
+- perl-support.vim
 - python_fold.vim
-- snipMate.vim
-- tagbar.vim
-- taglist.vim
-- TeTrIs.vim
-- winfileexplorer.vim
-- winmanager.vim
-- wintagexplorer.vim
-- indentLine.vim
-- Bunlde.vim
-- css.vim
+- [TagBar](http://majutsushi.github.io/tagbar/)
+- [TagList](http://vim-taglist.sourceforge.net/)
+- [TeTrIs](https://github.com/vim-scripts/TeTrIs.vim)
+- [WinManager](https://github.com/vim-scripts/winmanager)
+- [IndentLine](https://github.com/Yggdroot/indentLine)
+- [Vim Bunlde](https://github.com/gmarik/vundle)
+- [vim-css-color](https://github.com/skammer/vim-css-color)
+- [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate)
+- [tlib](https://github.com/tomtom/tlib_vim)
+- [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -107,40 +108,41 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 主题请看Screenshot
 - 自动配对
 - 自动添加信息：
-    - **,fn**: 添加当前文件名(无后缀，方便Java添加类名)
-    - **,fe**: 添加当前文件名(有后缀，方便添加注释)
-    - **,tt**: 添加当前时间
+    - **<leader>fn**: 添加当前文件名(无后缀，方便Java添加类名)
+    - **<leader>fe**: 添加当前文件名(有后缀，方便添加注释)
+    - **<leader>tt**: 添加当前时间
 - 自动保存和加载折叠信息
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - **tl**: 显示taglist
 - **wm**: 显示winmanager(附带taglist信息)
-- **,v**: 打开配置文件(_vimrc/.vimrc)
-- **,te**: 打开俄罗斯方块游戏(练习hjkl快捷键)
+- **<leader>v**: 打开配置文件(_vimrc/.vimrc)
+- **<leader>te**: 打开俄罗斯方块游戏(练习hjkl快捷键)
 - **tv**: 在vim/gvim中运行bash(是的，你没看错！)
 - **pyli**: Python静态代码分析(规范代码，远离砍手砍脚)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 ##插件列表：
-- authorinfo.vim
-- conque_term.vim
-- EnhancedCommentify.vim
-- minibufexpl.vim
-- mru.vim
-- per-support.vim
+- [AuthorInfo](https://github.com/vim-scripts/AuthorInfo)
+- [Conque Term](http://code.google.com/p/conque/)
+- [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
+- [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
+- [mru](https://github.com/vim-scripts/mru.vim)
+- [ctrlp](https://github.com/kien/ctrlp.vim)
+- perl-support.vim
 - python_fold.vim
-- snipMate.vim
-- tagbar.vim
-- taglist.vim
-- TeTrIs.vim
-- winfileexplorer.vim
-- winmanager.vim
-- wintagexplorer.vim
-- indentLine.vim
-- Bunlde.vim
-- css.vim
+- [TagBar](http://majutsushi.github.io/tagbar/)
+- [TagList](http://vim-taglist.sourceforge.net/)
+- [TeTrIs](https://github.com/vim-scripts/TeTrIs.vim)
+- [WinManager](https://github.com/vim-scripts/winmanager)
+- [IndentLine](https://github.com/Yggdroot/indentLine)
+- [Vim Bunlde](https://github.com/gmarik/vundle)
+- [vim-css-color](https://github.com/skammer/vim-css-color)
+- [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate)
+- [tlib](https://github.com/tomtom/tlib_vim)
+- [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
     
 +++++++++++++++++++++++++++++++++++++++++++
 

@@ -52,8 +52,15 @@ if !exists("g:indentLine_showFirstIndentLevel")
     let g:indentLine_showFirstIndentLevel = 0
 endif
 
+if !exists("g:indentLine_maxLines")
+    let g:indentLine_maxLines = 3000
+endif
+
+if !exists("g:indentLine_noConcealCursor")
+  set concealcursor=inc
+endif
+
 set conceallevel=1
-set concealcursor=inc
 
 "{{{1 function! <SID>InitColor()
 function! <SID>InitColor()
@@ -84,14 +91,15 @@ endfunction
 "{{{1 function! <SID>SetIndentLine()
 function! <SID>SetIndentLine()
     let b:indentLine_enabled = 1
-    let space = &l:shiftwidth
+    let space = &l:shiftwidth == 0 ? &l:tabstop : &l:shiftwidth
 
     if g:indentLine_showFirstIndentLevel
         exec 'syn match IndentLine /^ / containedin=ALL conceal cchar=' . g:indentLine_first_char
     endif
 
+    let pattern = line('$') < g:indentLine_maxLines ? 'v' : 'c'
     for i in range(space+1, space * g:indentLine_indentLevel + 1, space)
-        exec 'syn match IndentLine /\(^\s\+\)\@<=\%'.i.'v / containedin=ALL conceal cchar=' . g:indentLine_char
+        exec 'syn match IndentLine /\%(^\s\+\)\@<=\%'.i.pattern.' / containedin=ALL conceal cchar=' . g:indentLine_char
     endfor
 endfunction
 
@@ -156,7 +164,8 @@ endfunction
 
 "{{{1 commands
 autocmd BufWinEnter * call <SID>Setup()
-autocmd BufRead,ColorScheme * call <SID>InitColor()
+autocmd BufRead,BufNewFile,ColorScheme * call <SID>InitColor()
+autocmd Syntax * if exists("b:indentLine_set") | call <SID>InitColor() | call <SID>SetIndentLine() | endif
 
 command! -nargs=? IndentLinesReset call <SID>ResetWidth(<f-args>)
 command! IndentLinesToggle call <SID>IndentLinesToggle()
