@@ -112,13 +112,17 @@ filetype plugin indent on
 " ====================================== For Programming =====================================
 " Open the current file path by cmd
 func! OpenCMD()
-    " let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. expand('%:p:h') . '"'
-    " let com = '!cmd /c start cd '. expand('%:p:h')
-    " let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c "' . expand('%:p:h') .'"'
-    " let com = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command "Set-Location ' . expand ('%:p:h') . '"'
-    let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
-    let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
-    let com = com1 . com2
+    if has('win32')
+        " let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. expand('%:p:h') . '"'
+        " let com = '!cmd /c start cd '. expand('%:p:h')
+        " let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c "' . expand('%:p:h') .'"'
+        " let com = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command "Set-Location ' . expand ('%:p:h') . '"'
+        let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
+        let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
+        let com = com1 . com2
+    else
+        let com = '!/usr/bin/gnome-terminal --working-directory=' . expand('%:p:h')
+    endif
     silent execute com
 endfunc
 nmap cmd :call OpenCMD()<CR>
