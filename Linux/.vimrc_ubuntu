@@ -1,15 +1,16 @@
 " =============================================================================
-" #     FileName: _vimrc
-" #         Desc:
-" #       Author: Marslo
-" #      Version: 0.0.7
-" #   LastChange: 2012-11-08 16:44:38
-" #      History: 0.0.3: Add the Autoload and Fast Edit difference between win32 and non-win32
+"       FileName: .vimrc
+"           Desc:
+"         Author: Marslo
+"        Version: 0.0.8
+"     LastChange: 2013-09-06 02:56:16
+"        History: 0.0.3: Add the Autoload and Fast Edit difference between win32 and non-win32
 "                 0.0.4: Add CheckRubySyntax() function for checking and run ruby script
 "                 0.0.5: Add the function of highlight txt file
 "                        Add the function of Automatic paire signs (), [], {}, '', etc
 "                 0.0.6: Remove a pair of parentheses, brackets, or braces
 "                 0.0.7: Modification about autoPair(): if there are char behind the ( or [ or { it wont pair
+"                 0.0.8: Add the function of OpenCMD(), GotoFile(), FontSize_Enlarge(), FontSize_Reduce() and UpdateTagsFile()
 " =============================================================================
 
 " Remove the Welcome interface
@@ -20,9 +21,7 @@
 let mapleader=","
 let g:mapleader=","
 
-" set clipboard+=unnamed
-set clipboard=unnamedplus
-set paste
+" set paste
 set go+=a
 
 " document format
@@ -88,7 +87,7 @@ func! AutoPair(char)
         else
             return a:char
         endif
-    elseif "[" == a:char 
+    elseif "[" == a:char
         if '' == bchar
             return "[]\<Left>"
         else
@@ -105,9 +104,6 @@ func! AutoPair(char)
         endif
     endif
 endfunc
-
-
-
 
 function! ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -151,14 +147,63 @@ function! OpenCMD()
         let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
         let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
         let com = com1 . com2
-        silent execute com
     else
         let com = '!/usr/bin/gnome-terminal --working-directory=' . expand('%:p:h')
-        silent execute com
     endif
+    echo 'Goto "' . expand('%:p:h') . '" in command line'
+    silent execute com
 endfunction
 nmap cmd :call OpenCMD()<CR>
 
+" Add suffix '.py' if the filetype is python
+func! GotoFile()
+    if 'python' == &ft
+        let com = expand('<cfile>') . '.py'
+    else
+        let com = expand('<cfile>')
+    endif
+    silent execute ':e ' . com
+    echo 'Open file "'. com . '" under the cursor'
+endfunc
+nmap gf :call GotoFile()<CR>
+
+" Update tags file automatic
+set tags=tags;
+set autochdir
+function! UpdateTagsFile()
+    silent !ctags -R --fields=+ianS --extra=+q
+endfunction
+nmap <F12> :call UpdateTagsFile()<CR>
+
+" Reduce the font
+function! <SID>FontSize_Reduce()
+    if has('unix')
+        let pattern = '\<\d\+$'
+    elseif has('win32') || has('win95') || has('win64')
+        let pattern = ':h\zs\d\+\ze:'
+    endif
+    let fontsize = matchstr(&gfn, pattern)
+    echo fontsize
+    let cmd = substitute(&gfn, pattern, string(fontsize - 1), 'g')
+    let &gfn=cmd
+endfunction
+nnoremap <A--> :call <SID>FontSize_Reduce()<CR>
+
+" Enlarge the font
+function! <SID>FontSize_Enlarge()
+    if has('unix')
+        let pattern = '\<\d\+$'
+    elseif has('win32') || has('win95') || has('win64')
+        let pattern = ':h\zs\d\+\ze:'
+    endif
+    let fontsize = matchstr(&gfn, pattern)
+    let cmd = substitute(&gfn, pattern, string(fontsize + 1), 'g')
+    let &gfn=cmd
+endfunction
+nnoremap <A-+> :call <SID>FontSize_Enlarge()<CR> 
+
+vnoremap < <gv
+vnoremap > >gv
 
 " ====================================== For Inteface =====================================
 " Make vim maximize while it startup
@@ -181,11 +226,14 @@ if has('win32')
     nmap <leader>v :e $VIM/_vimrc<CR>
     " Fonts
     set guifont=Monaco:h12
+    set clipboard+=unnamed
+    set clipboard+=unnamedplus
 else
     " au GUIEnter * call MaximizeWindow()
     autocmd! bufwritepost ~/.vimrc source %
     nmap <leader>v :e ~/.vimrc<CR>
     set guifont=Monaco\ 12
+    set clipboard=unnamedplus
 endif
 
 set nobackup
@@ -308,9 +356,6 @@ let g:tagbar_iconchars=['+', '-']
 let g:tagbar_autoshowtag=1
 
 " Comments
-" nmap <silent> ,x
-vmap <silent> <C-Q> ,x
-imap <silent> <C-Q> ,x
 let g:EnhCommentifyAlignRight='yes'
 let g:EnhCommentifyRespectIndent='yes'
 let g:EnhCommentifyPretty='Yes'
@@ -374,4 +419,7 @@ let g:indentLine_char = '|'
 " let g:indentLine_loaded = 1
 
 set list listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
+
+
+" nnoremap <silent> <C-F6> :let old_reg=@"<CR>:let @"=substitute(expand("%:p"), "/", "\\", "g")<CR>:silent!!cmd /cstart <C-R><C-R>"<CR><CR>:let @"=old_reg<CR>
 

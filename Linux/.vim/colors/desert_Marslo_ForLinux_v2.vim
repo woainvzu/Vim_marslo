@@ -14,6 +14,18 @@
 "       Author: Marslo
 "       Email: marslo.vida@gmail.com
 "       File Name: desert_Marslo_ForLinux_2
+"
+" v1.2: Modified at 08/11/2012 16:05:59.95
+"       Author: Marslo
+"       Email: marslo.vida@gmail.com
+"       File Name: desert_Marslo_ForLinux_3
+"       Modified: g:colors_name
+"                 Normal        guibg
+"                 NonText       guibg
+"                 StatusLine    guibg
+"                 StatusLineNC  guibg
+"                 Folded        guibg
+"                 FoldColumn    guibg
 
 " cool help screens
 " :he group-name
@@ -44,8 +56,11 @@ hi Cursor	guibg=khaki guifg=slategrey
 "hi DiffText
 "hi ErrorMsg
 hi VertSplit	guibg=#c2bfa5 guifg=grey50 gui=none
+" Fold color
 hi Folded	guibg=grey30 guifg=gold
+hi Folded	ctermfg=darkgrey ctermbg=NONE
 hi FoldColumn	guibg=grey30 guifg=tan
+hi FoldColumn	ctermfg=darkgrey ctermbg=NONE
 hi IncSearch	guifg=slategrey guibg=khaki
 "hi LineNr
 hi ModeMsg	guifg=goldenrod
@@ -151,12 +166,11 @@ hi StatusLine	cterm=NONE ctermfg=darkgray ctermbg=black
 hi StatusLineNC cterm=NONE
 hi VertSplit	cterm=NONE
 hi Title	ctermfg=5
-hi Visual	cterm=NONE
-hi VisualNOS	cterm=NONE
+" hi Visual	cterm=reverse,bold
+hi Visual	cterm=bold,underline
+hi VisualNOS	cterm=reverse
 hi WarningMsg	ctermfg=yellow ctermbg=black
 hi WildMenu	ctermfg=0 ctermbg=3
-hi Folded	ctermfg=darkgrey ctermbg=NONE
-hi FoldColumn	ctermfg=darkgrey ctermbg=NONE
 hi DiffAdd	ctermbg=4
 hi DiffChange	ctermbg=5
 hi DiffDelete	cterm=NONE ctermfg=4 ctermbg=6
