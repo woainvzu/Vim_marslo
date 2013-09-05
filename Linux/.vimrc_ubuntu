@@ -202,8 +202,8 @@ function! <SID>FontSize_Enlarge()
 endfunction
 nnoremap <A-+> :call <SID>FontSize_Enlarge()<CR> 
 
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " ====================================== For Inteface =====================================
 " Make vim maximize while it startup
@@ -371,7 +371,6 @@ let g:vimrc_email='marslo.vida@gmail.com'
 " MRU
 " let MRU_File=$VIM.'\Data\mru_files.txt'
 let MRU_Auto_Close=1
-map <silent> <leader>h :MRU<CR>
 map <C-g> :MRU<CR>
 let MRU_Max_Entries=10
 set modifiable
@@ -383,16 +382,21 @@ set wildmenu
 " Completion mode that is used for the character
 set wildmode=longest,list,full
 
+" Disable F1
 noremap <F1> <ESC>
 imap <F1> <ESC>a
 
 map <C-k> <C-w>k
 map <C-j> <C-w>j
 
+" Emacs Style shortcuts
 map <C-a> <ESC>^
 imap <C-a> <ESC>I
 map <C-e> <ESC>$
 imap <C-e> <ESC>A
+imap <A-f> <ESC><Space>Wi
+imap <A-b> <ESC>Bi
+imap <A-d> <ESC>dW
 
 map <C-c> "+y
 map <C-v> "+p
