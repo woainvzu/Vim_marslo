@@ -1,10 +1,10 @@
 vim_config_marslo
 =================
 
-Author: Marslo  
-Email: marslo.vida@gmail.com  
-Version: 0.0.3  
-LastChange: 2013-09-03 21:40:16   
+Author: Marslo
+Email: marslo.vida@gmail.com
+Version: 0.0.3
+LastChange: 2013-09-03 21:40:16
 
 -----------------------------
 ##ScreenShots:
@@ -28,7 +28,7 @@ LastChange: 2013-09-03 21:40:16
 #Open is Maximize
 
 - Default maximze for Win32 user
-- lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843  
+- lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 
 ##Shortcuts
 
@@ -40,9 +40,9 @@ LastChange: 2013-09-03 21:40:16
 
 - Auto Pair
 - Auto compare code
-    -  `\<leader\>fn`: insert current file name
-    -  `\<leader\>fe`: insert current file name by suffix
-    -  `\<leader\>tt`:  insert the current time
+    -  `<leader>fn`: insert current file name
+    -  `<leader>fe`: insert current file name by suffix
+    -  `<leader>tt`:  insert the current time
 - Save and load the fold information automatic
 
 +++++++++++++++++++++++++++++++++++++++++++
@@ -53,28 +53,30 @@ LastChange: 2013-09-03 21:40:16
     - `Alt + -`: Reduce the font
     - `Alt + +`: Enlarge the font
     - `cmd`: Open command line and cd into the current file path
+    - `Alt + o`: Open the current file browser
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - Plugin shortcuts:
     - `tl`:     Show the taglist
     - `wm`:     Show winmanager
-    - `\<leader\>v`:     Open the configure file (_vimrc in windows and .vimrc in Linux)
-    - `\<leader\>te`:    Open the Tetris
+    - `<leader>v`:     Open the configure file (_vimrc in windows and .vimrc in Linux)
+    - `<leader>te`:    Open the Tetris
     - `tv`:     Open bash in the vim/gvim against Liunxu and open command line against Windows (Yes! That's true)
     - `pyli`:   Static Code Analysis for python
-    - `ctrl+g`:     Open the most recently used files
-    - `\<leader\>v`: Comments/Uncomments
+    - `ctrl + g`:     Open the most recently used files
+    - `<leader>v`: Comments/Uncomments
     - `gl`: Enter
 
 +++++++++++++++++++++++++++++++++++++++++++
 
-- Remap shortcuts
-    - `Ctrl+a`: Go to begin of the line  [Normal Mode && Insert Mode]
-    - `Ctrl+e`: Go to end of the line [Normal Mode && Insert Mode]
-    - `Alt+b`: Backward a word [Insert Mode]
-    - `Alt+f`: Forward a word  [Insert Mode]
-    - `Alt+d`: Delete a word (backward) [Insert Mode]
+- Emacs-style shortcuts:
+    - `Ctrl + a`: Go to begin of the line  [Normal Mode && Insert Mode]
+    - `Ctrl + e`: Go to end of the line [Normal Mode && Insert Mode]
+    - `Alt + b`: Backward a word [Insert Mode]
+    - `Alt + f`: Forward a word  [Insert Mode]
+    - `Alt + d`: Delete a word (backward) [Insert Mode]
+    - `Ctrl + w`: Delete a word (foreward) [Insert Mode]
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -116,9 +118,9 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 -----------------------------
 
-# 打开vim/gvim默认最大化  
-- Windows用户, 已默认开启最大化  
-- Linux用户，需要安装`lwmctr`。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843  
+# 打开vim/gvim默认最大化
+- Windows用户, 已默认开启最大化
+- Linux用户，需要安装`lwmctr`。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843
 
 ##快捷键
 
@@ -131,9 +133,9 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 主题请看Screenshot
 - 自动配对
 - 自动添加信息：
-    - `\<leader\>fn`: 添加当前文件名(无后缀，方便Java添加类名)
-    - `\<leader\>fe`: 添加当前文件名(有后缀，方便添加注释)
-    - `\<leader\>tt`: 添加当前时间
+    - `<leader>fn`: 添加当前文件名(无后缀，方便Java添加类名)
+    - `<leader>fe`: 添加当前文件名(有后缀，方便添加注释)
+    - `<leader>tt`: 添加当前时间
 - 自动保存和加载折叠信息
 
 +++++++++++++++++++++++++++++++++++++++++++
@@ -144,27 +146,29 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
     - `Alt + -`: 缩小字体
     - `Alt + +`: 增大字体
     - `cmd`: 打开命令行，且自动cd到当前文件目录（Linux打开的为Terminal，Windows打开的为command line）
+    - `Alt + o`: 打开文件浏览器， 且自动进入当前文档的目录 （Linux打开为Nautilus, Windows打开为Explorer）
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - 插件快捷键
     - `tl`: 显示taglist
     - `wm`: 显示winmanager(附带taglist信息)
-    - `\<leader\>v`: 打开配置文件(_vimrc/.vimrc)
-    - `\<leader\>te`: 打开俄罗斯方块游戏(练习hjkl快捷键)
+    - `<leader>v`: 打开配置文件(_vimrc/.vimrc)
+    - `<leader>te`: 打开俄罗斯方块游戏(练习hjkl快捷键)
     - `tv`: 在vim/gvim中运行bash(是的，你没看错！)
     - `pyli`: Python静态代码分析(规范代码，远离砍手砍脚)
-    - `ctrl+g`: 打开最近文件列表（10个）
-    - `\<leader\>v`: 注释/反注释
+    - `ctrl + g`: 打开最近文件列表（10个）
+    - `<leader>v`: 注释/反注释
 
 +++++++++++++++++++++++++++++++++++++++++++
 
 - Emacs 风格快捷键
-    - `Ctrl+a`: 光标移动到行首 [Normal模式 && 插入模式]
-    - `Ctrl+e`: 光标移动到行尾 [Normal模式 && 插入模式]
-    - `Alt+b`: 光标向前跳动一个单词 [插入模式]
-    - `Alt+f`: 光标向前跳动一个单词 [插入模式]
-    - `Alt+d`: 向前删除一个单词 [插入模式]
+    - `Ctrl + a`: 光标移动到行首 [Normal模式 && 插入模式]
+    - `Ctrl + e`: 光标移动到行尾 [Normal模式 && 插入模式]
+    - `Alt + b`: 光标向前跳动一个单词 [插入模式]
+    - `Alt + f`: 光标向前跳动一个单词 [插入模式]
+    - `Alt + d`: 向前删除一个单词 [插入模式]
+    - `Ctrl + w`: 向后删除一个单词 [插入模式]
 
 +++++++++++++++++++++++++++++++++++++++++++
 

@@ -29,12 +29,9 @@ let g:solarized_termcolors=256
 let mapleader=","
 let g:mapleader=","
 
-
 set iskeyword+=.
-
-" Copy the content to system clipboard by using y/p
-set clipboard+=unnamed
-set clipboard+=unnamedplus
+set autochdir
+set tags=tags
 
 " Code format
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
@@ -49,7 +46,6 @@ set selection=exclusive
 set selectmode=mouse,key
 set scrolloff=3
 
-
 set diffexpr=MyDiff()
 func! MyDiff()
     let opt = '-a --binary '
@@ -59,8 +55,8 @@ func! MyDiff()
     if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
     let arg2 = v:fname_new
     if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-        let mp = &makeprg
-        let mp = &makeprg
+    let mp = &makeprg
+    let mp = &makeprg
     let arg3 = v:fname_out
     if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
     let eq = ''
@@ -72,11 +68,10 @@ func! MyDiff()
             let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
         endif
     else
-          let cmd = $VIMRUNTIME . '\diff'
+        let cmd = $VIMRUNTIME . '\diff'
     endif
     silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunc
-
 
 " Vim Bundle
 set nocompatible
@@ -112,7 +107,7 @@ filetype plugin indent on
 " ====================================== For Programming =====================================
 " Open the current file path by cmd
 func! OpenCMD()
-    if has('win32')
+    if has('win32') || has('win95') || has('win64')
         " let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. expand('%:p:h') . '"'
         " let com = '!cmd /c start cd '. expand('%:p:h')
         " let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c "' . expand('%:p:h') .'"'
@@ -127,6 +122,13 @@ func! OpenCMD()
 endfunc
 nmap cmd :call OpenCMD()<CR>
 
+func! OpenFoler()
+    if has('win32') || has('win95') || has('win64')
+        let folderpath = expand('%:p:h')
+    endif
+    silent execute '!C:\Windows\explorer.exe "' . folderpath . '"'
+endfunc
+map <M-o> :call OpenFoler()<CR>
 
 " Run pylint
 func! PylintCheck()
@@ -183,9 +185,9 @@ let g:ctrlp_max_height = 8
 let g:ctrlp_max_depth = 100
 let g:ctrlp_working_path_mode = '.ctrlp'
 " let g:ctrlp_custom_ignore = {
-    " \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    " \ 'file': '\v\.(exe|so|dll)$',
-    " \ }
+" \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+" \ 'file': '\v\.(exe|so|dll)$',
+" \ }
 
 " Automatic Pair
 " inoremap ( ()<ESC>i
@@ -231,7 +233,6 @@ func! AutoPair(char)
     endif
 endfunc
 
-
 func! ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
         return "\<Right>"
@@ -253,6 +254,50 @@ function! DeletePairs()
     endif
 endfunction
 
+function! GotoFile()
+    if 'python' == &ft
+        let com = expand('<cfile>') . '.py'
+    else
+        let com = expand('<cfile>')
+    endif
+    silent execute ':e ' . com
+    echo 'Open file "' . com . '" under the cursor'
+endfunction
+nmap gf :call GotoFile()
+
+" Update tags file automatic
+function! UpdateTags()
+    silent !ctags -R --fields=+ianS --extra=+q
+endfunction
+nmap <F12> :call UpdateTags()
+
+" Reduce the font
+function! <SID>FontSize_Reduce()
+    if has('unix')
+        let pattern = '\<\d\+$'
+    elseif has('win32') || has('win95') || has('win64')
+        let pattern = ':h\zs\d\+\ze:'
+    endif
+    let fontsize = matchstr(&gfn, pattern)
+    echo fontsize
+    let cmd = substitute(&gfn, pattern, string(fontsize - 1), 'g')
+    let &gfn=cmd
+endfunction
+nnoremap <A--> :call <SID>FontSize_Reduce()<CR>
+
+" Enlarge the font
+function! <SID>FontSize_Enlarge()
+    if has('unix')
+        let pattern = '\<\d\+$'
+    elseif has('win32') || has('win95') || has('win64')
+        let pattern = ':h\zs\d\+\ze:'
+    endif
+    let fontsize = matchstr(&gfn, pattern)
+    let cmd = substitute(&gfn, pattern, string(fontsize + 1), 'g')
+    let &gfn=cmd
+endfunction
+nnoremap <A-+> :call <SID>FontSize_Enlarge()<CR>
+
 iabbrev <leader>/* /*********************************
 iabbrev <leader>*/ *********************************/
 iabbrev <leader>#- #------------------
@@ -264,6 +309,7 @@ inoremap <leader>fe <C-R>=expand("%:t")<CR>
 inoremap <M-b> <Esc>Bi
 inoremap <M-f> <Esc>f<Space>a
 inoremap <M-d> <Esc>cf<Space>
+inoremap <C-w> <Esc>BdW
 
 " Disable <F1> to open help file
 nmap <F1> <ESC>
@@ -279,39 +325,41 @@ imap <C-e> <ESC>A
 map <C-k> <C-w>k
 map <C-j> <C-w>j
 
-
 " map ecq :echo system("ruby -e 'print $:.join(%q{,})'")<CR>
 
 " ====================================== For Inteface =====================================
 " Make vim maximize while it startup
 func! MaximizeWindow()
-silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+    silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
 endfunc
 
 " The initialize size
 set lines=38
 set columns=118
 
-if has('win32')
-" Max after start vim
-" au GUIEnter * simalt ~x
-" autoload _vimrc
-autocmd! bufwritepost $VIM/_vimrc source %
-" Fast Edit vim configuration
-nmap <leader>v :e $VIM/_vimrc<CR>
-" Fonts
-set guifont=Monaco:h12
+if has('win32') || has('win95') || has('win64')
+    " Max after start vim
+    " au GUIEnter * simalt ~x
+    " autoload _vimrc
+    autocmd! bufwritepost $VIM/_vimrc source %
+    " Fast Edit vim configuration
+    nmap <leader>v :e $VIM/_vimrc<CR>
+    " Fonts
+    set guifont=Monaco:h12
+    " Copy the content to system clipboard by using y/p
+    set clipboard+=unnamed
+    set clipboard+=unnamedplus
 else
-" au GUIEnter * call MaximizeWindow()
-autocmd! bufwritepost ~/.vimrc source %
-nmap <leader>v :e ~/.vimrc<CR>
-set guifont=Monaco\ 12
+    " au GUIEnter * call MaximizeWindow()
+    autocmd! bufwritepost ~/.vimrc source %
+    nmap <leader>v :e ~/.vimrc<CR>
+    set guifont=Monaco\ 12
+    set clipboard=unnamedplus
 endif
 
 set nobackup
 set noswapfile
 set nowritebackup
-
 
 set number
 colorscheme desert_Marslo_ForLinux_v4
@@ -321,7 +369,6 @@ let psc_style='cool'
 syntax enable
 syntax on
 filetype plugin on
-
 
 " Hide everything
 " set go=
@@ -335,11 +382,8 @@ set guioptions-=r
 " Hide the Menu
 set guioptions-=m
 set cpoptions+=n
-
-
 " Set auto read when a file is changed by outside
 set autoread
-
 " Show matching bracets
 set showmatch
 
@@ -393,7 +437,6 @@ autocmd BufWinLeave * silent! mkview
 autocmd BufWinEnter * silent! loadview
 set viewoptions=folds
 
-
 " Highlight the txt file
 au BufRead,BufNewFile * setfiletype txt
 " au BufRead,BufNewFile *txt setfiletype txt
@@ -418,10 +461,10 @@ set backspace=indent,eol,start
 " set whichwrap+=<,>,h,l
 
 nmap <leader>s :ConqueTermSplit
-if has('win32')
-nmap tv :ConqueTermSplit cmd <CR>
+if has('win32') || has('win95') || has('win64')
+    nmap tv :ConqueTermSplit cmd <CR>
 else
-nmap tv :ConqueTermSplit bash <CR>
+    nmap tv :ConqueTermSplit bash <CR>
 endif
 
 " Delete the black space in the end of each line
@@ -522,7 +565,6 @@ let g:Perl_Email='marslo.vida@gmail.com'
 set linespace=0
 set wildmenu
 
-
 " The blinding frequency
 " set mat=2
 
@@ -548,6 +590,5 @@ let g:indentLine_indentLevel = 20
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_char = '|'
 " let g:indentLine_loaded = 1
-
 
 set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:·
