@@ -263,40 +263,43 @@ function! GotoFile()
     silent execute ':e ' . com
     echo 'Open file "' . com . '" under the cursor'
 endfunction
-nmap gf :call GotoFile()
+nmap gf :call GotoFile()<CR>
 
 " Update tags file automatic
 function! UpdateTags()
     silent !ctags -R --fields=+ianS --extra=+q
 endfunction
-nmap <F12> :call UpdateTags()
+nmap <F12> :call UpdateTags()<CR>
 
 " Reduce the font
-function! <SID>FontSize_Reduce()
+" function! <SID>FontSize_Reduce()
+function! FontSize_Reduce()
     if has('unix')
         let pattern = '\<\d\+$'
     elseif has('win32') || has('win95') || has('win64')
-        let pattern = ':h\zs\d\+\ze:'
+        " let pattern = ':h\zs\d\+\ze:'
+        let pattern = '\([1-9][0-9]*\)$'
     endif
     let fontsize = matchstr(&gfn, pattern)
     echo fontsize
     let cmd = substitute(&gfn, pattern, string(fontsize - 1), 'g')
     let &gfn=cmd
 endfunction
-nnoremap <A--> :call <SID>FontSize_Reduce()<CR>
+nnoremap <A--> :call FontSize_Reduce()<CR>
 
 " Enlarge the font
-function! <SID>FontSize_Enlarge()
+function! FontSize_Enlarge()
     if has('unix')
         let pattern = '\<\d\+$'
     elseif has('win32') || has('win95') || has('win64')
-        let pattern = ':h\zs\d\+\ze:'
+        " let pattern = ':h\zs\d\+\ze:'
+        let pattern = '\([1-9][0-9]*\)$'
     endif
     let fontsize = matchstr(&gfn, pattern)
     let cmd = substitute(&gfn, pattern, string(fontsize + 1), 'g')
     let &gfn=cmd
 endfunction
-nnoremap <A-+> :call <SID>FontSize_Enlarge()<CR>
+nnoremap <A-+> :call FontSize_Enlarge()<CR>
 
 iabbrev <leader>/* /*********************************
 iabbrev <leader>*/ *********************************/
@@ -309,7 +312,6 @@ inoremap <leader>fe <C-R>=expand("%:t")<CR>
 inoremap <M-b> <Esc>Bi
 inoremap <M-f> <Esc>f<Space>a
 inoremap <M-d> <Esc>cf<Space>
-inoremap <C-w> <Esc>BdW
 
 " Disable <F1> to open help file
 nmap <F1> <ESC>
@@ -576,8 +578,8 @@ set t_vb=
 set completeopt=longest,menu
 
 " Cursor format
-set guicursor=a:hor10
-set guicursor+=i-r-ci-cr-o:hor10-blinkon0
+set guicursor=a:hor6
+set guicursor+=i-r-ci-cr-o:hor6-blinkon0
 
 set cursorline
 hi LineNr guifg=#555555 guibg=background ctermfg=darkgrey ctermbg=none
@@ -588,7 +590,7 @@ let g:indentLine_color_gui = '#282828'
 let g:indentLine_color_term = 10
 let g:indentLine_indentLevel = 20
 let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_char = '|'
+let g:indentLine_char = '¦'
 " let g:indentLine_loaded = 1
 
 set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:·
