@@ -87,21 +87,23 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim.git'
-" Bundle 'xolox/vim-shell'
-" Bundle 'xolox/vim-misc'
-" Bundle 'xolox/vim-easytags'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'majutsushi/tagbar'
 Bundle 'AuthorInfo'
 Bundle 'Conque-Shell'
-" Bundle 'EnhCommentify.vim'
 Bundle 'mru.vim'
 Bundle 'python_fold'
-" Bundle 'snipMate'
-Bundle 'Tagbar'
+" Bundle 'Tagbar'
 Bundle 'taglist.vim'
 Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
+" Bundle 'EnhCommentify.vim'
+" Bundle 'snipMate'
+" Bundle 'xolox/vim-shell'
+" Bundle 'xolox/vim-misc'
+" Bundle 'xolox/vim-easytags'
 
 " Colors
 Bundle 'txt.vim'
@@ -185,18 +187,6 @@ func! RunResult()
     let &errorformat = ef
 endfunc
 map <F5> :call RunResult()<CR>
-
-" CtrlP
-" let g:ctrlp_map = '<s-w>'
-let g:ctrlp_max_height = 8
-let g:ctrlp_max_depth = 100
-let g:ctrlp_working_path_mode = '.ctrlp'
-" let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-\ 'file': '\v\.(exe|so|dll)$',
-\ }
 
 " Automatic Pair
 " inoremap ( ()<ESC>i
@@ -338,6 +328,26 @@ map <C-k> <C-w>k
 map <C-j> <C-w>j
 
 " map ecq :echo system("ruby -e 'print $:.join(%q{,})'")<CR>
+
+" CtrlP
+" let g:ctrlp_map = '<s-w>'
+let g:ctrlp_max_height = 8
+let g:ctrlp_max_depth = 100
+let g:ctrlp_working_path_mode = '.ctrlp'
+" let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll)$',
+\ }
+
+" GundoToggle
+nnoremap <leader>g :GundoToggle<CR>
+let g:gundo_width = 35
+let g:gundo_preview_height = 20
+let g:gundo_right = 0
+let g:gundo_preview_bottom = 0
+
 
 " ====================================== For Inteface =====================================
 " Make vim maximize while it startup
