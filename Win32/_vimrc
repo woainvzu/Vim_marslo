@@ -31,7 +31,11 @@ let g:mapleader=","
 
 set iskeyword+=.
 set autochdir
+
+" Tags
 set tags=tags
+set tags+=c:\Marslo\Job\Summa\TEX\SVN\netact-mpp-lab-scripts\.tags
+autocmd BufEnter c:\Marslo\Job\Summa\TEX\SVN\netact-mpp-lab-scripts\* :setlocal tags+=c:\Marslo\Job\Summa\TEX\SVN\netact-mpp-lab-scripts\.tags
 
 " Code format
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
@@ -83,6 +87,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim.git'
+" Bundle 'xolox/vim-shell'
+" Bundle 'xolox/vim-misc'
+" Bundle 'xolox/vim-easytags'
 Bundle 'AuthorInfo'
 Bundle 'Conque-Shell'
 " Bundle 'EnhCommentify.vim'
@@ -184,10 +191,12 @@ map <F5> :call RunResult()<CR>
 let g:ctrlp_max_height = 8
 let g:ctrlp_max_depth = 100
 let g:ctrlp_working_path_mode = '.ctrlp'
-" let g:ctrlp_custom_ignore = {
-" \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-" \ 'file': '\v\.(exe|so|dll)$',
-" \ }
+" let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll)$',
+\ }
 
 " Automatic Pair
 " inoremap ( ()<ESC>i
@@ -256,7 +265,10 @@ endfunction
 
 function! GotoFile()
     if 'python' == &ft
-        let com = expand('<cfile>') . '.py'
+        let com = expand('%:p:h') . '\' . expand('<cfile>') . '.py'
+    " elseif 'ruby' == &ft
+        " let com = expand('%:p:h') . '\' . expand('<cfile>')
+        " let com = 'C:\Marslo\Job\Summa\TEX\SVN\netact-mpp-lab-scripts\' . expand('<cfile>')
     else
         let com = expand('<cfile>')
     endif
@@ -272,16 +284,14 @@ endfunction
 nmap <F12> :call UpdateTags()<CR>
 
 " Reduce the font
-" function! <SID>FontSize_Reduce()
 function! FontSize_Reduce()
     if has('unix')
         let pattern = '\<\d\+$'
     elseif has('win32') || has('win95') || has('win64')
-        " let pattern = ':h\zs\d\+\ze:'
-        let pattern = '\([1-9][0-9]*\)$'
+        let pattern = ':h\zs\d\+\ze'
+        " let pattern = '\([1-9][0-9]*\)$'
     endif
     let fontsize = matchstr(&gfn, pattern)
-    echo fontsize
     let cmd = substitute(&gfn, pattern, string(fontsize - 1), 'g')
     let &gfn=cmd
 endfunction
@@ -292,8 +302,8 @@ function! FontSize_Enlarge()
     if has('unix')
         let pattern = '\<\d\+$'
     elseif has('win32') || has('win95') || has('win64')
-        " let pattern = ':h\zs\d\+\ze:'
-        let pattern = '\([1-9][0-9]*\)$'
+        let pattern = ':h\zs\d\+\ze'
+        " let pattern = '\([1-9][0-9]*\)$'
     endif
     let fontsize = matchstr(&gfn, pattern)
     let cmd = substitute(&gfn, pattern, string(fontsize + 1), 'g')
@@ -336,8 +346,8 @@ func! MaximizeWindow()
 endfunc
 
 " The initialize size
-set lines=38
-set columns=118
+set lines=40
+set columns=122
 
 if has('win32') || has('win95') || has('win64')
     " Max after start vim
@@ -374,7 +384,6 @@ filetype plugin on
 
 " Hide everything
 " set go=
-
 " Hide the tool bar
 set guioptions-=T
 " Hide the side scroll bar
@@ -449,20 +458,12 @@ au BufRead,BufNewFile *.t set ft=perl
 hi MBEVisibleActive guifg=#5DC2D6 guibg=#333333
 hi MBEVisibleNormal guifg=#A6DB29 guibg=#333333
 
-
-" set novisualbell
-" Highlight the Cursor line
-" set cursorline
-" hi CursorLine   cterm=NONE ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
-" Remove alarm voice
-" set vb t_vb=
-
 " ====================================== For Function =====================================
 " make backspace h, l, etc wrap to
 set backspace=indent,eol,start
 " set whichwrap+=<,>,h,l
 
-nmap <leader>s :ConqueTermSplit
+" nmap <leader>s :ConqueTermSplit
 if has('win32') || has('win95') || has('win64')
     nmap tv :ConqueTermSplit cmd <CR>
 else
@@ -527,8 +528,8 @@ let g:miniBufExplUseSingleClick=1 " Single Click could switch the buffers
 
 " Comments
 " nmap <silent> ,x
-vmap <silent> <C-Q> ,x
-imap <silent> <C-Q> ,x
+" vmap <silent> <C-Q> ,x
+" imap <silent> <C-Q> ,x
 let g:EnhCommentifyAlignRight='yes'
 let g:EnhCommentifyRespectIndent='yes'
 let g:EnhCommentifyPretty='Yes'
@@ -566,6 +567,7 @@ let g:Perl_Email='marslo.vida@gmail.com'
 
 set linespace=0
 set wildmenu
+set wildignore+=*.swp,*.zip,*.exe
 
 " The blinding frequency
 " set mat=2
@@ -584,6 +586,7 @@ set guicursor+=i-r-ci-cr-o:hor6-blinkon0
 set cursorline
 hi LineNr guifg=#555555 guibg=background ctermfg=darkgrey ctermbg=none
 hi CursorLineNr guifg=#A6E22E guibg=background gui=NONE ctermbg=black ctermfg=lightgreen
+" hi CursorLine   cterm=NONE ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
 
 " IndentLine
 let g:indentLine_color_gui = '#282828'

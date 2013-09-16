@@ -103,6 +103,7 @@ LastChange: 2013-09-03 21:40:16
 - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate)
 - [tlib](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
+- [python.vim(Indent)](http://www.vim.org/scripts/script.php?script_id=3461)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
