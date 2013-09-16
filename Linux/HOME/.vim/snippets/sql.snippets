@@ -1,0 +1,55 @@
+snippet dt
+	DATETIME,${1}
+snippet bi
+	BIGINT,${1}
+snippet vc
+	VARCHAR(${1}),${2}
+snippet char
+	CHAR(${1}),${2}
+snippet cd
+	CREATE DATABASE;
+snippet ct
+	create table '${1:TableName}'
+	(
+		${2:-- table contents}
+	); ${3}
+snippet use
+	USE ${1:DatabaseName};${2}
+snippet sd
+	SHOW DATABASES;${1}
+snippet st
+	SHOW TABLES;${1}
+snippet desc
+	DESC ${1:TableName};${2}
+snippet insert
+	INSERT INTO ${1:TableName} VALUES
+	${2:--Table Contents}
+snippet commit
+	COMMIT;${1}
+snippet del
+	DELETE FROM ${1:TableName} 
+	WHERE ${2:Conditions};${3}
+snippet update
+	UPDATE ${1:TableName} SET ${2:Field} = ${3:NewValue}
+	WHERE ${4:Conditios};${5}
+snippet limit
+	SELECT * FROM ${1:TableName} ORDER BY ${2:Value}
+	LIMIT ${3:StartLine}, ${4:LineNum};${5}
+snippet add
+	ALTER TABLE ${1:TableName} ADD
+	${2:Field} ${3:Type} ${4:Others};${5}
+snippet rename
+	RENAME TABLE ${1:OldName} TO ${2:NewName};${3}
+snippet drop
+	DROP TABLE ${1:TableName};${2}
+snippet dropif
+	DROP TABLE IF EXISTS ${1:TableName};${2}
+snippet group
+	GROUP BY ${1:Field};${2}
+snippet order
+	ORDER BY ${1:Value}; ${2}
+snippet sel
+	SELECT * FROM ${1:TableName};
+snippet selwhere
+	SELECT ${1:ColumnName} FROM ${2:TableName}
+	WHERE ${3:Condition}; ${4}
