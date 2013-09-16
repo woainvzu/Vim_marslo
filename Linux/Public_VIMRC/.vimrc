@@ -13,6 +13,7 @@ let s:portable = expand('<sfile>:p:h')
 let &runtimepath=printf('%s/.vim,%s/.vim,%s/.vim/after', s:portable, &runtimepath, s:portable)
 " let s:portable = '/home/auto/lijiao'
 " let $runtimepath=~s:portable/.vim,usr/local/share/vim/vimfiles,/usr/local/share/vim/vim74,/usr/local/share/vim/vimfiles/after,/home/auto/.vim/after
+set nocompatible
 
 colorscheme marslo
 
@@ -162,13 +163,13 @@ set write
 set viewoptions=folds
 
 " automatic Pair
-inoremap ( :call AutoPair('(')<CR>
-inoremap ) :call ClosePair(')')<CR>
-inoremap [ :call AutoPair('[')<CR>
-inoremap ] :call ClosePair(']')<CR>
-inoremap { :call AutoPair('{')<CR>
-inoremap } :call ClosePair('}')<CR>
-inoremap % :call AutoPair('%')<CR>
+inoremap ( <c-r>=AutoPair('(')<CR>
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap [ <c-r>=AutoPair('[')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap { <c-r>=AutoPair('{')<CR>
+inoremap } <c-r>=ClosePair('}')<CR>
+inoremap % <c-r>=AutoPair('%')<CR>
 
 func! AutoPair(char)
     if "(" == a:char
