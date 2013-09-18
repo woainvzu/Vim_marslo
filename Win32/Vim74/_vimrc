@@ -32,6 +32,8 @@ let g:mapleader=","
 set iskeyword+=.
 set autochdir
 
+set t_Co=256
+
 " Tags
 set tags=tags
 set tags+=c:\Marslo\Job\Summa\TEX\SVN\netact-mpp-lab-scripts\.tags
@@ -121,11 +123,14 @@ func! OpenCMD()
     if has('win32') || has('win95') || has('win64')
         " let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. expand('%:p:h') . '"'
         " let com = '!cmd /c start cd '. expand('%:p:h')
-        " let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c "' . expand('%:p:h') .'"'
         " let com = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command "Set-Location ' . expand ('%:p:h') . '"'
-        let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
-        let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
-        let com = com1 . com2
+        if 'java' == &ft
+            let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13x64\tcc.exe" /d "' . expand('%:p:h') .'"'
+        else
+            let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
+            let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
+            let com = com1 . com2
+        endif
     else
         let com = '!/usr/bin/gnome-terminal --working-directory=' . expand('%:p:h')
     endif
