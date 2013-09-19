@@ -32,7 +32,6 @@ let g:mapleader=","
 set iskeyword+=.
 set autochdir
 
-set t_Co=256
 
 " Tags
 set tags=tags
@@ -114,7 +113,8 @@ Bundle 'txt.vim'
 Bundle 'css.vim'
 Bundle 'hail2u/vim-css3-syntax'
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 " nmap bi :BundleInstall<CR>
 
 " ====================================== For Programming =====================================
@@ -338,14 +338,18 @@ map <C-j> <C-w>j
 
 " CtrlP
 " let g:ctrlp_map = '<s-w>'
+" let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'
+" let g:ctrlp_working_path_mode = '.ctrlp'
 let g:ctrlp_max_height = 8
 let g:ctrlp_max_depth = 100
-let g:ctrlp_working_path_mode = '.ctrlp'
-" let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrl_root_makers = ['ctrlp']
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_use_caching = 1
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-\ 'file': '\v\.(exe|so|dll)$',
+\ 'file': '\v\.(exe|so|dll|rpm|tar|gz|bz2|zip|ctags|tags)|tags|ctags$',
+\ 'link': 'some_bad_symbolic_links',
 \ }
 
 " GundoToggle
@@ -390,98 +394,80 @@ else
     set clipboard=unnamedplus
 endif
 
-set nobackup
-set noswapfile
-set nowritebackup
+set nobackup noswapfile nowritebackup
 
-set number
+" ruler: Show Line and colum number; number: line number
+set ruler number
+
 colorscheme desert_Marslo_ForLinux_v4
 " colorscheme neverness
+set t_Co=256
 let psc_style='cool'
 
 syntax enable
 syntax on
 filetype plugin on
 
-" Hide everything
-" set go=
-" Hide the tool bar
-set guioptions-=T
-" Hide the side scroll bar
-set guioptions-=r
-" Add the bottom scroll bar
-" set guioptions+=b
-" Hide the Menu
-set guioptions-=m
+" set go=                           " Hide everything
+" set guioptions+=b                 " Add the bottom scroll bar
+set guioptions-=T                   " Hide the tool bar
+set guioptions-=r                   " Hide the side scroll bar
+set guioptions-=m                   " Hide the Menu
 set cpoptions+=n
-" Set auto read when a file is changed by outside
-set autoread
-" Show matching bracets
-set showmatch
 
-" Wrap lines
-set nowrap
-" Tab width
-set tabstop=4
-set expandtab
+set autoread                        " Set auto read when a file is changed by outside
+set showmatch                       " Show matching bracets
+
+set nowrap                          " Wrap lines
 " set textwidth=150
-set autoindent
-set smartindent
-" the width of <Tab> in first line would refer to 'Shiftwidth' parameter
-set smarttab
-" the width while trigger <Tab> key
-set softtabstop=4
-" the tab width by using >> & <<
-set shiftwidth=4
+set autoindent smartindent
+set smarttab expandtab              " smarttab: the width of <Tab> in first line would refer to 'Shiftwidth' parameter
+set tabstop=4                       " Tab width
+set softtabstop=4                   " the width while trigger <Tab> key
+set shiftwidth=4                    " the tab width by using >> & <<
+
 set lbr
 set tw=0
-
-" Show Line and colum number
-set ruler
 
 " Set status bar
 set laststatus=2
 set statusline=%m%r
-set statusline=%f\ \ %y,%{&fileformat}\  " file path\file name & filetype
-set statusline+=%=      " right align
+set statusline=%f\ \ %y,%{&fileformat}\                 " file path\file name & filetype
+set statusline+=%=                                      " right align
 set statusline+=\ \ %-{strftime(\"%H:%M\ %d/%m/%Y\")}   " Current Time
-set statusline+=\ \ %b[A],0x%B    " ASCII code, Hex mode
-set statusline+=\ \ %c%V,%l/%L      " current Column, current Line/All Line
+set statusline+=\ \ %b[A],0x%B                          " ASCII code, Hex mode
+set statusline+=\ \ %c%V,%l/%L                          " current Column, current Line/All Line
 set statusline+=\ \ %p%%\
 
 " At Menu
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+
 " At Console
 language messages utf-8
 
-" Show (partial) command in status line
-set showcmd
+set showcmd                             " Show (partial) command in status line
 
 " Fold
-set foldenable "Enable Fold
+set foldenable                          "Enable Fold
 set foldmethod=manual
 set foldcolumn=1
-set foldexpr=1 "Shown line number after fold
-set foldlevel=100 " Not fold while VIM set up
+set foldexpr=1                          "Shown line number after fold
+set foldlevel=100                       " Not fold while VIM set up
 " au BufWinLeave * silent mkview
 autocmd BufWinLeave * silent! mkview
 autocmd BufWinEnter * silent! loadview
 set viewoptions=folds
 
-" Highlight the txt file
-au BufRead,BufNewFile * setfiletype txt
-" au BufRead,BufNewFile *txt setfiletype txt
-" Perl test file as Perl code
-au BufRead,BufNewFile *.t set ft=perl
+au BufRead,BufNewFile * setfiletype txt     " Highlight the txt file
+au BufRead,BufNewFile *.t set ft=perl       " Perl test file as Perl code
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#5DC2D6 guibg=#333333
 hi MBEVisibleNormal guifg=#A6DB29 guibg=#333333
 
 " ====================================== For Function =====================================
-" make backspace h, l, etc wrap to
-set backspace=indent,eol,start
+set backspace=indent,eol,start                  " make backspace h, l, etc wrap to
 " set whichwrap+=<,>,h,l
 
 " nmap <leader>s :ConqueTermSplit
@@ -495,17 +481,11 @@ endif
 nmap zdb :%s/\s\+$//<CR>
 nmap zhh :%s/^\s\+//<CR>
 nmap zmm :g/^/ s//\=line('.').' '/<CR>
-" Delete white space
-nmap zws :g/^\s*$/d<CR>
+nmap zws :g/^\s*$/d<CR>                         " Delete white space
 
-" Search
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
+set incsearch hlsearch ignorecase smartcase     " Search
 
-" Regular Expression
-set magic
+set magic                                       " Regular Expression
 
 " WinManager
 " let g:AutoOpenWinManager=1
@@ -524,7 +504,7 @@ let Tlist_sql_settings = 'sql;P:package;t:table'
 let Tlist_Process_File_Always=0
 " let Tlist_Close_On_Select=1
 " let Tlist_Auto_Open=1
-" let Tlist_Ctags_Cmd='x:\xx\xx\ctags.exe'
+" let Tlist_Ctags_Cmd=$VIM . 'vimfiles\ctags58\ctags.exe'
 " let updatetime=1000
 nmap tl :TlistToggle<CR>
 
@@ -541,11 +521,11 @@ let g:tagbar_autoshowtag=1
 " MiniBufExplorer
 let g:miniBufExplMapCTabSwitchBufs=1
 let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplorerMoreThanOne=0 " Mult-files openning at one minibufexplorer
-let g:miniBufExplMapWindowNavVim=1 " Using <HJKL> to change the buffer
+let g:miniBufExplorerMoreThanOne=0              " Mult-files openning at one minibufexplorer
+let g:miniBufExplMapWindowNavVim=1              " Using <HJKL> to change the buffer
 let g:miniBufExplTabWra=1
-let g:miniBufExplModSelTarget=1     " Use other explorers like TagList set it at 1
-let g:miniBufExplUseSingleClick=1 " Single Click could switch the buffers
+let g:miniBufExplModSelTarget=1                 " Use other explorers like TagList set it at 1
+let g:miniBufExplUseSingleClick=1               " Single Click could switch the buffers
 
 " Comments
 let g:EnhCommentifyAlignRight='yes'
@@ -568,25 +548,22 @@ let g:vimrc_author='Marslo'
 let g:vimrc_email='marslo.vida@gmail.com'
 
 " MRU
-" let MRU_File=$VIM.'\Data\mru_files.txt'
-let MRU_Auto_Close=1
-map <silent> <leader>h :MRU<CR>
+" let MRU_File=$VIM . 'vimfiles\Data\mru_files.txt'
+let MRU_Auto_Close = 1
+let MRU_Max_Entries = 10
 map <C-g> :MRU<CR>
-let MRU_Max_Entries=10
 
 set linespace=0
 set wildmenu
 set wildignore+=*.swp,*.zip,*.exe
 
-" The blinding frequency
-" set mat=2
+" set mat=2                                     " The blinding frequency
 
 " turn off error beep/flash
-set noerrorbells
-set novisualbell
+set noerrorbells novisualbell
 set t_vb=
 
-set completeopt=longest,menu
+set completeopt=longest,menuone
 
 " Cursor format
 set guicursor=a:hor6
