@@ -30,7 +30,7 @@ set fileformat=unix
 
 " Code format
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
-set termencoding=utf-8
+set termencoding=utf8
 set encoding=utf8
 set fileencoding=utf8
 let &termencoding=&encoding
@@ -60,7 +60,7 @@ Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 Bundle 'Conque-Shell'
-" Bundle 'EnhCommentify.vim'
+Bundle 'EnhCommentify.vim'
 " Bundle 'snipMate'
 " Colors
 Bundle 'txt.vim'
@@ -71,33 +71,6 @@ filetype indent on
 " nmap bi :BundleInstall<CR>
 
 " ====================================== For Programming =====================================
-" Open the current file path by cmd
-func! OpenCMD()
-    if has('win32') || has('win95') || has('win64')
-        " let com = '!cmd /c start C:\Marslo\Tools\Softwares\Data\System\CMD\Console2\Console.exe -d "'. expand('%:p:h') . '"'
-        " let com = '!cmd /c start cd '. expand('%:p:h')
-        " let com = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command "Set-Location ' . expand ('%:p:h') . '"'
-        if 'java' == &ft
-            let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13x64\tcc.exe" /d "' . expand('%:p:h') .'"'
-        else
-            let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
-            let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
-            let com = com1 . com2
-        endif
-    else
-        let com = '!/usr/bin/gnome-terminal --working-directory=' . expand('%:p:h')
-    endif
-    silent execute com
-endfunc
-nmap cmd :call OpenCMD()<CR>
-
-func! OpenFoler()
-    if has('win32') || has('win95') || has('win64')
-        let folderpath = expand('%:p:h')
-    endif
-    silent execute '!C:\Windows\explorer.exe "' . folderpath . '"'
-endfunc
-map <M-o> :call OpenFoler()<CR>
 func! RunResult()
     let mp = &makeprg
     let ef = &errorformat
@@ -214,9 +187,13 @@ function! OpenCMD()
         " let com = '!cmd /c start cd '. expand('%:p:h')
         " let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13\tcc.exe" /c "' . expand('%:p:h') .'"'
         " let com = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command "Set-Location ' . expand ('%:p:h') . '"'
-        let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
-        let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
-        let com = com1 . com2
+        if 'java' == &ft
+            let com = '!cmd /c start "C:\Program Files\JPSoft\TCCLE13x64\tcc.exe" /d "' . expand('%:p:h') .'"'
+        else
+            let com1 = '!cmd /c start C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command '
+            let com2 = '"Set-Location ' . "'" . expand ('%:p:h') ."'" . '"'
+            let com = com1 . com2
+        endif
     else
         let com = '!/usr/bin/gnome-terminal --working-directory=' . expand('%:p:h')
     endif
@@ -224,6 +201,14 @@ function! OpenCMD()
     silent execute com
 endfunction
 nmap cmd :call OpenCMD()<CR>
+
+func! OpenFoler()
+    if has('win32') || has('win95') || has('win64')
+        let folderpath = expand('%:p:h')
+    endif
+    silent execute '!C:\Windows\explorer.exe "' . folderpath . '"'
+endfunc
+map <M-o> :call OpenFoler()<CR>
 
 " Add suffix '.py' if the filetype is python
 func! GotoFile()
@@ -324,7 +309,7 @@ set nowritebackup
 
 
 set number
-colorscheme desert_Marslo_ForLinux_v3
+colorscheme marslo
 let psc_style='cool'
 
 " colorscheme desert
@@ -377,7 +362,7 @@ set statusline+=\ \ %p%%\
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 " At Console
-language messages utf-8
+" language messages utf8
 set showcmd                                 " Show (partial) command in status line
 
 " Fold

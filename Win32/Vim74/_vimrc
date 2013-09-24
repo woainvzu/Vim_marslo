@@ -540,6 +540,7 @@ function! EnhCommentifyCallback(ft)
     endif
 endfunction
 let g:EnhCommentifyCallbackExists = 'Yes'
+let g:EnhCommentifyAlignRight='Yes'
 
 
 " AutoInfo
