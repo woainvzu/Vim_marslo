@@ -30,6 +30,7 @@ It will be downloaded from [git](https://github.com/b4winckler/vim.git):
 - libxpm-dev
 - libx11-dev
 - libxt-dev
+
 ### Install them by the command as below:
 <pre><code>$ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
 </code></pre>
@@ -54,23 +55,23 @@ It will be downloaded from [git](https://github.com/b4winckler/vim.git):
     - `--with-compiledby=NAME`:  name to show in :version message
     - `--with-features=TYPE`:    tiny, small, normal, big or huge (default: normal)
 
-### Commands:
-    <pre><code>$ cd vim
-    $ ./configure --with-x --enable-gui=gnome2 --enable-cscope --enable-multibyte --enable-xim --enable-fontset --with-features=huge --enable-pythoninterp=yes --enable-rubyinterp=yes --enable-python3interp=yes --prefix=/home/marslo/Tools/Software/vim74/ --with-compiledby=Marslo --enable-gnome-check
-    $ make
-    $ sudo make install
-    </code></pre>
-### Set the PATH:
-    <pre><code>$ cat >> ~/.bashrc << EOF
-    > export PATH=/home/marslo/Tools/Software/vim74/:$PATH
-    > EOF
-    $ vim --version
-    VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Sep 25 2013 15:31:13)
-    Included patches: 1-35
-    Compiled by Marslo
-    Huge version with GTK2-GNOME GUI.  Features included (+) or not (-):
-    ....
-    </code></pre>
+### Commands
+<pre><code>$ cd vim
+$ ./configure --with-x --enable-gui=gnome2 --enable-cscope --enable-multibyte --enable-xim --enable-fontset --with-features=huge --enable-pythoninterp=yes --enable-rubyinterp=yes --enable-python3interp=yes --prefix=/home/marslo/Tools/Software/vim74/ --with-compiledby=Marslo --enable-gnome-check
+$ make
+$ sudo make install
+</code></pre>
+### Set the PATH
+<pre><code>$ cat >> ~/.bashrc << EOF
+> export PATH=/home/marslo/Tools/Software/vim74/:$PATH
+> EOF
+$ vim --version
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Sep 25 2013 15:31:13)
+Included patches: 1-35
+Compiled by Marslo
+Huge version with GTK2-GNOME GUI.  Features included (+) or not (-):
+....
+</code></pre>
 
 ## Make the compiled Gvim as the default text editor in Ubunut:
 - Copy `applications/gvim.desktop` and `application/defaults.list` to `/usr/share/applications/`
@@ -96,7 +97,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
         </code></pre>
         Open gvim and run:
         <pre><code>:BundleInstall!
-        </code><pre>
+        </code></pre>
 
 - Linux User:
     - Copy all files under `Linux/Home`(.vim + .vimrc) into `$HOME`
