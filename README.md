@@ -1,20 +1,80 @@
-vim_config_marslo
-=================
-
-Author: Marslo
-Email: marslo.vida@gmail.com
-Version: 0.0.3
-LastChange: 2013-09-03 21:40:16
+vim_marslo
+================= 
+Author: Marslo    
+Email: marslo.vida@gmail.com    
+Version: 0.0.3    
+LastChange: 2013-09-03 21:40:16    
 
 -----------------------------
 ##ScreenShots:
-#Ubuntu(Ubuntu):
+###Ubuntu(Ubuntu):
 ![Screenshot_Ubuntu](https://github.com/woainvzu/Vim_config_marslo/blob/master/Screenshots/Screenshots_Ubuntu.png?raw=true)
-#Windows
+###Windows
 ![Screenshot_Windows](https://github.com/woainvzu/Vim_config_marslo/blob/master/Screenshots/screenshot_gvim.png?raw=true)
 
 
-##Usage
+# Build and Install by source code
+## Prepare for compiling environment:
+### Downaload from [git](https://github.com/b4winckler/vim.git)
+<pre><code>$ git clone https://github.com/b4winckler/vim.git
+</code></pre>
+### Necessary libs for GUI:
+- libatk1.0-dev
+- libbonoboui2-dev
+- libcairo2-dev
+- libgnome2-dev
+- libgnomeui-dev
+- libgtk2.0-dev
+- libncurses5-dev
+- libxpm-dev
+- libx11-dev
+- libxt-dev
+Install them by the command as below:
+<pre><code>$ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
+</code></pre>
+
+## Compile and Install:
+### Arugs:
+- Installation directories:
+    - `--prefix=PREFIX`:        install architecture-independent files in PREFIX
+                                [/usr/local]
+- Optional Features:
+    - `--enable-gui=OPTS`:     X11 GUI default=auto OPTS=auto/no/gtk2/gnome2/motif/athena/neXtaw/photon/carbon
+    - `--enable-gnome-check`:  If GTK GUI, check for GNOME default=no
+    - `--enable-fontset`:      Include X fontset output support
+    - `--enable-xim`:          Include XIM input support
+    - `--enable-cscope`:       Include cscope interface
+    - `--enable-pythoninterp=OPTS`:  Include Python interpreter. default=no OPTS=no/yes/dynamic
+    - `--enable-python3interp=OPTS`: Include Python3 interpreter. default=no OPTS=no/yes/dynamic
+    - `--enable-rubyinterp=OPTS`:    Include Ruby interpreter.  default=no OPTS=no/yes/dynamic
+    - `--enable-multibyte`:          Include multibyte editing support
+- Optional Packages:
+    - `--with-x`:                use the X Window System
+    - `--with-compiledby=NAME`:  name to show in :version message
+    - `--with-features=TYPE`:    tiny, small, normal, big or huge (default: normal)
+### Commands:
+    <pre><code>$ cd vim
+    $ ./configure --with-x --enable-gui=gnome2 --enable-cscope --enable-multibyte --enable-xim --enable-fontset --with-features=huge --enable-pythoninterp=yes --enable-rubyinterp=yes --enable-python3interp=yes --prefix=/home/marslo/Tools/Software/vim74/ --with-compiledby=Marslo --enable-gnome-check
+    $ make
+    $ sudo make install
+    </code></pre>
+
+## Make the compiled Gvim as the default text editor in Ubunut:
+- Copy `applications/gvim.desktop` and `application/defaults.list` to `/usr/share/applications/`
+<pre><code>$ cp /usr/share/applications/defaults.list /usr/share/applications/defaults_bak.list`
+$ cp applications/gvim.desktop /usr/share/applications/
+$ cp -f applications/defaults.list /usr/share/applications/
+</code></pre>
+- Make gvim.desktop can find the gvim icon (it will be shown as bellow):
+<pre><code>$ vim gvim.desktop
+...
+Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
+...
+</code></pre>
+
+
+# Configuration
+## Usage
 - Windows User:
     Copy all files(vimfiles and _vimrc) into `C:\Program Files\Vim`.
 
