@@ -15,7 +15,8 @@ LastChange: 2013-09-03 21:40:16
 
 # Build and Install by source code
 ## Prepare for compiling environment:
-### Downaload from [git](https://github.com/b4winckler/vim.git)
+### Downaload vim source code:
+It will be downloaded from [git](https://github.com/b4winckler/vim.git):
 <pre><code>$ git clone https://github.com/b4winckler/vim.git
 </code></pre>
 ### Necessary libs for GUI:
@@ -29,15 +30,15 @@ LastChange: 2013-09-03 21:40:16
 - libxpm-dev
 - libx11-dev
 - libxt-dev
-Install them by the command as below:
+### Install them by the command as below:
 <pre><code>$ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
 </code></pre>
 
 ## Compile and Install:
 ### Arugs:
 - Installation directories:
-    - `--prefix=PREFIX`:        install architecture-independent files in PREFIX
-                                [/usr/local]
+    - `--prefix=PREFIX`:        install architecture-independent files in PREFIX    
+                                Default directory: [/usr/local]
 - Optional Features:
     - `--enable-gui=OPTS`:     X11 GUI default=auto OPTS=auto/no/gtk2/gnome2/motif/athena/neXtaw/photon/carbon
     - `--enable-gnome-check`:  If GTK GUI, check for GNOME default=no
@@ -52,11 +53,23 @@ Install them by the command as below:
     - `--with-x`:                use the X Window System
     - `--with-compiledby=NAME`:  name to show in :version message
     - `--with-features=TYPE`:    tiny, small, normal, big or huge (default: normal)
+
 ### Commands:
     <pre><code>$ cd vim
     $ ./configure --with-x --enable-gui=gnome2 --enable-cscope --enable-multibyte --enable-xim --enable-fontset --with-features=huge --enable-pythoninterp=yes --enable-rubyinterp=yes --enable-python3interp=yes --prefix=/home/marslo/Tools/Software/vim74/ --with-compiledby=Marslo --enable-gnome-check
     $ make
     $ sudo make install
+    </code></pre>
+### Set the PATH:
+    <pre><code>$ cat >> ~/.bashrc << EOF
+    > export PATH=/home/marslo/Tools/Software/vim74/:$PATH
+    > EOF
+    $ vim --version
+    VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Sep 25 2013 15:31:13)
+    Included patches: 1-35
+    Compiled by Marslo
+    Huge version with GTK2-GNOME GUI.  Features included (+) or not (-):
+    ....
     </code></pre>
 
 ## Make the compiled Gvim as the default text editor in Ubunut:
@@ -66,22 +79,40 @@ $ cp applications/gvim.desktop /usr/share/applications/
 $ cp -f applications/defaults.list /usr/share/applications/
 </code></pre>
 - Make gvim.desktop can find the gvim icon (it will be shown as bellow):
-<pre><code>$ vim gvim.desktop
+<pre><code>$ cat gvim.desktop
 ...
 Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 ...
 </code></pre>
+- An fully [gvim.desktop](http://mirrors2.kernel.org/slackware/slackware-14.0/source/ap/vim/gvim.desktop)
 
 
 # Configuration
 ## Usage
 - Windows User:
-    Copy all files(vimfiles and _vimrc) into `C:\Program Files\Vim`.
+    - Copy all files(vimfiles and _vimrc) into `C:\Program Files\Vim`.
+    - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
+        <pre><code>> git clone https://github.com/gmarik/vundle.git $VIMHOME/vimfile
+        </code></pre>
+        Open gvim and run:
+        <pre><code>:BundleInstall!
+        </code><pre>
 
 - Linux User:
-    - Copy all files(vimfiles + _vimrc) into `$HOME`
-    - Change the file name _vimrc to .vimrc
-    - Change the folder name vimfiles to .vim
+    - Copy all files under `Linux/Home`(.vim + .vimrc) into `$HOME`
+    <pre><code>$ cp Linux/Home/.vimrc ~/
+    </code></pre>
+    - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
+        <pre><code>$ mkdir -p ~/.vim/colors
+        $ git clone https://github.com/gmarik/vundle.git ~/.vim
+        </code></pre>
+        Open Vim and Run:
+        <pre><code>:BundleInstall!
+        </code></pre>
+    - Transfer the file type
+        <pre><code>$ sudo apt-get install dos2unix
+        $ dos2unix ~/.vim/bundle/css.vim/syntax/css.vim
+        </code><pre>
 
 -----------------------------
 
