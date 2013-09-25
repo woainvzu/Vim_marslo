@@ -2,8 +2,8 @@ vim_marslo
 ================= 
 Author: Marslo    
 Email: marslo.vida@gmail.com    
-Version: 0.0.3    
-LastChange: 2013-09-03 21:40:16    
+Version: 0.0.4    
+LastChange: 2013-09-25 27:56:23    
 
 -----------------------------
 ##ScreenShots:
@@ -112,7 +112,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
     - Transfer the file type
         <pre><code>$ sudo apt-get install dos2unix
         $ dos2unix ~/.vim/bundle/css.vim/syntax/css.vim
-        </code><pre>
+        </code></pre>
 
 -----------------------------
 
