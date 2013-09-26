@@ -13,13 +13,13 @@ LastChange: 2013-09-26 11:22:39
 ![Screenshot_Windows](https://github.com/woainvzu/Vim_config_marslo/blob/master/Screenshots/screenshot_gvim.png?raw=true)
 
 
-# Compile VIM/GVIM by source code
-## Prepare for compiling environment:
-### Downaload vim source code:
-It will be downloaded from [git](https://github.com/b4winckler/vim.git):
+# Compile VIM/GVIM by source code on Linux(Ubuntu)
+## 1. Prepare environment:
+### 1.1. Downaload vim source code:
+Download source from [git](https://github.com/b4winckler/vim.git):
 <pre><code>$ git clone https://github.com/b4winckler/vim.git
 </code></pre>
-### Necessary libs for GUI:
+### 1.2. Install Necessary libs for GUI:
 - libatk1.0-dev
 - libbonoboui2-dev
 - libcairo2-dev
@@ -31,12 +31,12 @@ It will be downloaded from [git](https://github.com/b4winckler/vim.git):
 - libx11-dev
 - libxt-dev
 
-### Install them by the command as below:
+#### Install necessary libs by the command as below:
 <pre><code>$ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
 </code></pre>
 
-## Compile and Install:
-### Arugs:
+## 2. Compile and Install:
+### 2.1 Arugs:
 - Installation directories:
     - `--prefix=PREFIX`:        install architecture-independent files in PREFIX    
                                 Default directory: [/usr/local]
@@ -55,13 +55,14 @@ It will be downloaded from [git](https://github.com/b4winckler/vim.git):
     - `--with-compiledby=NAME`:  name to show in :version message
     - `--with-features=TYPE`:    tiny, small, normal, big or huge (default: normal)
 
-### Commands
+### 2.2. Commands
 <pre><code>$ cd vim
 $ ./configure --with-x --enable-gui=gnome2 --enable-cscope --enable-multibyte --enable-xim --enable-fontset --with-features=huge --enable-pythoninterp=yes --enable-rubyinterp=yes --enable-python3interp=yes --prefix=/home/marslo/Tools/Software/vim74/ --with-compiledby=Marslo --enable-gnome-check
 $ make
 $ sudo make install
 </code></pre>
-### Set the PATH
+
+### 2.3. Set the PATH
 <pre><code>$ cat >> ~/.bashrc << EOF
 > export PATH=/home/marslo/Tools/Software/vim74/:$PATH
 > EOF
@@ -73,7 +74,7 @@ Huge version with GTK2-GNOME GUI.  Features included (+) or not (-):
 ....
 </code></pre>
 
-## Make the compiled Gvim as the default text editor in Ubunut:
+## 3. Make the compiled Gvim as the default text editor in Ubunut:
 - Copy `applications/gvim.desktop` and `application/defaults.list` to `/usr/share/applications/`
 <pre><code>$ cp /usr/share/applications/defaults.list /usr/share/applications/defaults_bak.list`
 $ cp applications/gvim.desktop /usr/share/applications/
