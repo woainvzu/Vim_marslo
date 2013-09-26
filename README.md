@@ -203,8 +203,9 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 -----------------------------
 
 ##使用方法
+
 - Windows用户
-    复制**Configurations\Win\Vim74_Vundle**目录下的所有的文件(vimfiles/colors/*, vimfiles/snippets/* 和 _vimrc) 到 C:\Program Files\Vim
+    复制**Configurations\Win\Vim74_Vundle** 目录下的所有的文件(vimfiles/colors/*, vimfiles/snippets/* 和 _vimrc) 到 C:\Program Files\Vim
     - 从 [Vundle](https://github.com/gmarik/vundle.git) 克隆代码到 `$VIMHOME\vimfiles` 目录下
         </code></pre>
         Open gvim and run:
@@ -212,7 +213,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
         </code></pre>
 
 - Linux 用户:
-    - 复制**Configurations\Linux\HOME\**下的所有文件(.vim 和 .vimrc) 到 `$HOME`
+    - 复制**Configurations\Linux\HOME\** 下的所有文件(.vim 和 .vimrc) 到 `$HOME`
     <pre><code>$ cp Linux/Home/.vimrc ~/
     </code></pre>
     - 从[Vundle](https://github.com/gmarik/vundle.git)下克隆代码到 `$HOME\.vim`
