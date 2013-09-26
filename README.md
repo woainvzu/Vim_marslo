@@ -205,10 +205,10 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 ##使用方法
 
 - Windows用户
-    复制 **Configurations\Win\Vim74_Vundle** 目录下的所有的文件(vimfiles/colors/*, vimfiles/snippets/* 和 _vimrc) 到 C:\Program Files\Vim
+    - 复制 **Configurations\Win\Vim74_Vundle** 目录下的所有的文件(vimfiles/colors/*, vimfiles/snippets/* 和 _vimrc) 到 C:\Program Files\Vim
     - 从 [Vundle](https://github.com/gmarik/vundle.git) 克隆代码到 `$VIMHOME\vimfiles` 目录下
         </code></pre>
-        Open gvim and run:
+    - 打开Vim,并且执行:
         <pre><code>:BundleInstall!
         </code></pre>
 
