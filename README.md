@@ -1,15 +1,15 @@
 vim_marslo
-================= 
-Author: Marslo    
-Email: marslo.vida@gmail.com    
-Version: 0.0.4    
-LastChange: 2013-09-26 11:22:39    
+=================
+Author: Marslo
+Email: marslo.vida@gmail.com
+Version: 0.0.4
+LastChange: 2013-09-26 11:22:39
 
 -----------------------------
-##ScreenShots:
-###Ubuntu(Ubuntu):
+## ScreenShots:
+### Ubuntu(Ubuntu):
 ![Screenshot_Ubuntu](https://github.com/woainvzu/Vim_config_marslo/blob/master/Screenshots/Screenshots_Ubuntu.png?raw=true)
-###Windows
+### Windows
 ![Screenshot_Windows](https://github.com/woainvzu/Vim_config_marslo/blob/master/Screenshots/screenshot_gvim.png?raw=true)
 
 
@@ -38,7 +38,7 @@ Download source from [git](https://github.com/b4winckler/vim.git):
 ## 2. Compile and Install:
 ### 2.1 Arugs:
 - Installation directories:
-    - `--prefix=PREFIX`:        install architecture-independent files in PREFIX    
+    - `--prefix=PREFIX`:        install architecture-independent files in PREFIX
                                 Default directory: [/usr/local]
 - Optional Features:
     - `--enable-gui=OPTS`:     X11 GUI default=auto OPTS=auto/no/gtk2/gnome2/motif/athena/neXtaw/photon/carbon
@@ -88,20 +88,19 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 </code></pre>
 - An fully [gvim.desktop](http://mirrors2.kernel.org/slackware/slackware-14.0/source/ap/vim/gvim.desktop)
 
-
 # Configuration
 ## Usage
 - Windows User:
-    - Copy all files(vimfiles and _vimrc) into `C:\Program Files\Vim`.
+    - Copy all files from **Configurations\Win\Vim74_vundle** (vimfiles\colors\*, vimfiles\snippets\* and _vimrc) into `C:\Program Files\Vim`.
     - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
-        <pre><code>> git clone https://github.com/gmarik/vundle.git $VIMHOME/vimfile
+        <pre><code>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vimfiles"
         </code></pre>
         Open gvim and run:
         <pre><code>:BundleInstall!
         </code></pre>
 
 - Linux User:
-    - Copy all files under `Linux/Home`(.vim + .vimrc) into `$HOME`
+    - Copy all files under `Configurations/Linux/Home`(.vim + .vimrc) into `$HOME`
     <pre><code>$ cp Linux/Home/.vimrc ~/
     </code></pre>
     - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
@@ -111,7 +110,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
         Open Vim and Run:
         <pre><code>:BundleInstall!
         </code></pre>
-    - Transfer the file type
+    - Transfer the file type from Dos to Unix
         <pre><code>$ sudo apt-get install dos2unix
         $ dos2unix ~/.vim/bundle/css.vim/syntax/css.vim
         </code></pre>
@@ -205,25 +204,43 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 ##使用方法
 - Windows用户
-    复制所有的文件(vimfiles 和 _vimrc) 到 C:\Program Files\Vim
-- Linux User:
-    复制所有文件(.vim 和 .vimrc) 到 /home/[用户名]/目录下
+    复制**Configurations\Win\Vim74_Vundle**目录下的所有的文件(vimfiles/colors/*, vimfiles/snippets/* 和 _vimrc) 到 C:\Program Files\Vim
+    - 从 [Vundle](https://github.com/gmarik/vundle.git) 克隆代码到 `$VIMHOME\vimfiles` 目录下
+        </code></pre>
+        Open gvim and run:
+        <pre><code>:BundleInstall!
+        </code></pre>
+
+- Linux 用户:
+    - 复制**Configurations\Linux\HOME\**下的所有文件(.vim 和 .vimrc) 到 `$HOME`
+    <pre><code>$ cp Linux/Home/.vimrc ~/
+    </code></pre>
+    - 从[Vundle](https://github.com/gmarik/vundle.git)下克隆代码到 `$HOME\.vim`
+        <pre><code>$ mkdir -p ~/.vim/colors
+        $ git clone https://github.com/gmarik/vundle.git ~/.vim
+        </code></pre>
+        Open Vim and Run:
+        <pre><code>:BundleInstall!
+        </code></pre>
+    - 将Windows下的文件格式改为Unix格式
+        <pre><code>$ sudo apt-get install dos2unix
+        $ dos2unix ~/.vim/bundle/css.vim/syntax/css.vim
+        </code></pre>
 
 -----------------------------
 
-# 打开vim/gvim默认最大化
+## 打开vim/gvim默认最大化
 - Windows用户, 已默认开启最大化
 - Linux用户，需要安装`lwmctr`。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843
 
-##快捷键
-
+## 快捷键
 - `F5`: 一键运行Python, Ruby 和 Perl。(运行结果将显示在Quickfix窗口中)
 - `F3`: 打开tagbar
 - `F4`: 自动添加用户信息
 
 +++++++++++++++++++++++++++++++++++++++++++
 
-主题请看Screenshot
+## 主题请看Screenshot
 - 自动配对
 - 自动添加信息：
     - `<leader>fn`: 添加当前文件名(无后缀，方便Java添加类名)
@@ -269,7 +286,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
     - `zdb`: 删除行尾空格
     - `zmm`: 插入文档行号
 
-##插件列表：
+## 插件列表：
 - [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
 - [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
