@@ -3,7 +3,7 @@ vim_marslo
 Author: Marslo    
 Email: marslo.vida@gmail.com    
 Version: 0.0.4    
-LastChange: 2013-09-25 27:56:23    
+LastChange: 2013-09-26 11:22:39    
 
 -----------------------------
 ##ScreenShots:
@@ -13,7 +13,7 @@ LastChange: 2013-09-25 27:56:23
 ![Screenshot_Windows](https://github.com/woainvzu/Vim_config_marslo/blob/master/Screenshots/screenshot_gvim.png?raw=true)
 
 
-# Build and Install by source code
+# Compile VIM/GVIM by source code
 ## Prepare for compiling environment:
 ### Downaload vim source code:
 It will be downloaded from [git](https://github.com/b4winckler/vim.git):
@@ -117,13 +117,11 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 
 -----------------------------
 
-#Open is Maximize
-
+## Open is Maximize
 - Default maximze for Win32 user
 - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 
-##Shortcuts
-
+## Shortcuts
 - `F5`: Run Python, Ruby and Perl by one key! (The result could be shown in the Quickfix window)
 - `F3`: Open the tagbar
 - `F4`: Add the personal information
@@ -177,7 +175,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
     - `zmm`: Insert the line number
 
 ##Plugins:
-- [AuthorInfo](https://github.com/vim-scripts/AuthorInfo)
+- [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
 - [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
 - [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
@@ -196,6 +194,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - [tlib](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 - [python.vim(Indent)](http://www.vim.org/scripts/script.php?script_id=3461)
+- [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -270,7 +269,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
     - `zmm`: 插入文档行号
 
 ##插件列表：
-- [AuthorInfo](https://github.com/vim-scripts/AuthorInfo)
+- [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
 - [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
 - [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
@@ -288,6 +287,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate)
 - [tlib](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
+- [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
