@@ -13,13 +13,13 @@ LastChange: 2013-09-26 11:22:39
 ![Screenshot_Windows](https://github.com/woainvzu/Vim_config_marslo/blob/master/Screenshots/screenshot_gvim.png?raw=true)
 
 
-# Compile VIM/GVIM by source code on Linux(Ubuntu)
-## 1. Prepare environment:
-### 1.1. Downaload vim source code:
+## Compile VIM/GVIM by source code on Linux(Ubuntu)
+### 1. Prepare environment:
+#### 1.1. Downaload vim source code:
 Download source from [git](https://github.com/b4winckler/vim.git):
 <pre><code>$ git clone https://github.com/b4winckler/vim.git
 </code></pre>
-### 1.2. Install Necessary libs for GUI:
+#### 1.2. Install Necessary libs for GUI:
 - libatk1.0-dev
 - libbonoboui2-dev
 - libcairo2-dev
@@ -31,12 +31,12 @@ Download source from [git](https://github.com/b4winckler/vim.git):
 - libx11-dev
 - libxt-dev
 
-#### Install necessary libs by the command as below:
+##### Install necessary libs by the command as below:
 <pre><code>$ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
 </code></pre>
 
-## 2. Compile and Install:
-### 2.1 Arugs:
+### 2. Compile and Install:
+#### 2.1 Arugs:
 - Installation directories:
     - `--prefix=PREFIX`:        install architecture-independent files in PREFIX
                                 Default directory: [/usr/local]
@@ -55,14 +55,14 @@ Download source from [git](https://github.com/b4winckler/vim.git):
     - `--with-compiledby=NAME`:  name to show in :version message
     - `--with-features=TYPE`:    tiny, small, normal, big or huge (default: normal)
 
-### 2.2. Commands
+#### 2.2. Commands
 <pre><code>$ cd vim
 $ ./configure --with-x --enable-gui=gnome2 --enable-cscope --enable-multibyte --enable-xim --enable-fontset --with-features=huge --enable-pythoninterp=yes --enable-rubyinterp=yes --enable-python3interp=yes --prefix=/home/marslo/Tools/Software/vim74/ --with-compiledby=Marslo --enable-gnome-check
 $ make
 $ sudo make install
 </code></pre>
 
-### 2.3. Set the PATH
+#### 2.3. Set the PATH
 <pre><code>$ cat >> ~/.bashrc << EOF
 > export PATH=/home/marslo/Tools/Software/vim74/:$PATH
 > EOF
@@ -74,7 +74,7 @@ Huge version with GTK2-GNOME GUI.  Features included (+) or not (-):
 ....
 </code></pre>
 
-## 3. Make the compiled Gvim as the default text editor in Ubunut:
+### 3. Make the compiled Gvim as the default text editor in Ubunut:
 - Copy `applications/gvim.desktop` and `application/defaults.list` to `/usr/share/applications/`
 <pre><code>$ cp /usr/share/applications/defaults.list /usr/share/applications/defaults_bak.list`
 $ cp applications/gvim.desktop /usr/share/applications/
@@ -89,9 +89,9 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - An fully [gvim.desktop](http://mirrors2.kernel.org/slackware/slackware-14.0/source/ap/vim/gvim.desktop)
 
 # Configuration
-## Usage
+### Usage
 - Windows User:
-    - Copy all files from **Configurations\Win\Vim74_vundle** (vimfiles\colors\*, vimfiles\snippets\* and _vimrc) into `C:\Program Files\Vim`.
+    - Copy all files from **Configurations\Win\Vim74_Vundle** (vimfiles\colors\*, vimfiles\snippets\* and _vimrc) into `C:\Program Files\Vim`.
     - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
         <pre><code>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vimfiles"
         </code></pre>
@@ -100,12 +100,11 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
         </code></pre>
 
 - Linux User:
-    - Copy all files under `Configurations/Linux/Home`(.vim + .vimrc) into `$HOME`
-    <pre><code>$ cp Linux/Home/.vimrc ~/
+    - Copy all files under `Configurations/Linux/Vim74_Vundle`(.vim + .vimrc) into `$HOME`
+    <pre><code>$ cp -r Linux/Vim74_Vundle ~/
     </code></pre>
     - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
-        <pre><code>$ mkdir -p ~/.vim/colors
-        $ git clone https://github.com/gmarik/vundle.git ~/.vim
+        <pre><code>$ git clone https://github.com/gmarik/vundle.git ~/.vim
         </code></pre>
         Open Vim and Run:
         <pre><code>:BundleInstall!
@@ -117,11 +116,11 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 
 -----------------------------
 
-## Open is Maximize
+### Open is Maximize
 - Default maximze for Win32 user
 - lwmctr must be installed for linux User. Download from: http://download.csdn.net/detail/jiaoxiaogu/4317843
 
-## Shortcuts
+### Shortcuts
 - `F5`: Run Python, Ruby and Perl by one key! (The result could be shown in the Quickfix window)
 - `F3`: Open the tagbar
 - `F4`: Add the personal information
@@ -174,7 +173,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
     - `zdb`: Delete the backspace at the each of each line
     - `zmm`: Insert the line number
 
-##Plugins:
+###Plugins:
 - [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
 - [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
@@ -202,10 +201,9 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 -----------------------------
 
-##使用方法
-
+###使用方法
 - Windows用户
-    - 复制 **Configurations\Win\Vim74_Vundle** 目录下的所有的文件(vimfiles/colors/*, vimfiles/snippets/* 和 _vimrc) 到 C:\Program Files\Vim
+    - 复制 **Configurations\Win\Vim74_Vundle** 目录下的所有的文件(vimfiles/\* 和 _vimrc) 到 C:\Program Files\Vim
     - 从 [Vundle](https://github.com/gmarik/vundle.git) 克隆代码到 `$VIMHOME\vimfiles` 目录下
         </code></pre>
     - 打开Vim,并且执行:
@@ -213,12 +211,11 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
         </code></pre>
 
 - Linux 用户:
-    - 复制 **Configurations\Linux\HOME\** 下的所有文件(.vim 和 .vimrc) 到 `$HOME`
-    <pre><code>$ cp Linux/Home/.vimrc ~/
+    - 复制 **Configurations\Linux\Vim74_vundle\** 下的所有文件(.vim 和 .vimrc) 到 `$HOME`
+    <pre><code>$ cp -r Linux/Vim74_vundle ~/
     </code></pre>
     - 从[Vundle](https://github.com/gmarik/vundle.git)下克隆代码到 `$HOME\.vim`
-        <pre><code>$ mkdir -p ~/.vim/colors
-        $ git clone https://github.com/gmarik/vundle.git ~/.vim
+        <pre><code>$ git clone https://github.com/gmarik/vundle.git ~/.vim
         </code></pre>
         Open Vim and Run:
         <pre><code>:BundleInstall!
@@ -230,18 +227,18 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 -----------------------------
 
-## 打开vim/gvim默认最大化
+### 打开vim/gvim默认最大化
 - Windows用户, 已默认开启最大化
 - Linux用户，需要安装`lwmctr`。下载地址：http://download.csdn.net/detail/jiaoxiaogu/4317843
 
-## 快捷键
+### 快捷键
 - `F5`: 一键运行Python, Ruby 和 Perl。(运行结果将显示在Quickfix窗口中)
 - `F3`: 打开tagbar
 - `F4`: 自动添加用户信息
 
 +++++++++++++++++++++++++++++++++++++++++++
 
-## 主题请看Screenshot
+### 主题请看Screenshot
 - 自动配对
 - 自动添加信息：
     - `<leader>fn`: 添加当前文件名(无后缀，方便Java添加类名)
@@ -287,7 +284,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
     - `zdb`: 删除行尾空格
     - `zmm`: 插入文档行号
 
-## 插件列表：
+### 插件列表：
 - [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
 - [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
