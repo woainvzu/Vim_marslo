@@ -55,6 +55,7 @@ Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'woainvzu/EnhCommentify.vim'
 " Bundle 'Tagbar'
 
 Bundle 'AuthorInfo'
@@ -66,7 +67,6 @@ Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
-Bundle 'EnhCommentify.vim'
 " Bundle 'snipMate'
 
 " Colors
@@ -331,6 +331,8 @@ set smartindent
 set smarttab                                " the width of <Tab> in first line would refer to 'Shiftwidth' parameter
 set softtabstop=4                           " the width while trigger <Tab> key
 set shiftwidth=4                            " the tab width by using >> & <<
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+
 set lbr
 set tw=0
 

@@ -49,6 +49,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'AuthorInfo'
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
@@ -60,7 +61,6 @@ Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 Bundle 'Conque-Shell'
-" Bundle 'EnhCommentify.vim'
 " Bundle 'snipMate'
 " Colors
 Bundle 'txt.vim'
@@ -357,6 +357,8 @@ set smarttab
 set softtabstop=4
 " the tab width by using >> & <<
 set shiftwidth=4
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+
 set lbr
 set tw=0
 

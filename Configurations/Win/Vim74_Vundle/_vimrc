@@ -102,6 +102,7 @@ Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'hdima/python-syntax.git'
 Bundle 'plasticboy/vim-markdown.git'
+Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -111,8 +112,6 @@ Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
-Bundle 'Conque-Shell'
-Bundle 'EnhCommentify.vim'
 " Bundle 'dirkwallenstein/vim-excess-lines'
 " Bundle 'snipMate'
 " Bundle 'xolox/vim-shell'
@@ -436,7 +435,7 @@ set smarttab expandtab                      " smarttab: the width of <Tab> in fi
 set tabstop=4                               " Tab width
 set softtabstop=4                           " the width while trigger <Tab> key
 set shiftwidth=4                            " the tab width by using >> & <<
-
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 set lbr
 set tw=0
 

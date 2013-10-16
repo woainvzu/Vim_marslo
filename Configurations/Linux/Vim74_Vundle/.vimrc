@@ -55,7 +55,7 @@ Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'majutsushi/tagbar'
-" Bundle 'Tagbar'
+Bundle 'woainvzu/EnhCommentify.vim'
 
 Bundle 'AuthorInfo'
 Bundle 'Conque-Shell'
@@ -66,8 +66,8 @@ Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
-Bundle 'EnhCommentify.vim'
 " Bundle 'snipMate'
+" Bundle 'Tagbar'
 
 " Colors
 Bundle 'txt.vim'
@@ -333,6 +333,7 @@ set softtabstop=4                           " the width while trigger <Tab> key
 set shiftwidth=4                            " the tab width by using >> & <<
 set lbr
 set tw=0
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 
 set ruler                                   " Show Line and colum number
 

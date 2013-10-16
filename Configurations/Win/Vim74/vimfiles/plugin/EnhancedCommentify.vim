@@ -719,7 +719,7 @@ function s:GetFileTypeSettings(ft)
 		\ 'strace\|xpm\|yacc\)$'
 	let b:ECcommentOpen = '/*'
 	let b:ECcommentClose = '*/'
-    elseif fileType =~ '^\(html\|xhtml\|xml\|xslt\|xsd\|dtd\|sgmllnx\)$'
+    elseif fileType =~ '^\(html\|xhtml\|xml\|xslt\|xsd\|dtd\|eruby\|sgmllnx\)$'
 	let b:ECcommentOpen = '<!--'
 	let b:ECcommentClose = '-->'
     elseif fileType =~ '^\(sgml\|smil\)$'
@@ -1055,7 +1055,7 @@ endfunction
 " Eg. C will never have embedded code...
 "
 function s:CheckPossibleEmbedding(ft)
-    if a:ft =~ '^\(php\|vim\|latte\|html\)$'
+    if a:ft =~ '^\(php\|vim\|latte\|eruby\|html\)$'
 	let b:ECpossibleEmbedding = 1
     else
 	" Since getting the synID is slow, we set the default to 'no'!

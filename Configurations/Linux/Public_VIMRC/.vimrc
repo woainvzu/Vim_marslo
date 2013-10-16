@@ -39,6 +39,7 @@ Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'hdima/python-syntax.git'
 Bundle 'plasticboy/vim-markdown.git'
+Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -49,7 +50,6 @@ Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 Bundle 'Conque-Shell'
-Bundle 'EnhCommentify.vim'
 
 filetype plugin on
 filetype indent on
@@ -114,6 +114,8 @@ set magic
 set shiftwidth=4                        " the tab width by using >> & <<
 set softtabstop=4                       " the width while trigger <Tab> key
 set tabstop=4
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+
 set lbr
 set tw=0
 " set cindent

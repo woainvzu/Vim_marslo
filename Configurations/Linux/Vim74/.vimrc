@@ -88,6 +88,8 @@ set shiftwidth=4
 " the width while trigger <Tab> key
 set softtabstop=4
 " set cindent
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+
 set lbr
 set tw=0
 
