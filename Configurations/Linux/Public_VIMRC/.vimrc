@@ -257,7 +257,11 @@ inoremap <buffer> <C-h> <c-r>=DeletePairs()<CR>
 
 " Delete the pair of parentheses, brackets and braces
 function! DeletePairs()
+<<<<<<< HEAD
     let AutoPaires = {')': '(', ']': '[', '}': '{'}
+=======
+    let AutoPaires = {')': '(',']': '[','}': '{'}
+>>>>>>> 9415e116b071d6e6fe967f8152f24cfbffcb96a3
     if has_key(AutoPaires, getline('.')[col('.') - 1]) && getline('.')[col('.') - 2 ] == AutoPaires[getline('.')[col('.') - 1]]
         return "\<BS>\<DEL>"
     else
