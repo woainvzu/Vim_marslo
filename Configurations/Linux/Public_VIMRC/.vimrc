@@ -1,11 +1,14 @@
-" ============================================================================
-"      FileName: .vimrc
-"          Desc: 
-"        Author: Marslo
-"         Email: marslo.vida@gmail.com
-"       Version: 0.0.3
-"    LastChange: 2012-11-21 17:01:04
-"       History:
+" =============================================================================
+"       FileName: .vimrc
+"           Desc: 
+"         Author: Marslo
+"          Email: li.jiao@tieto.com
+"        Created: 2013-10-16 07:19:00
+"        Version: 0.0.4
+"     LastChange: 2013-10-16 07:19:00
+"        History:
+"                 0.0.1 | Marslo | init
+"                 0.0.4 | Marslo | Add Vim Bundle
 " =============================================================================
 
 let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
@@ -14,6 +17,44 @@ let &runtimepath=printf('%s/.vim,%s/.vim,%s/.vim/after', s:portable, &runtimepat
 " let s:portable = '/home/auto/lijiao'
 " let $runtimepath=~s:portable/.vim,usr/local/share/vim/vimfiles,/usr/local/share/vim/vim74,/usr/local/share/vim/vimfiles/after,/home/auto/.vim/after
 set nocompatible
+
+" Vim Bundle
+set nocompatible
+filetype off
+if has('win32') || has('win64')
+    set rtp+=$VIM/vimfiles/bundle/vundle
+    call vundle#rc('$VIM/vimfiles/bundle/')
+else
+    set rtp+=$HOME/Marslo/.vim/bunle/vundle
+    call vundle#rc()
+endif
+
+" Plugins
+Bundle 'gmarik/vundle'
+Bundle 'Yggdroot/indentLine'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'majutsushi/tagbar'
+Bundle 'dantezhu/authorinfo'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'hdima/python-syntax.git'
+Bundle 'plasticboy/vim-markdown.git'
+Bundle 'Conque-Shell'
+Bundle 'mru.vim'
+Bundle 'python_fold'
+Bundle 'Tagbar'
+Bundle 'taglist.vim'
+Bundle 'TeTrIs.vim'
+Bundle 'winmanager'
+Bundle 'matrix.vim--Yang'
+Bundle 'pyflakes.vim'
+Bundle 'Conque-Shell'
+Bundle 'EnhCommentify.vim'
+
+filetype plugin on
+filetype indent on
+nmap <leader>bi :BundleInstall<CR>
+nmap <leader>bu :BundleUpdate<CR>
 
 colorscheme marslo
 
@@ -38,8 +79,8 @@ if has('win32')
     " Font
     set guifont=Monaco:h12
 else
-    autocmd! bufwritepost $MJHOME/.vimrc source %
-    nmap ,v :e $MJHOME/.vimrc<CR>
+    autocmd! bufwritepost $HOME/Marslo/.vimrc source %
+    nmap ,v :e $HOME/Marslo/.vimrc<CR>
     set guifont=Monaco\ 12
 endif
 
@@ -60,23 +101,23 @@ set backspace=indent,eol,start
 set showmatch
 
 set autoread
+set tags=tags
 
 " Search opts
-set incsearch hlsearch ignorecase
-
-" Fomart settings
-set tabstop=4
-" set textwidth=150
+set incsearch hlsearch ignorecase smartcase
 set autoindent smartindent cindent
 set smarttab expandtab
+set magic
+
+" Fomart settings
 " the width of <tab> in first line would refer to 'shiftwidth' parameter
-" the tab width by using >> & <<
-set shiftwidth=4
-" the width while trigger <Tab> key
-set softtabstop=4
-" set cindent
+set shiftwidth=4                        " the tab width by using >> & <<
+set softtabstop=4                       " the width while trigger <Tab> key
+set tabstop=4
 set lbr
 set tw=0
+" set cindent
+" set textwidth=150
 
 if &term=="xterm"
   set t_Co=8
@@ -216,7 +257,7 @@ inoremap <buffer> <C-h> <c-r>=DeletePairs()<CR>
 
 " Delete the pair of parentheses, brackets and braces
 function! DeletePairs()
-    let AutoPaires = {')':'(',']':'[','}':'{'}
+    let AutoPaires = {')': '(', ']': '[', '}': '{'}
     if has_key(AutoPaires, getline('.')[col('.') - 1]) && getline('.')[col('.') - 2 ] == AutoPaires[getline('.')[col('.') - 1]]
         return "\<BS>\<DEL>"
     else
@@ -230,6 +271,12 @@ iabbrev <leader>*/ *********************************/
 inoremap <leader>tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 inoremap <leader>fn <C-R>=expand("%:t:r")<CR>
 inoremap <leader>fe <C-R>=expand("%:t")<CR>
+
+" Delete the black space in the end of each line
+nmap zdb :0s/\s\+$//<CR>
+nmap zhh :0s/^\s\+//<CR>
+nmap zmm :g/^/ s//\=line('.').' '/<CR>
+nmap zws :g/^\s*$/d<CR>                         " Delete white space
 
 " Cursor format
 set guicursor=a:hor10
@@ -254,3 +301,35 @@ map <C-l> <C-w>l
 
 " set cursorline
 set list listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
+
+let g:rbpt_loadcmd_toggle = 1
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+" IndentLine
+let g:indentLine_color_gui = "#282828"
+let g:indentLine_indentLevel = 20
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_char = '¦'
+" let g:indentLine_loaded = 1
+let g:indentLine_color_term = 8
