@@ -3,7 +3,7 @@
 "           Desc:
 "         Author: Marslo
 "        Created: 2010-10
-"        Version: 0.0.8
+"        Version: 0.0.9
 "     LastChange: 2013-09-27 03:15:50
 "        History: 0.0.3 | Marslo | Add the Autoload and Fast Edit difference between win32 and non-win32
 "                 0.0.4 | Marslo | Add CheckRubySyntax() function for checking and run ruby script
@@ -12,6 +12,7 @@
 "                 0.0.6 | Marslo | Remove a pair of parentheses, brackets, or braces
 "                 0.0.7 | Marslo | Modification about autoPair(): if there are char behind the ( or [ or { it wont pair
 "                 0.0.8 | Marslo | Add the function of OpenCMD(), GotoFile(), FontSize_Enlarge(), FontSize_Reduce() and UpdateTagsFile()
+"                 0.0.9 | Marslo | Add three bundles: woainvzu/EnhCommentify.vim && woainvzu/Marslo.vim && tpope/vim-rails
 " =============================================================================
 
 " Remove the Welcome interface

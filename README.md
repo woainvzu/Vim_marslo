@@ -179,7 +179,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 ###Plugins:
 - [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
-- [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
+- [EnhancedCommentify](https://github.com/woainvzu/EnhCommentify.vim)
 - [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
 - [mru](https://github.com/vim-scripts/mru.vim)
 - [ctrlp](https://github.com/kien/ctrlp.vim)
@@ -197,6 +197,8 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 - [python.vim(Indent)](http://www.vim.org/scripts/script.php?script_id=3461)
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
+- [vim-rails](https://github.com/tpope/vim-rails)
+- [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -290,7 +292,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 ### 插件列表：
 - [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
-- [EnhancedCommentify](https://github.com/hrp/EnhancedCommentify)
+- [EnhancedCommentify](https://github.com/woainvzu/EnhCommentify.vim)
 - [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
 - [mru](https://github.com/vim-scripts/mru.vim)
 - [ctrlp](https://github.com/kien/ctrlp.vim)
@@ -307,6 +309,8 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 - [tlib](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
+- [vim-rails](https://github.com/tpope/vim-rails)
+- [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
 

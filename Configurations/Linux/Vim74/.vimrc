@@ -4,7 +4,7 @@
 " #       Author: Marslo
 " #        Email: marslo.vida@gmail.com
 " #      Version: 0.0.2
-" #   LastChange: 2012-11-21 17:01:04
+" #   LastChange: 2013-10-17 19:54:45
 " #      History:
 " =============================================================================
 
@@ -239,7 +239,7 @@ inoremap <buffer> <C-h> <c-r>=DeletePairs()<CR>
 
 " Delete the pair of parentheses, brackets and braces
 function! DeletePairs()
-    let AutoPaires = {')':'(',']':'[','}':'{'}
+    let AutoPaires = {')': '(',']': '[','}': '{'}
     if has_key(AutoPaires, getline('.')[col('.') - 1]) && getline('.')[col('.') - 2 ] == AutoPaires[getline('.')[col('.') - 1]]
         return "\<BS>\<DEL>"
     else

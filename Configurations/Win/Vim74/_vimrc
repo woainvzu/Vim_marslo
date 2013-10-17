@@ -3,8 +3,8 @@
 "          Desc:
 "        Author: Marslo
 "       Created: 2010-10
-"       Version: 0.0.10
-"    LastChange: 2013-09-26 11:22:39
+"       Version: 0.0.11
+"    LastChange: 2013-10-17 13:19:28
 "       History:
 "                0.0.3  | Marslo | Add the Autoload and Fast Edit difference between win32 and non-win32
 "                0.0.4  | Marslo | Add CheckRubySyntax() function for checking and run ruby script
@@ -15,6 +15,7 @@
 "                0.0.8  | Marslo | Remap the shortcut key: Ctrl-A/Ctrl-E/F1
 "                0.0.9  | Marslo | Add the function about remove a paird parentheses, brackets, braces
 "                0.0.10 | Marslo | Add the configuration about rainbow_parentheses
+"                0.0.11 | Marslo | Add three bundles: woainvzu/EnhCommentify.vim && woainvzu/Marslo.vim && tpope/vim-rails
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
