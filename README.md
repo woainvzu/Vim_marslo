@@ -91,22 +91,25 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 # Configuration
 ### Usage
 - Windows User:
-    - Copy all files from **Configurations\Win\Vim74_Vundle** (vimfiles\colors\*, vimfiles\snippets\* and _vimrc) into `C:\Program Files\Vim`.
+    - Copy **_vimrc** from into `C:\Program Files\Vim`.
     - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
-        <pre><code>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vimfiles"
+        <pre><code>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vim\vimfiles"
         </code></pre>
-        Open gvim and run:
+        Open gvim and run (Ignore warnings and errors):
         <pre><code>:BundleInstall!
         </code></pre>
 
 - Linux User:
-    - Copy all files under `Configurations/Linux/Vim74_Vundle`(.vim + .vimrc) into `$HOME`
-    <pre><code>$ cp -r Linux/Vim74_Vundle ~/
+    - Copy **.vimrc** into `$HOME`
+    <pre><code>$ cp .vimrc ~/
     </code></pre>
     - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
-        <pre><code>$ git clone https://github.com/gmarik/vundle.git ~/.vim
+        <pre><code>$ cat .vimrc | grep "set rtp"
+            set rtp+=$VIM/vimfiles/bundle/vundle
+            set rtp+=~/.vim/bunle/vundle
+        $ git clone https://github.com/gmarik/vundle.git ~/.vim
         </code></pre>
-        Open Vim and Run:
+        Open Vim and Run (Ignore warnings and errors):
         <pre><code>:BundleInstall!
         </code></pre>
     - Transfer the file type from Dos to Unix
