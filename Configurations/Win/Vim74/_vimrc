@@ -103,6 +103,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'hdima/python-syntax.git'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'woainvzu/EnhCommentify.vim'
+Bundle 'tpope/vim-rails'
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -122,6 +123,7 @@ Bundle 'pyflakes.vim'
 Bundle 'txt.vim'
 Bundle 'css.vim'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'woainvzu/Marslo.vim'
 
 filetype plugin on
 filetype indent on
@@ -407,6 +409,7 @@ set nobackup noswapfile nowritebackup
 
 " ruler: Show Line and colum number; number: line number
 set ruler number
+set report=0
 
 colorscheme marslo
 " colorscheme desert_Marslo_ForLinux_v4

@@ -49,23 +49,27 @@ Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'dantezhu/authorinfo'
 Bundle 'woainvzu/EnhCommentify.vim'
-Bundle 'AuthorInfo'
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
-" Bundle 'Tagbar'
 Bundle 'taglist.vim'
 Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 Bundle 'Conque-Shell'
-" Bundle 'snipMate'
+Bundle 'snipMate'
+" Bundle 'Tagbar'
+" Bundle 'AuthorInfo'
+
 " Colors
 Bundle 'txt.vim'
 Bundle 'css.vim'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'woainvzu/Marslo.vim'
+
 filetype plugin on
 filetype indent on
 " nmap bi :BundleInstall<CR>
