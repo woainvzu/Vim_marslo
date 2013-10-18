@@ -1,9 +1,9 @@
 vim_marslo
 =================
-Author: Marslo    
-Email: marslo.vida@gmail.com    
-Version: 0.0.4    
-LastChange: 2013-09-26 11:22:39    
+Author: Marslo
+Email: marslo.vida@gmail.com
+Version: 0.0.4
+LastChange: 2013-09-26 11:22:39
 
 -----------------------------
 ## ScreenShots:
@@ -199,6 +199,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
+- [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -208,21 +209,22 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 
 ###使用方法
 - Windows用户
-    - 复制 **Configurations\Win\Vim74_Vundle** 目录下的所有的文件(vimfiles/\* 和 _vimrc) 到 C:\Program Files\Vim
+    - 复制 **Configurations\Win\Vim74_Vundle\_vimrc** 到 `C:\Program Files (x86)\Vim`
     - 从 [Vundle](https://github.com/gmarik/vundle.git) 克隆代码到 `$VIMHOME\vimfiles` 目录下
+        <pre><code>>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\Vim\vimfile\"
         </code></pre>
-    - 打开Vim,并且执行:
+    - 打开Vim,并且执行 (忽略错误或者警告）:
         <pre><code>:BundleInstall!
         </code></pre>
 
 - Linux 用户:
-    - 复制 **Configurations\Linux\Vim74_vundle\** 下的所有文件(.vim 和 .vimrc) 到 `$HOME`
-    <pre><code>$ cp -r Linux/Vim74_vundle ~/
+    - 复制 **Configurations\Linux\Vim74_vundle\.vimrc** 到 `$HOME`
+    <pre><code>$ cp Linux/Vim74_vundle/.vimrc ~/
     </code></pre>
     - 从[Vundle](https://github.com/gmarik/vundle.git)下克隆代码到 `$HOME\.vim`
         <pre><code>$ git clone https://github.com/gmarik/vundle.git ~/.vim
         </code></pre>
-        Open Vim and Run:
+    - 打开Gvim且运行 (忽略错误或警告）：
         <pre><code>:BundleInstall!
         </code></pre>
     - 将Windows下的文件格式改为Unix格式
@@ -311,6 +313,7 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
+- [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
 

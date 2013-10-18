@@ -38,6 +38,7 @@ set fileencoding=utf8
 let &termencoding=&encoding
 
 " Vim Bundle
+" Get Vundle by: git clone https://github.com/gmarik/vundle.git ~/.vim
 set nocompatible
 filetype off
 if has('win32') || has('win64')
@@ -51,17 +52,14 @@ endif
 Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim.git'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'majutsushi/tagbar'
+
 Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'hdima/python-syntax.git'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'tpope/vim-rails'
-
-" Bundle 'AuthorInfo'
+Bundle 'mattn/emmet-vim'
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -70,8 +68,10 @@ Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
-" Bundle 'snipMate'
+Bundle 'Conque-Shell'
+Bundle 'snipMate'
 " Bundle 'Tagbar'
+" Bundle 'AuthorInfo'
 
 " Colors
 Bundle 'txt.vim'
