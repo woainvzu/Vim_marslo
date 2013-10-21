@@ -3,8 +3,8 @@
 "          Desc:
 "        Author: Marslo
 "       Created: 2010-10
-"       Version: 0.0.11
-"    LastChange: 2013-10-17 13:19:15
+"       Version: 0.0.12
+"    LastChange: 2013-10-21 18:48:24
 "       History:
 "                0.0.3  | Marslo | Add the Autoload and Fast Edit difference between win32 and non-win32
 "                0.0.4  | Marslo | Add CheckRubySyntax() function for checking and run ruby script
@@ -16,6 +16,7 @@
 "                0.0.9  | Marslo | Add the function about remove a paird parentheses, brackets, braces
 "                0.0.10 | Marslo | Add the configuration about rainbow_parentheses
 "                0.0.11 | Marslo | Add three bundles: woainvzu/EnhCommentify.vim && woainvzu/Marslo.vim && tpope/vim-rails
+"                0.0.12 | Marslo | Add function GetGit() to get vundle automaticly
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -84,11 +85,39 @@ endfunc
 
 " Vim Bundle
 " Get Vundle by: git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vim\vimfiles"
+" Got from http://pastebin.com/embed_iframe.php?i=C9fUE0M3
 set nocompatible
 filetype off
+
+func! GetGits()
+    " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
+
+    let vundleAlreadyExists=1
+    if has('win32') || has('win64')
+        let vundle_readme=expand('$VIM\bundle\vundle\README.md')
+        let vbundle='$VIM\bundle'
+        let vvundle=vbundle . '\vundle'
+    else
+        let vundle_readme=expand('~/.vim/bunle/vundle/README.md')
+        let vbundle='$VIM/bundle'
+        let vvundle=vbundle . '/vundle'
+    endif
+
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle..."
+        echo ""
+        if isdirectory(expand(vbundle)) == 0
+            call mkdir(expand(vbundle), 'p')
+        endif
+        execute 'silent !git clone https://github.com/gmarik/vundle.git "' . expand(vvundle) . '"'
+        let vundleAlreadyExists=0
+    endif
+endfunc
+
+" Setting runtimepath for Vundle use
 if has('win32') || has('win64')
-    set rtp+=$VIM/vimfiles/bundle/vundle
-    call vundle#rc('$VIM/vimfiles/bundle/')
+    set rtp+=$VIM/bundle/vundle
+    call vundle#rc('$VIM/bundle')
 else
     set rtp+=~/.vim/bunle/vundle
     call vundle#rc()
@@ -106,7 +135,7 @@ Bundle 'hdima/python-syntax.git'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'tpope/vim-rails'
-Bundle 'mattn/emmet-vim'
+Bundle 'tpope/vim-pathogen'
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -116,8 +145,8 @@ Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 " Bundle 'Tagbar'
+" Bundle 'mattn/emmet-vim'
 " Bundle 'dirkwallenstein/vim-excess-lines'
-" Bundle 'snipMate'
 " Bundle 'xolox/vim-shell'
 " Bundle 'xolox/vim-misc'
 " Bundle 'xolox/vim-easytags'
@@ -128,8 +157,32 @@ Bundle 'css.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'woainvzu/Marslo.vim'
 
-filetype plugin on
-filetype indent on
+let g:rbpt_loadcmd_toggle = 1
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+filetype plugin indent on
+
 nmap <leader>bi :BundleInstall<CR>
 nmap <leader>bu :BundleUpdate<CR>
 
@@ -598,26 +651,3 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_char = '¦'
 " let g:indentLine_loaded = 1
 
-let g:rbpt_loadcmd_toggle = 1
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
