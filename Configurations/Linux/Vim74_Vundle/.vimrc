@@ -3,7 +3,7 @@
 "           Desc:
 "         Author: Marslo
 "        Created: 2010-10
-"        Version: 0.0.9
+"        Version: 0.1.0
 "     LastChange: 2013-09-27 03:15:50
 "        History: 0.0.3 | Marslo | Add the Autoload and Fast Edit difference between win32 and non-win32
 "                 0.0.4 | Marslo | Add CheckRubySyntax() function for checking and run ruby script
@@ -13,6 +13,7 @@
 "                 0.0.7 | Marslo | Modification about autoPair(): if there are char behind the ( or [ or { it wont pair
 "                 0.0.8 | Marslo | Add the function of OpenCMD(), GotoFile(), FontSize_Enlarge(), FontSize_Reduce() and UpdateTagsFile()
 "                 0.0.9 | Marslo | Add three bundles: woainvzu/EnhCommentify.vim && woainvzu/Marslo.vim && tpope/vim-rails
+"                 0.0.10 | Marslo | Add function of GetVundle() and GetVim() for git clone automaticlly"
 " =============================================================================
 
 " Remove the Welcome interface
@@ -38,28 +39,58 @@ set fileencoding=utf8
 let &termencoding=&encoding
 
 " Vim Bundle
-" Get Vundle by: git clone https://github.com/gmarik/vundle.git ~/.vim
+" Get Vundle from: git clone https://github.com/gmarik/vundle.git ~/.vim
+" Get vim from: git clone git@github.com:b4winckler/vim.git
 set nocompatible
 filetype off
+
+func! GetVundle()
+    " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
+
+    let vundleAlreadyExists=1
+    if has('win32') || has('win64')
+        let vundle_readme=expand('$VIM\bundle\vundle\README.md')
+        let vbundle='$VIM\bundle'
+        let vvundle=vbundle . '\vundle'
+    else
+        let vundle_readme=expand('~/.vim/bunle/vundle/README.md')
+        let vbundle='~/.vim/bundle'
+        let vvundle=vbundle . '/vundle'
+    endif
+
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle..."
+        echo ""
+        if isdirectory(expand(vbundle)) == 0
+            call mkdir(expand(vbundle), 'p')
+        endif
+        execute 'silent !git clone https://github.com/gmarik/vundle.git "' . expand(vvundle) . '"'
+        let vundleAlreadyExists=0
+    endif
+endfunc
+
 if has('win32') || has('win64')
     set rtp+=$VIM/vimfiles/bundle/vundle
     call vundle#rc('$VIM/vimfiles/bundle/')
 else
-    set rtp+=~/.vim/bunle/vundle
+    set rtp+=~/.vim/bundle/vundle
     call vundle#rc()
 endif
 " Plugins
 Bundle 'gmarik/vundle'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim.git'
-
+Bundle 'sjl/gundo.vim.git'
+Bundle 'majutsushi/tagbar'
 Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'plasticboy/vim-markdown.git'
-Bundle 'majutsushi/tagbar'
 Bundle 'woainvzu/EnhCommentify.vim'
+Bundle 'woainvzu/snipmate.vim.git'
 Bundle 'tpope/vim-rails'
-Bundle 'mattn/emmet-vim'
+Bundle 'tpope/vim-pathogen'
+
+" Get from vim-srcipts
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -69,7 +100,8 @@ Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 Bundle 'Conque-Shell'
-Bundle 'snipMate'
+" Bundle 'snipMate'
+" Bundle 'mattn/emmet-vim'
 " Bundle 'Tagbar'
 " Bundle 'AuthorInfo'
 
@@ -78,10 +110,20 @@ Bundle 'txt.vim'
 Bundle 'css.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'woainvzu/Marslo.vim'
-filetype plugin on
-filetype indent on
+
+filetype plugin indent on
 nmap <leader>bi :BundleInstall<CR>
 nmap <leader>bu :BundleUpdate<CR>
+
+" The idea of GetGits() Got from: http://pastebin.com/embed_iframe.php?i=C9fUE0M3
+func! GetVim()
+if has('unix')
+    let vimgitcfg=expand('~/.vim/src/vim/.git/config')
+    if !filereadable(vimgitcfg)
+        execute 'silent !git clone git@github.com:b4winckler/vim.git "' . expand('~/.vim/vimsrc') . '"'
+    end
+endif
+endfunc
 
 " ====================================== For Programming =====================================
 func! RunResult()
