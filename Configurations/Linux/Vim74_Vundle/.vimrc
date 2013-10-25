@@ -4,7 +4,7 @@
 "         Author: Marslo
 "        Created: 2010-10
 "        Version: 0.1.0
-"     LastChange: 2013-09-27 03:15:50
+"     LastChange: 2013-10-25 12:29:19
 "        History: 0.0.3 | Marslo | Add the Autoload and Fast Edit difference between win32 and non-win32
 "                 0.0.4 | Marslo | Add CheckRubySyntax() function for checking and run ruby script
 "                 0.0.5 | Marslo | Add the function of highlight txt file
@@ -40,7 +40,7 @@ let &termencoding=&encoding
 
 " Vim Bundle
 " Get Vundle from: git clone https://github.com/gmarik/vundle.git ~/.vim
-" Get vim from: git clone git@github.com:b4winckler/vim.git
+" The idea of GetGits() Got from: http://pastebin.com/embed_iframe.php?i=C9fUE0M3
 set nocompatible
 filetype off
 
@@ -115,7 +115,7 @@ filetype plugin indent on
 nmap <leader>bi :BundleInstall<CR>
 nmap <leader>bu :BundleUpdate<CR>
 
-" The idea of GetGits() Got from: http://pastebin.com/embed_iframe.php?i=C9fUE0M3
+" Get vim from: git clone git@github.com:b4winckler/vim.git
 func! GetVim()
 if has('unix')
     let vimgitcfg=expand('~/.vim/src/vim/.git/config')
@@ -420,9 +420,9 @@ set backspace=indent,eol,start              " make backspace h, l, etc wrap to
 
 " nmap <leader>s :ConqueTermSplit
 if has('win32') || has('win95') || has('win64')
-    nmap tv :ConqueTermSplit cmd <CR>
+    nmap <leader>tv :ConqueTermSplit cmd <CR>
 else
-    nmap tv :ConqueTermSplit bash <CR>
+    nmap <leader>tv :ConqueTermSplit bash <CR>
 endif
 
 nmap zdb :%s/\s\+$//<CR>                        " Delete the black space in the end of each line
@@ -436,7 +436,7 @@ set ignorecase
 set magic                                       " Regular Expression
 
 " Tagbar
-map <F6> :TagbarToggle<CR>
+map <leader>ta :TagbarToggle<CR>
 let g:tagbar_left=1
 let g:tagbar_width=20
 let g:tagbar_autofocus=1
@@ -461,7 +461,7 @@ let g:EnhCommentifyCallbackExists = 'Yes'
 let g:EnhCommentifyAlignRight='Yes'
 
 " AutoInfo
-map <F4> :AuthorInfoDetect<CR>
+map <leader>aid :AuthorInfoDetect<CR>
 let g:vimrc_author='Marslo'
 let g:vimrc_email='marslo.vida@gmail.com'
 
@@ -563,7 +563,7 @@ hi CursorLineNr guifg=#A6E22E guibg=background gui=NONE ctermbg=black ctermfg=li
 
 " IndentLine
 let g:indentLine_color_gui = '#282828'
-let g:indentLine_color_term = 10
+let g:indentLine_color_term = 8
 let g:indentLine_indentLevel = 20
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_char = '¦'
