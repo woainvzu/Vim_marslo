@@ -199,6 +199,10 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
+- [MatchTag](https://github.com/gregsexton/MatchTag)
+- [ruby-matchit](https://github.com/vim-scripts/ruby-matchit)
+
+#### Not be used
 - [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
@@ -313,6 +317,10 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
+- [MatchTag](https://github.com/gregsexton/MatchTag)
+- [ruby-matchit](https://github.com/vim-scripts/ruby-matchit)
+
+#### Not be used
 - [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
