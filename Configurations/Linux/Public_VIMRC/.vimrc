@@ -4,29 +4,59 @@
 "         Author: Marslo
 "          Email: li.jiao@tieto.com
 "        Created: 2013-10-16 07:19:00
-"        Version: 0.0.4
+"        Version: 0.0.5
 "     LastChange: 2013-10-16 07:19:00
 "        History:
 "                 0.0.1 | Marslo | init
 "                 0.0.4 | Marslo | Add Vim Bundle
+"                 0.0.5 | Marslo | Add GetVundle() and GetVim() and the configuration of WinManager
 " =============================================================================
 
 let &runtimepath=printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
 let s:portable = expand('<sfile>:p:h')
 let &runtimepath=printf('%s/.vim,%s/.vim,%s/.vim/after', s:portable, &runtimepath, s:portable)
-" let s:portable = '/home/auto/lijiao'
+" let s:portable = '$HOME/Marslo'
 " let $runtimepath=~s:portable/.vim,usr/local/share/vim/vimfiles,/usr/local/share/vim/vim74,/usr/local/share/vim/vimfiles/after,/home/auto/.vim/after
 set nocompatible
 
 " Vim Bundle
+" Get Vundle from: git clone https://github.com/gmarik/vundle.git ~/.vim
+" The idea of GetGits() Got from: http://pastebin.com/embed_iframe.php?i=C9fUE0M3
 set nocompatible
 filetype off
+
+func! GetVundle()
+    " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
+
+    let vundleAlreadyExists=1
+    if has('win32') || has('win64')
+        let vundle_readme=expand('$VIM\bundle\vundle\README.md')
+        let vbundle='$VIM\bundle'
+        let vvundle=vbundle . '\vundle'
+    else
+        let vundle_readme=expand('~/.vim/bunle/vundle/README.md')
+        let vbundle='~/.vim/bundle'
+        let vvundle=vbundle . '/vundle'
+    endif
+
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle..."
+        echo ""
+        if isdirectory(expand(vbundle)) == 0
+            call mkdir(expand(vbundle), 'p')
+        endif
+        execute 'silent !git clone https://github.com/gmarik/vundle.git "' . expand(vvundle) . '"'
+        let vundleAlreadyExists=0
+    endif
+endfunc
+
+
 if has('win32') || has('win64')
     set rtp+=$VIM/vimfiles/bundle/vundle
     call vundle#rc('$VIM/vimfiles/bundle/')
 else
-    set rtp+=$HOME/Marslo/.vim/bunle/vundle
-    call vundle#rc()
+    set rtp+=$HOME/Marslo/.vim/bundle/vundle
+    call vundle#rc('$HOME/Marslo/.vim/bundle')
 endif
 
 " Plugins
@@ -37,13 +67,18 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'hdima/python-syntax.git'
+" Bundle 'hdima/python-syntax.git'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'woainvzu/EnhCommentify.vim'
+Bundle 'woainvzu/snipmate.vim.git'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-pathogen'
+
+" Get from vim-scripts
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
-Bundle 'Tagbar'
+" Bundle 'Tagbar'
 Bundle 'taglist.vim'
 Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
@@ -51,10 +86,28 @@ Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 Bundle 'Conque-Shell'
 
-filetype plugin on
-filetype indent on
+" Colors
+Bundle 'txt.vim'
+Bundle 'css.vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'woainvzu/Marslo.vim'
+
+filetype plugin indent on
+
 nmap <leader>bi :BundleInstall<CR>
 nmap <leader>bu :BundleUpdate<CR>
+nmap <leader>bi! :BundleInstall!<CR>
+nmap <leader>bu! :BundleUpdate<CR>
+
+" Get vim from: git clone git@github.com:b4winckler/vim.git
+func! GetVim()
+if has('unix')
+    let vimgitcfg=expand('~/Marslo/.vim/src/vim/.git/config')
+    if !filereadable(vimgitcfg)
+        execute 'silent !git clone git@github.com:b4winckler/vim.git "' . expand('~/Marslo/.vim/vimsrc') . '"'
+    end
+endif
+endfunc
 
 colorscheme marslo
 
@@ -84,7 +137,6 @@ else
     set guifont=Monaco\ 12
 endif
 
-
 " Hghlight the txt file
 au BufRead,BufNewFile * setfiletype txt
 
@@ -94,7 +146,6 @@ set nowrap
 " Make backspace key can manage normal indent, eol, start, etc 
 set backspace=indent,eol,start
 " set backspace=2
-
 " set report=0
 
 " Show matching bracets
@@ -114,10 +165,10 @@ set magic
 set shiftwidth=4                        " the tab width by using >> & <<
 set softtabstop=4                       " the width while trigger <Tab> key
 set tabstop=4
-autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
-
 set lbr
 set tw=0
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+
 " set cindent
 " set textwidth=150
 
@@ -134,15 +185,20 @@ endif
 " set selection=exclusive
 " set selectmode=mouse,key
 set scrolloff=3
+" set completeopt=longest,menu
 
 nmap <F1> <ESC>
 imap <F1> <ESC>
 
+" Emacs shortcuts
 map <C-a> <ESC>^
 imap <C-a> <ESC>I
 map <C-e> <ESC>$
 imap <C-e> <ESC>A
 
+inoremap <M-b> <ESC>Bi
+inoremap <M-f> <ESC>f<Space>a
+inoremap <M-d> <ESC>cf<Space>
 
 " Show Line and colum number
 set ruler
@@ -160,7 +216,7 @@ set statusline+=\ \ %p%%
 set showcmd
 
 " Tagbar
-map tt :TagbarToggle<CR>
+map <leader>ta :TagbarToggle<CR>
 let g:tagbar_left=1
 let g:tagbar_width=20
 let g:tagbar_autofocus=1
@@ -170,7 +226,6 @@ let g:tagbar_iconchars=['+', '-']
 let g:tagbar_autoshowtag=1
 
 " Comments setting
-" nmap <silent> <C-Q> ,x
 let g:EnhCommentifyAlignRight='Yes'
 let g:EnhCommentifyRespectIndent='yes'
 let g:EnhCommentifyPretty='Yes'
@@ -184,12 +239,33 @@ map tif :AuthorInfoDetect<CR>
 
 " ConqueTerm
 nmap <leader>s :ConqueTermSplit
-map tn :ConqueTermSplit bash<CR>
+map tv :ConqueTermSplit bash<CR>
 
 " Most Recently Used(MRU)
 map <C-g> :MRU<CR>
 let MRU_Auto_Close = 1
 let MRU_Max_Entries = 10
+
+" WinManager
+" let g:AutoOpenWinManager=1
+let g:winManagerWidth = 20
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap <leader>mm :WMToggle<cr>
+
+" Tlist
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Use_SingleClick=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_show_Menu=1
+let Tlist_sql_settings = 'sql;P:package;t:table'
+let Tlist_Process_File_Always=0
+" let Tlist_Close_On_Select=1
+" let Tlist_Auto_Open=1
+" let Tlist_Ctags_Cmd=$VIM . 'vimfiles\ctags58\ctags.exe'
+" let updatetime=1000
+nmap tl :TlistToggle<CR>
 
 " Fold
 set foldenable "Enable Fold
@@ -267,7 +343,6 @@ function! DeletePairs()
     endif
 endfunction
 
-
 iabbrev <leader>/* /*********************************
 iabbrev <leader>*/ *********************************/
 inoremap <leader>tt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
@@ -284,12 +359,10 @@ nmap zws :g/^\s*$/d<CR>                         " Delete white space
 set guicursor=a:hor10
 set guicursor+=i-r-ci-cr-o:hor10-blinkon0
 
-
 " turn off error beep/flash
 set noerrorbells
 set novisualbell
 set t_vb=
-
 
 vmap <C-c> "+y
 vmap <C-v> "+gP
@@ -298,8 +371,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
-
-" set completeopt=longest,menu
 
 " set cursorline
 set list listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
@@ -332,6 +403,6 @@ let g:rbpt_colorpairs = [
 let g:indentLine_color_gui = "#282828"
 let g:indentLine_indentLevel = 20
 let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_char = '?'
+let g:indentLine_char = '¦'
 " let g:indentLine_loaded = 1
 let g:indentLine_color_term = 8
