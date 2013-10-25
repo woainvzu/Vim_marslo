@@ -136,6 +136,13 @@ Bundle 'plasticboy/vim-markdown.git'
 Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-pathogen'
+Bundle 'gregsexton/MatchTag'
+
+if has('unix')
+   Bundle 'woainvzu/snipmate.vim.git'
+endif
+
+" Get from vim-scripts
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -144,6 +151,9 @@ Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
+Bundle 'ruby-matchit'
+
+" Others
 " Bundle 'Tagbar'
 " Bundle 'mattn/emmet-vim'
 " Bundle 'dirkwallenstein/vim-excess-lines'

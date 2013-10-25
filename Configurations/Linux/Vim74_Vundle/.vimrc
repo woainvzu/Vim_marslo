@@ -86,9 +86,13 @@ Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'woainvzu/EnhCommentify.vim'
-Bundle 'woainvzu/snipmate.vim.git'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-pathogen'
+Bundle 'gregsexton/MatchTag'
+
+if has('unix')
+   Bundle 'woainvzu/snipmate.vim.git'
+endif
 
 " Get from vim-srcipts
 Bundle 'Conque-Shell'
@@ -100,6 +104,9 @@ Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
 Bundle 'Conque-Shell'
+Bundle 'ruby-matchit'
+
+" Others
 " Bundle 'snipMate'
 " Bundle 'mattn/emmet-vim'
 " Bundle 'Tagbar'

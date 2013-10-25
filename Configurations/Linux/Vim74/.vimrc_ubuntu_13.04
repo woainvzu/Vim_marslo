@@ -59,7 +59,14 @@ Bundle 'plasticboy/vim-markdown.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'tpope/vim-rails'
-Bundle 'mattn/emmet-vim'
+Bundle 'tpope/vim-pathogen'
+Bundle 'gregsexton/MatchTag'
+
+if has('unix')
+   Bundle 'woainvzu/snipmate.vim.git'
+endif
+
+" Get from vim-scripts
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -68,8 +75,9 @@ Bundle 'TeTrIs.vim'
 Bundle 'winmanager'
 Bundle 'matrix.vim--Yang'
 Bundle 'pyflakes.vim'
-Bundle 'Conque-Shell'
-Bundle 'snipMate'
+Bundle 'ruby-matchit'
+
+" Bundle 'snipMate'
 " Bundle 'Tagbar'
 " Bundle 'AuthorInfo'
 
@@ -79,8 +87,8 @@ Bundle 'css.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'woainvzu/Marslo.vim'
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
+
 nmap <leader>bi :BundleInstall<CR>
 nmap <leader>bu :BundleUpdate<CR>
 
@@ -337,7 +345,7 @@ set smartindent
 set smarttab                                " the width of <Tab> in first line would refer to 'Shiftwidth' parameter
 set softtabstop=4                           " the width while trigger <Tab> key
 set shiftwidth=4                            " the tab width by using >> & <<
-autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+autocmd FileType ruby,eruby,yaml,html set ai sw=2 sts=2 et
 
 set lbr
 set tw=0
