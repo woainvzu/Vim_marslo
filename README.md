@@ -179,12 +179,11 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 ###Plugins:
 - [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
-- [EnhancedCommentify](https://github.com/woainvzu/EnhCommentify.vim)
+- [EnhancedCommentify](https://github.com/woainvzu/EnhCommentify.vim), [EnhancedByMarslo](https://github.com/woainvzu/EnhCommentify.vim)
 - [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
 - [mru](https://github.com/vim-scripts/mru.vim)
 - [ctrlp](https://github.com/kien/ctrlp.vim)
-- perl-support.vim
-- python_fold.vim
+- [python_fold.vim](https://github.com/vim-scripts/python_fold)
 - [TagBar](http://majutsushi.github.io/tagbar/)
 - [TagList](http://vim-taglist.sourceforge.net/)
 - [TeTrIs](https://github.com/vim-scripts/TeTrIs.vim)
@@ -192,10 +191,7 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - [IndentLine](https://github.com/Yggdroot/indentLine)
 - [Vim Bunlde](https://github.com/gmarik/vundle)
 - [vim-css-color](https://github.com/skammer/vim-css-color)
-- [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate)
-- [tlib](https://github.com/tomtom/tlib_vim)
-- [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
-- [python.vim(Indent)](http://www.vim.org/scripts/script.php?script_id=3461)
+- [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate), [EnhancedByMarslo](https://github.com/woainvzu/snipmate.vim)
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
@@ -203,6 +199,9 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - [ruby-matchit](https://github.com/vim-scripts/ruby-matchit)
 
 #### Not be used
+- perl-support.vim
+- [tlib](https://github.com/tomtom/tlib_vim)
+- [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 - [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
@@ -298,12 +297,11 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 ### 插件列表：
 - [AuthorInfo](https://github.com/dantezhu/authorinfo)
 - [Conque Term](http://code.google.com/p/conque/)
-- [EnhancedCommentify](https://github.com/woainvzu/EnhCommentify.vim)
+- [EnhancedCommentify](https://github.com/woainvzu/EnhCommentify.vim), [EnhancedByMarslo](https://github.com/woainvzu/EnhCommentify.vim)
 - [MiniBufExpl](http://www.vim.org/scripts/script.php?script_id=159)
 - [mru](https://github.com/vim-scripts/mru.vim)
 - [ctrlp](https://github.com/kien/ctrlp.vim)
-- perl-support.vim
-- python_fold.vim
+- [python_fold.vim](https://github.com/vim-scripts/python_fold)
 - [TagBar](http://majutsushi.github.io/tagbar/)
 - [TagList](http://vim-taglist.sourceforge.net/)
 - [TeTrIs](https://github.com/vim-scripts/TeTrIs.vim)
@@ -311,16 +309,17 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 - [IndentLine](https://github.com/Yggdroot/indentLine)
 - [Vim Bunlde](https://github.com/gmarik/vundle)
 - [vim-css-color](https://github.com/skammer/vim-css-color)
-- [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate)
-- [tlib](https://github.com/tomtom/tlib_vim)
-- [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
+- [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate), [EnhancedByMarslo](https://github.com/woainvzu/snipmate.vim)
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
 - [MatchTag](https://github.com/gregsexton/MatchTag)
 - [ruby-matchit](https://github.com/vim-scripts/ruby-matchit)
 
-#### Not be used
+#### 未被使用的（曾被使用）
+- perl-support.vim
+- [tlib](https://github.com/tomtom/tlib_vim)
+- [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 - [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
