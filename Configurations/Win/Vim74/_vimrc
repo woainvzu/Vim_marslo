@@ -3,7 +3,7 @@
 "          Desc:
 "        Author: Marslo
 "       Created: 2010-10
-"       Version: 0.0.12
+"       Version: 0.0.13
 "    LastChange: 2013-10-25 19:03:40
 "       History:
 "                0.0.3  | Marslo | Add the Autoload and Fast Edit difference between win32 and non-win32
@@ -17,6 +17,7 @@
 "                0.0.10 | Marslo | Add the configuration about rainbow_parentheses
 "                0.0.11 | Marslo | Add three bundles: woainvzu/EnhCommentify.vim && woainvzu/Marslo.vim && tpope/vim-rails
 "                0.0.12 | Marslo | Add GetVundle() and GetVim()
+"                0.0.13 | Marslo | Add Alpha setting for vim tweak
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -163,11 +164,13 @@ Bundle 'ruby-matchit'
 " Colors
 Bundle 'txt.vim'
 Bundle 'css.vim'
+Bundle 'gorodinskiy/vim-coloresque'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'woainvzu/Marslo.vim'
+" Bundle 'ap/vim-css-color'
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
+
 nmap <leader>bi :BundleInstall<CR>
 nmap <leader>bu :BundleUpdate<CR>
 
@@ -462,6 +465,9 @@ syntax enable
 syntax on
 filetype plugin on
 
+if !filereadable("$VIM\vim74\vimtweak.dll")
+    au GUIENTER * call libcallnr("vimtweak.dll","SetAlpha",245)
+endif
 " set go=                                   " Hide everything
 " set guioptions+=b                         " Add the bottom scroll bar
 set guioptions-=T                           " Hide the tool bar
@@ -479,7 +485,7 @@ set smarttab expandtab                      " smarttab: the width of <Tab> in fi
 set tabstop=4                               " Tab width
 set softtabstop=4                           " the width while trigger <Tab> key
 set shiftwidth=4                            " the tab width by using >> & <<
-autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+autocmd FileType ruby,eruby,yaml,html set ai sw=2 sts=2 et
 set lbr
 set tw=0
 

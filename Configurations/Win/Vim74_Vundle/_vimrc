@@ -165,8 +165,10 @@ Bundle 'ruby-matchit'
 " Colors
 Bundle 'txt.vim'
 Bundle 'css.vim'
+Bundle 'gorodinskiy/vim-coloresque'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'woainvzu/Marslo.vim'
+" Bundle 'ap/vim-css-color'
 
 filetype plugin indent on
 

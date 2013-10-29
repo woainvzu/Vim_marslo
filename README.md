@@ -3,7 +3,7 @@ vim_marslo
 Author: Marslo
 Email: marslo.vida@gmail.com
 Version: 0.0.4
-LastChange: 2013-09-26 11:22:39
+LastChange: 2013-10-29 09:48:48
 
 -----------------------------
 ## ScreenShots:
@@ -190,18 +190,19 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - [WinManager](https://github.com/vim-scripts/winmanager)
 - [IndentLine](https://github.com/Yggdroot/indentLine)
 - [Vim Bunlde](https://github.com/gmarik/vundle)
-- [vim-css-color](https://github.com/skammer/vim-css-color)
 - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate), [EnhancedByMarslo](https://github.com/woainvzu/snipmate.vim)
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
 - [MatchTag](https://github.com/gregsexton/MatchTag)
 - [ruby-matchit](https://github.com/vim-scripts/ruby-matchit)
+- [vim-colorsque](https://github.com/gorodinskiy/vim-coloresque)
 
 #### Not be used
 - perl-support.vim
 - [tlib](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
+- [vim-css-color](https://github.com/ap/vim-css-color)          # Cannot work for vim74, using **vim-colorsque** instead
 - [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
@@ -308,18 +309,19 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 - [WinManager](https://github.com/vim-scripts/winmanager)
 - [IndentLine](https://github.com/Yggdroot/indentLine)
 - [Vim Bunlde](https://github.com/gmarik/vundle)
-- [vim-css-color](https://github.com/skammer/vim-css-color)
 - [snipMate](http://www.vim.org/scripts/script.php?script_id=2540), [Github](https://github.com/garbas/vim-snipmate), [EnhancedByMarslo](https://github.com/woainvzu/snipmate.vim)
 - [Rainbow Parentheses](https://github.com/kien/rainbow_parentheses.vim)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [Marslo.vim](https://github.com/woainvzu/Marslo.vim)
 - [MatchTag](https://github.com/gregsexton/MatchTag)
 - [ruby-matchit](https://github.com/vim-scripts/ruby-matchit)
+- [vim-colorsque](https://github.com/gorodinskiy/vim-coloresque)
 
 #### 未被使用的（曾被使用）
 - perl-support.vim
 - [tlib](https://github.com/tomtom/tlib_vim)
 - [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
+- [vim-css-color](https://github.com/ap/vim-css-color)                      # 不支持Vim74， 使用**vim-colorsque**替代
 - [emmet.vim](https://github.com/mattn/emmet-vim)
 
 +++++++++++++++++++++++++++++++++++++++++++
