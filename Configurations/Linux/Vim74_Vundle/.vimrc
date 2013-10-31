@@ -39,11 +39,11 @@ set fileencoding=utf8
 let &termencoding=&encoding
 
 " Vim Bundle
-" Get Vundle from: git clone https://github.com/gmarik/vundle.git ~/.vim
-" The idea of GetGits() Got from: http://pastebin.com/embed_iframe.php?i=C9fUE0M3
+" Get Vundle by: git clone https://github.com/gmarik/vundle.git ~/.vim
 set nocompatible
 filetype off
 
+" Inspired from http://pastebin.com/embed_iframe.php?i=C9fUE0M3
 func! GetVundle()
     " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
 
@@ -84,17 +84,15 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'dantezhu/authorinfo'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'hdima/python-syntax.git'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-pathogen'
 Bundle 'gregsexton/MatchTag'
+Bundle 'woainvzu/snipmate.vim.git'
 
-if has('unix')
-   Bundle 'woainvzu/snipmate.vim.git'
-endif
-
-" Get from vim-srcipts
+" Get from vim-scripts
 Bundle 'Conque-Shell'
 Bundle 'mru.vim'
 Bundle 'python_fold'
@@ -115,14 +113,16 @@ Bundle 'ruby-matchit'
 " Colors
 Bundle 'txt.vim'
 Bundle 'css.vim'
+Bundle 'gorodinskiy/vim-coloresque'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'woainvzu/Marslo.vim'
+" Bundle 'ap/vim-css-color'
 
 filetype plugin indent on
 nmap <leader>bi :BundleInstall<CR>
 nmap <leader>bu :BundleUpdate<CR>
 
-" Get vim from: git clone git@github.com:b4winckler/vim.git
+" Get vim by: git clone git@github.com:b4winckler/vim.git
 func! GetVim()
 if has('unix')
     let vimgitcfg=expand('~/.vim/src/vim/.git/config')

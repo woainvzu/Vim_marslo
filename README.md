@@ -1,9 +1,9 @@
 vim_marslo
 =================
-Author: Marslo
-Email: marslo.vida@gmail.com
-Version: 0.0.4
-LastChange: 2013-10-29 09:48:48
+Author: Marslo    
+Email: marslo.vida@gmail.com    
+Version: 0.0.4    
+LastChange: 2013-10-29 09:48:48   
 
 -----------------------------
 ## ScreenShots:

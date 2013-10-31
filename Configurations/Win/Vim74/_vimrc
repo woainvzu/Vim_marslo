@@ -22,6 +22,7 @@
 
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
+" runtime macros/matchit.vim
 behave mswin
 
 let g:ruby_path=$RUBY_BIN
@@ -89,6 +90,7 @@ endfunc
 set nocompatible
 filetype off
 
+" Inspired from http://pastebin.com/embed_iframe.php?i=C9fUE0M3
 func! GetGits()
     " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
 
@@ -116,8 +118,8 @@ endfunc
 
 " Setting runtimepath for Vundle use
 if has('win32') || has('win64')
-    set rtp+=$VIM/vimfiles/bundle/vundle
-    call vundle#rc('$VIM/vimfiles/bundle/')
+    set rtp+=$VIM/bundle/vundle
+    call vundle#rc('$VIM/bundle')
 else
     set rtp+=~/.vim/bunle/vundle
     call vundle#rc()
@@ -137,10 +139,9 @@ Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-pathogen'
 Bundle 'gregsexton/MatchTag'
-
-if has('unix')
-   Bundle 'woainvzu/snipmate.vim.git'
-endif
+" if has('unix')
+Bundle 'woainvzu/snipmate.vim.git'
+" endif
 
 " Get from vim-scripts
 Bundle 'Conque-Shell'
@@ -160,6 +161,7 @@ Bundle 'ruby-matchit'
 " Bundle 'xolox/vim-shell'
 " Bundle 'xolox/vim-misc'
 " Bundle 'xolox/vim-easytags'
+" Bundle 'dbarsam/vim-vimtweak'
 
 " Colors
 Bundle 'txt.vim'
@@ -468,6 +470,7 @@ filetype plugin on
 if !filereadable("$VIM\vim74\vimtweak.dll")
     au GUIENTER * call libcallnr("vimtweak.dll","SetAlpha",245)
 endif
+
 " set go=                                   " Hide everything
 " set guioptions+=b                         " Add the bottom scroll bar
 set guioptions-=T                           " Hide the tool bar
@@ -629,10 +632,8 @@ set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:·
 set guicursor=a:hor6
 set guicursor+=i-r-ci-cr-o:hor6-blinkon0
 
+" Highlight Line Number
 set cursorline
-hi LineNr guifg=#555555 guibg=background ctermfg=darkgrey ctermbg=none
-hi CursorLineNr guifg=#A6E22E guibg=background gui=NONE ctermbg=black ctermfg=lightgreen
-" hi CursorLine   cterm=NONE ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
 
 " IndentLine
 let g:indentLine_color_gui = '#282828'

@@ -17,6 +17,7 @@
 "                0.0.10 | Marslo | Add the configuration about rainbow_parentheses
 "                0.0.11 | Marslo | Add three bundles: woainvzu/EnhCommentify.vim && woainvzu/Marslo.vim && tpope/vim-rails
 "                0.0.12 | Marslo | Add function GetGit() to get vundle automaticly
+"                0.0.13 | Marslo | Add Alpha setting for vim tweak
 " =============================================================================
 
 source $VIMRUNTIME/vimrc_example.vim
@@ -86,10 +87,10 @@ endfunc
 
 " Vim Bundle
 " Get Vundle by: git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vim\vimfiles"
-" Got from http://pastebin.com/embed_iframe.php?i=C9fUE0M3
 set nocompatible
 filetype off
 
+" Inspired from http://pastebin.com/embed_iframe.php?i=C9fUE0M3
 func! GetGits()
     " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
 
@@ -138,10 +139,9 @@ Bundle 'woainvzu/EnhCommentify.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-pathogen'
 Bundle 'gregsexton/MatchTag'
-
-if has('unix')
-   Bundle 'woainvzu/snipmate.vim.git'
-endif
+" if has('unix')
+Bundle 'woainvzu/snipmate.vim.git'
+" endif
 
 " Get from vim-scripts
 Bundle 'Conque-Shell'
@@ -161,6 +161,7 @@ Bundle 'ruby-matchit'
 " Bundle 'xolox/vim-shell'
 " Bundle 'xolox/vim-misc'
 " Bundle 'xolox/vim-easytags'
+" Bundle 'dbarsam/vim-vimtweak'
 
 " Colors
 Bundle 'txt.vim'
@@ -631,10 +632,8 @@ set list listchars=tab:\ \ ,trail:·,extends:»,precedes:«,nbsp:·
 set guicursor=a:hor6
 set guicursor+=i-r-ci-cr-o:hor6-blinkon0
 
+" Highlight Line Number
 set cursorline
-hi LineNr guifg=#555555 guibg=background ctermfg=darkgrey ctermbg=none
-hi CursorLineNr guifg=#A6E22E guibg=background gui=NONE ctermbg=black ctermfg=lightgreen
-" hi CursorLine   cterm=NONE ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
 
 " IndentLine
 let g:indentLine_color_gui = '#282828'
