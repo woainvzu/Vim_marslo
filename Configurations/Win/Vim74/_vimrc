@@ -91,7 +91,7 @@ set nocompatible
 filetype off
 
 " Inspired from http://pastebin.com/embed_iframe.php?i=C9fUE0M3
-func! GetGits()
+func! GetVundle()
     " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
 
     let vundleAlreadyExists=1

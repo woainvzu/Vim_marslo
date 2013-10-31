@@ -93,8 +93,8 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 - Windows User:
     - Copy **_vimrc** from into `C:\Program Files\Vim`.
     - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
-        <pre><code>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vim\vimfiles"
-        </code></pre>
+        --<pre><code>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vim\vimfiles"
+        </code></pre>--
         Open gvim and run (Ignore warnings and errors):
         <pre><code>:BundleInstall!
         </code></pre>

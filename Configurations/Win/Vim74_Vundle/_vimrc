@@ -16,7 +16,7 @@
 "                0.0.9  | Marslo | Add the function about remove a paird parentheses, brackets, braces
 "                0.0.10 | Marslo | Add the configuration about rainbow_parentheses
 "                0.0.11 | Marslo | Add three bundles: woainvzu/EnhCommentify.vim && woainvzu/Marslo.vim && tpope/vim-rails
-"                0.0.12 | Marslo | Add function GetGit() to get vundle automaticly
+"                0.0.12 | Marslo | Add function GetVundle() to get vundle automaticly
 "                0.0.13 | Marslo | Add Alpha setting for vim tweak
 " =============================================================================
 
@@ -91,7 +91,7 @@ set nocompatible
 filetype off
 
 " Inspired from http://pastebin.com/embed_iframe.php?i=C9fUE0M3
-func! GetGits()
+func! GetVundle()
     " execute 'silent !git clone https://github.com/woainvzu/snipmate.vim.git "' . expand('$VIM') . '"'
 
     let vundleAlreadyExists=1
