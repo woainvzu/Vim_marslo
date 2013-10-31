@@ -92,11 +92,12 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
 ### Usage
 - Windows User:
     - Copy **_vimrc** from into `C:\Program Files\Vim`.
-    - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
-    <del>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vim\vimfiles"</del>
-        <pre><code>:call GetVundle()
-        </code></pre>
-        Open gvim and run (Ignore warnings and errors):
+    - Get [Vundle](https://github.com/gmarik/vundle.git)
+        - <del>>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\vim\vimfiles"</del>
+        - Open Vim and execute (Ignore warning and errors)
+            <pre><code>:call GetVundle()
+            </code></pre>
+    - Get the other plugins
         <pre><code>:BundleInstall!
         </code></pre>
 
@@ -104,13 +105,16 @@ Icon=/home/marslo/Tools/Software/Vim/applications/gvim.png
     - Copy **.vimrc** into `$HOME`
     <pre><code>$ cp .vimrc ~/
     </code></pre>
-    - Get vim plugins by [Vundle](https://github.com/gmarik/vundle.git)
+    - Get [Vundle](https://github.com/gmarik/vundle.git)
         <pre><code>$ cat .vimrc | grep "set rtp"
             set rtp+=$VIM/vimfiles/bundle/vundle
             set rtp+=~/.vim/bunle/vundle
-        $ git clone https://github.com/gmarik/vundle.git ~/.vim
         </code></pre>
-        Open Vim and Run (Ignore warnings and errors):
+        <del>$ git clone https://github.com/gmarik/vundle.git ~/.vim</del>
+        - Open Vim and Run (Ignore warnings and errors):
+            <pre><code>:call GetVundle()
+            </code></pre>
+    - Get the other plugins
         <pre><code>:BundleInstall!
         </code></pre>
     - Transfer the file type from Dos to Unix
@@ -215,10 +219,12 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
 ###使用方法
 - Windows用户
     - 复制 **Configurations\Win\Vim74_Vundle\_vimrc** 到 `C:\Program Files (x86)\Vim`
-    - 从 [Vundle](https://github.com/gmarik/vundle.git) 克隆代码到 `$VIMHOME\vimfiles` 目录下
-        <pre><code>>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\Vim\vimfile\"
+    - 获取 [Vundle](https://github.com/gmarik/vundle.git) [克隆代码到 `$VIMHOME\vimfiles` 目录下]
+        - <del>>> git clone https://github.com/gmarik/vundle.git "C:\Program Files (x86)\Vim\vimfile\"</del>
+        - 打开vim(忽略错误或警告)
+        <pre><code>:call GetVundle()
         </code></pre>
-    - 打开Vim,并且执行 (忽略错误或者警告）:
+    - 获取其他插件
         <pre><code>:BundleInstall!
         </code></pre>
 
@@ -226,10 +232,12 @@ The default Font named: Monaco, download form: http://download.csdn.net/detail/j
     - 复制 **Configurations\Linux\Vim74_vundle\.vimrc** 到 `$HOME`
     <pre><code>$ cp Linux/Vim74_vundle/.vimrc ~/
     </code></pre>
-    - 从[Vundle](https://github.com/gmarik/vundle.git)下克隆代码到 `$HOME\.vim`
-        <pre><code>$ git clone https://github.com/gmarik/vundle.git ~/.vim
-        </code></pre>
-    - 打开Gvim且运行 (忽略错误或警告）：
+    - 获取 [Vundle](https://github.com/gmarik/vundle.git) 【克隆代码到 `$HOME\.vim`】
+        <del>$ git clone https://github.com/gmarik/vundle.git ~/.vim</del>
+        - 打开Gvim且运行 (忽略错误或警告）：
+            <pre><code>:call GetVundle()
+            </code></pre>
+    - 获取其他插件
         <pre><code>:BundleInstall!
         </code></pre>
     - 将Windows下的文件格式改为Unix格式
